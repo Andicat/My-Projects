@@ -1,47 +1,45 @@
 body {
-  width: 1000px;
-  margin: 0;
-  padding: 0 10px;
-
-  font-family: "Times New Roman", serif;
-  font-size: 14px solid;
+  background: #c7b39b url(img/deep_sea.jpg);
 }
 
-table {
-	border-collapse: collapse;
- }
-
-h2 {color:#5e9ca0;}
-
-h3 {color:#2e6c80;}
-
-.RedText {color:#993366;}
-
-.bullet {
-margin-left: 0;
-counter-reset: li;
+h1 {
+  font-style: italic;
+  font-size: 30px;
+  font-weight:bolder;
+  color: white;
+  text-shadow: 0px 0px 1px white;
+  text-align: center;
 }
 
-.bullet li {
-position: relative;
-margin-bottom: 1.5em;
-border: 2px solid #5e9ca0;
-padding: 0.4em;
-border-radius: 4px;
-background: #FEFEFE;
-color: #231F20;
+h2 {
+  font-style: italic;
+  font-size: 24px;
+  font-weight:bolder;
+  color: white;
+  text-shadow: 0px 0px 1px white;
+  text-align: center;
 }
 
-.bullet li:before {
-position: absolute;
-top: -0.7em;
-padding-left: 0.4em;
-padding-right: 0.4em;
-font-size: 16px;
-font-weight: bold;
-color: #993366;
-background: #FEFEFE;
-border-radius: 50%;
-counter-increment: li;
-content: counter(li);
+.projects-list {
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.projects-list__item {
+	border: 1px solid white;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+.projects-list__link {
+	text-decoration: none;
+	font-size: 24px;
+	color: white;
+	margin-bottom: 10px;
 }
