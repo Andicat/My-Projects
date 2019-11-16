@@ -28,6 +28,7 @@ h2 {
 }
 
 .projects-list__item {
+	background-color: grey;
 	border: 1px solid white;
 	width: 30%;
 	display: flex;
