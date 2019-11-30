@@ -1,12 +1,13 @@
 body {
-  background: #c7b39b url(img/deep_sea.jpg);
+  background: #ffffff;
+  /*c7b39b url(img/deep_sea.jpg);*/
 }
 
 h1 {
   font-style: italic;
   font-size: 30px;
-  font-weight:bolder;
-  color: white;
+  font-weight: normal;
+  color: gray;
   text-shadow: 0px 0px 1px white;
   text-align: center;
 }
@@ -14,8 +15,8 @@ h1 {
 h2 {
   font-style: italic;
   font-size: 24px;
-  font-weight:bolder;
-  color: white;
+  font-weight: normal;
+  color: gray;
   text-shadow: 0px 0px 1px white;
   text-align: center;
 }
@@ -28,19 +29,45 @@ h2 {
 }
 
 .projects-list__item {
-	background-color: grey;
-	border: 1px solid white;
-	width: 30%;
+	background-color: gray;
+	border: 1px solid gray;
+	width: 100%;
+	height: 300px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 20px;
-	padding: 20px;
+	padding: 0;
 }
 
 .projects-list__link {
-	text-decoration: none;
 	font-size: 24px;
 	color: white;
-	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+
+.projects-list__link:hover .scroll {
+	transform: translateY(calc(-100% + 300px));
+}
+
+.projects-list__image {
+	position: relative;
+	width: 100%;
+	transition: transform 5s ease;
+}
+
+.projects-list__legend {
+	background-color: black;
+	opacity: 0.5;
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+}
+
+@media (min-width: 1200px ) {
+	.projects-list__item {
+		width: 30%;
+	}
 }
