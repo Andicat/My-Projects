@@ -1,0 +1,19 @@
+{
+  "name": "myprojects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andicat/My-Projects.git"
+  },
+  "author": "Katerina Andreeva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andicat/My-Projects/issues"
+  },
+  "homepage": "https://github.com/Andicat/My-Projects#readme"
+}

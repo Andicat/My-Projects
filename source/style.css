@@ -1,12 +1,11 @@
 body {
   background: #ffffff;
-
+  color: #555555;
   margin: 0;
   text-align: center;
 }
 
 h1 {
-  font-style: italic;
   font-size: 30px;
   font-weight: normal;
   text-shadow: 0px 0px 1px white;
@@ -14,7 +13,6 @@ h1 {
 }
 
 h2 {
-  font-style: italic;
   font-size: 24px;
   font-weight: normal;
   text-shadow: 0px 0px 1px white;
@@ -30,9 +28,33 @@ a {
 }
 
 .header {
-	background-color: #c5d6d9;
+	
 	font-style: italic;
   	font-size: 20px;
+  	min-height: 30px;
+}
+
+.nav {
+	display: flex;
+	justify-content: center;
+}
+
+.nav__item {
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	width: 100px;
+	min-height: 40px;
+	font-style: normal;
+	color: #555555;
+	padding: 10px;
+}
+
+
+.nav__item:hover,
+.nav__item:focus {
+	color: #668888;
+	outline: none;
 }
 
 .skills__list {
@@ -42,12 +64,20 @@ a {
 }
 
 .skills__item {
-	margin: 5px;
+	display: block;
+	margin: 10px;
+	min-height: 25px;
+	min-width: 50px;
+}
+
+.portfolio {
+	/*background-color: #c5d6d9;*/
+	padding: 10px;
 }
 
 .projects-list {
-	background-color: #c5d6d9;
-	padding: 20px;
+	padding: 10px;
+	margin: 0;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -56,6 +86,7 @@ a {
 .projects-list__item {
 	background-color: #ffffff;
 	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	height: 280px;
 	display: flex;
 	flex-direction: column;
@@ -89,8 +120,8 @@ a {
 .projects-list__legend {
 	display: none;
 	background-color: #ffffff;
-	color: #0c343b;
-	opacity: 0.8;
+	color: #555555;
+	opacity: 0.9;
 	position: absolute;
 	width: 100%;
 	height: 100%;
