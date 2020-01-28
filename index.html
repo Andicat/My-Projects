@@ -6,56 +6,83 @@
 	  <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-	  <!--<h1>Hi! I'm Andi and here're my projects</h1>-->
-    <h2>Мои учебные проекты:</h2>
-    <ul class='projects-list'>
-      <li class="projects-list__item">
-        <a class="projects-list__link" href="https://andicat.github.io/sedona-1/">
-          <img class="projects-list__image scroll" src="img/sedona-1.jpg" width="100%" alt="Седона-1">
-          <div class="projects-list__legend">
-            <h3 class="projects-list__name">Седона №1</h3>
-            <span class="projects-list__desc">Описание проекта</span>  
-          </div>
-        </a>
-      </li>
-      <!--<li class="projects-list__item">
-        <div class="projects-list__img_box">
-          <img class="projects-list__img scroll" src="img/sedona-1.jpg" width="100%" alt="Седона-1">
-        </div>
-        <a href="https://andicat.github.io/sedona-1/" class="projects-list__link">Седона №1</a>
-        <span class="projects-list__desc">Описание проекта</span>
-      </li>
-      <li class="projects-list__item">
-        <div class="projects-list__img_box">
-          <img class="projects-list__img scroll" src="img/technomart.jpg" width="100%" alt="Техномарт">
-        </div>
-        <a href="https://andicat.github.io/technomart/" class="projects-list__link">Техномарт</a>
-        <span class="projects-list__desc">Описание проекта</span>
-      </li>
-      <li class="projects-list__item">
-        <div class="projects-list__img_box">
-          <img class="projects-list__img scroll" src="img/sedona-2.jpg" width="100%" alt="Седона-2">
-        </div>
-        <a href="https://andicat.github.io/sedona-2/" class="projects-list__link">Седона №2</a>
-        <span class="projects-list__desc">Описание проекта</span>
-      </li>
-      <li class="projects-list__item">
-        <div class="projects-list__img_box">
-          <img class="projects-list__img scroll" src="img/keksobooking.jpg" width="100%" alt="Кексобукинг">
-        </div>
-        <a href="https://andicat.github.io/keksobooking/" class="projects-list__link">Кексобукинг</a>
-        <span class="projects-list__desc">Описание проекта</span>
-      </li>
-    </ul>
-    <h2>Мои тренировочные проекты:</h2>
-    <ul class='projects-list'>
-      <li class="projects-list__item">
-        <div class="projects-list__img_box">
-          <img class="projects-list__img" src="img/quotes.jpg" width="100%" alt="Рандомные цитаты">
-        </div>
-        <a href="https://andicat.github.io/Quotes/" class="projects-list__link">Рандомные цитаты</a>
-        <span class="projects-list__desc">Описание проекта</span>
-      </li>-->
-    </ul>
+    <header class="header">
+      <!--<span class="nick">Andi</span>-->
+      <nav class="nav">
+        <a class="nav__item active" href="#portfolio">Portfolio</a>
+        <a class="nav__item" href="#contacts">Contacts</a>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="skills">
+        <h2>Ekaterina Andreeva</h2>
+        <!--<p>Front-end</p>-->
+        <ul class='skills__list'>
+          <li class="skills__item">
+            <img class="skill__logo" src="img/html-logo.png" width="50px" alt="HTML5">
+          </li>
+          <li class="skills__item">
+            <img class="skill__logo" src="img/css-logo.png" width="50px" alt="CSS3">
+          </li>
+          <li class="skills__item">
+            <img class="skill__logo" src="img/js-logo.png" width="50px" alt="Java script">
+          </li>
+          </li>
+        </ul>
+      </section>
+      <section class="portfolio" id="portfolio">
+        <h2>Portfolio</h2>
+        <ul class='projects-list'>
+          <li class="projects-list__item">
+            <a class="projects-list__link" href="https://andicat.github.io/sedona-1/">
+              <img class="projects-list__image scroll" src="img/sedona-1.jpg" width="100%" alt="Sedona-1">
+              <div class="projects-list__legend">
+                <h3 class="projects-list__name">Sedona</h3>
+                <span class="projects-list__desc">Description</span>  
+              </div>
+            </a>
+          </li>
+          <li class="projects-list__item">
+            <a class="projects-list__link" href="https://andicat.github.io/technomart/">
+              <img class="projects-list__image scroll" src="img/technomart.jpg" width="100%" alt="Technomart">
+              <div class="projects-list__legend">
+                <h3 class="projects-list__name">Technomart</h3>
+                <span class="projects-list__desc">Description</span>  
+              </div>
+            </a>
+          </li>
+          <li class="projects-list__item">
+            <a class="projects-list__link" href="https://andicat.github.io/sedona-2/">
+              <img class="projects-list__image scroll" src="img/sedona-2.jpg" width="100%" alt="Sedona-2">
+              <div class="projects-list__legend">
+                <h3 class="projects-list__name">Sedona adaptive</h3>
+                <span class="projects-list__desc">Description</span>  
+              </div>
+            </a>
+          </li>
+           <li class="projects-list__item">
+            <a class="projects-list__link" href="https://andicat.github.io/keksobooking/">
+              <img class="projects-list__image scroll" src="img/keksobooking.jpg" width="100%" alt="Keksobooking">
+              <div class="projects-list__legend">
+                <h3 class="projects-list__name">Keksobooking</h3>
+                <span class="projects-list__desc">Description</span>  
+              </div>
+            </a>
+          </li>
+          <li class="projects-list__item">
+            <a class="projects-list__link" href="https://andicat.github.io/Quotes/">
+              <img class="projects-list__image" src="img/quotes.jpg" width="100%" alt="Random quotes">
+              <div class="projects-list__legend">
+                <h3 class="projects-list__name">Quotes</h3>
+                <span class="projects-list__desc">Description</span>  
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="contacts" id="contacts">
+        <h2>Contacts</h2>
+      </section>
+    </main>
   </body>
 </html>

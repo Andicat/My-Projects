@@ -1,13 +1,14 @@
 body {
   background: #ffffff;
-  /*c7b39b url(img/deep_sea.jpg);*/
+
+  margin: 0;
+  text-align: center;
 }
 
 h1 {
   font-style: italic;
   font-size: 30px;
   font-weight: normal;
-  color: gray;
   text-shadow: 0px 0px 1px white;
   text-align: center;
 }
@@ -16,40 +17,67 @@ h2 {
   font-style: italic;
   font-size: 24px;
   font-weight: normal;
-  color: gray;
   text-shadow: 0px 0px 1px white;
   text-align: center;
 }
 
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.header {
+	background-color: #c5d6d9;
+	font-style: italic;
+  	font-size: 20px;
+}
+
+.skills__list {
+	display: flex;
+  	justify-content: center;
+  	padding: 0;
+}
+
+.skills__item {
+	margin: 5px;
+}
+
 .projects-list {
+	background-color: #c5d6d9;
 	padding: 20px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .projects-list__item {
-	background-color: gray;
-	border: 1px solid gray;
-	width: 100%;
-	height: 300px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	height: 280px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 20px;
+	margin: 10px;
 	padding: 0;
+	overflow: hidden;
+	position: relative;
 }
 
 .projects-list__link {
 	font-size: 24px;
 	color: white;
-	overflow: hidden;
-	position: relative;
+}
+
+.projects-list__link:hover .scroll {
+	/*transform: translateY(calc(-100% + 300px));*/
 }
 
 
-.projects-list__link:hover .scroll {
-	transform: translateY(calc(-100% + 300px));
+.projects-list__link:hover .projects-list__legend {
+	display: block;
 }
 
 .projects-list__image {
@@ -59,10 +87,13 @@ h2 {
 }
 
 .projects-list__legend {
-	background-color: black;
-	opacity: 0.5;
+	display: none;
+	background-color: #ffffff;
+	color: #0c343b;
+	opacity: 0.8;
 	position: absolute;
 	width: 100%;
+	height: 100%;
 	bottom: 0px;
 }
 
