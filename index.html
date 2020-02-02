@@ -3,89 +3,120 @@
   <head>
     <meta charset="utf-8">
   	<title>Andi</title>
-	  <link rel="stylesheet" href="style.css">
+	  <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <header class="header">
-      <!--<span class="name">Andi</span>-->
-      <nav class="nav">
-        <a class="nav__item active" href="#skills">Skills</a>
-        <a class="nav__item" href="#projects">Projects</a>
-        <a class="nav__item" href="#contacts">Contacts</a>
-        <a class="nav__item" href="#aboutme">About me</a>
-      </nav>
+      <section class="header-container center-aligned">
+        <img class="logo" src="img/logo.png" width="67" height="29" alt="Andi">
+        <nav class="nav">
+          <a class="nav__item active" href="#skills">Skills</a>
+          <a class="nav__item" href="#portfolio">portfolio</a>
+          <a class="nav__item" href="#aboutme">About me</a>
+          <a class="nav__item" href="#contacts">Contacts</a>
+        </nav>
+      </section>
     </header>
     <main class="main">
-      <section class="skills" id='skills'>
-        <h2>Katerina Andreeva</h2>
-        <p>Front-end beginner)</p>
+      <section class="intro">
+        <div class="intro-container center-aligned">
+          <div class="intro__photo">
+          <img class="photo" src="img/photo.jpg" width="250px" alt="Katerina">
+        </div>
+        <div class="intro__decs">
+          <h2>Hi, I'm Katerina</h2>
+          <p>a front-end developer</p>
+        </div>
+        </div>
+      </section>
+      <!--<section class="skills center-aligned" id='skills'>
+        <h2>Skills</h2>
+        <p>description</p>
         <ul class='skills__list'>
           <li class="skills__item">
-            <img class="skill__logo" src="img/html-logo.png" width="50px" alt="HTML5">
+            <h3 class="skill__name">HTML</h3>
+            <div class="skill__level"></div>
           </li>
           <li class="skills__item">
-            <img class="skill__logo" src="img/css-logo.png" width="50px" alt="CSS3">
+            <h3 class="skill__name">CSS</h3>
+            <div class="skill__level"></div>
           </li>
           <li class="skills__item">
-            <img class="skill__logo" src="img/js-logo.png" width="50px" alt="Java script">
+            <h3 class="skill__name">JS</h3>
+            <div class="skill__level"></div>
           </li>
+        </ul>
+        <ul class='skills__list'>
+          <li class="skills__item">
+            <h3 class="skill__name">Photoshop</h3>
+            <div class="skill__level"></div>
+          </li>
+          <li class="skills__item">
+            <h3 class="skill__name">CSS</h3>
+            <div class="skill__level"></div>
+          </li>
+          <li class="skills__item">
+            <h3 class="skill__name">JS</h3>
+            <div class="skill__level"></div>
           </li>
         </ul>
       </section>
-      <section class="projects" id="projects">
-        <h2>Projects</h2>
-        <p></p>
-        <ul class='projects-list'>
-          <li class="projects-list__item">
-            <a class="projects-list__link" href="https://andicat.github.io/sedona-1/">
-              <img class="projects-list__image scroll" src="img/sedona-1.jpg" width="100%" alt="Sedona-1">
-              <div class="projects-list__legend">
-                <h3 class="projects-list__name">Sedona</h3>
-                <span class="projects-list__desc">Description</span>  
-              </div>
+      <section class="portfolio center-aligned" id="portfolio">
+        <h2>Portfolio</h2>
+        <p>description</p>
+        <ul class='portfolio__list'>
+          <li class="portfolio__item">
+            <a class="portfolio__link" href="https://andicat.github.io/technomart/">
+              <img class="portfolio__image" src="img/technomart.jpg" width="100%" alt="Technomart">
             </a>
+            <h3 class="portfolio__name">Technomart</h3>
+            <p class="portfolio__desc">Description</p>  
           </li>
-          <li class="projects-list__item">
-            <a class="projects-list__link" href="https://andicat.github.io/technomart/">
-              <img class="projects-list__image scroll" src="img/technomart.jpg" width="100%" alt="Technomart">
-              <div class="projects-list__legend">
-                <h3 class="projects-list__name">Technomart</h3>
-                <span class="projects-list__desc">Description</span>  
-              </div>
+          <li class="portfolio__item">
+            <a class="portfolio__link" href="https://andicat.github.io/sedona/">
+              <img class="portfolio__image" src="img/sedona.jpg" width="100%" alt="Sedona">
             </a>
+            <h3 class="portfolio__name">Sedona</h3>
+            <p class="portfolio__desc">Description</p>  
           </li>
-          <li class="projects-list__item">
-            <a class="projects-list__link" href="https://andicat.github.io/sedona-2/">
-              <img class="projects-list__image scroll" src="img/sedona-2.jpg" width="100%" alt="Sedona-2">
-              <div class="projects-list__legend">
-                <h3 class="projects-list__name">Sedona adaptive</h3>
-                <span class="projects-list__desc">Description</span>  
-              </div>
+           <li class="portfolio__item">
+            <a class="portfolio__link" href="https://andicat.github.io/keksobooking/">
+              <img class="portfolio__image scroll" src="img/keksobooking.jpg" width="100%" alt="Keksobooking">
             </a>
+            <h3 class="portfolio__name">Keksobooking</h3>
+            <p class="portfolio__desc">Description</p>  
           </li>
-           <li class="projects-list__item">
-            <a class="projects-list__link" href="https://andicat.github.io/keksobooking/">
-              <img class="projects-list__image scroll" src="img/keksobooking.jpg" width="100%" alt="Keksobooking">
-              <div class="projects-list__legend">
-                <h3 class="projects-list__name">Keksobooking</h3>
-                <span class="projects-list__desc">Description</span>  
-              </div>
+          <li class="portfolio__item">
+            <a class="portfolio__link" href="https://andicat.github.io/Quotes/">
+              <img class="portfolio__image" src="img/quotes.jpg" width="100%" alt="Random quotes">
             </a>
-          </li>
-          <li class="projects-list__item">
-            <a class="projects-list__link" href="https://andicat.github.io/Quotes/">
-              <img class="projects-list__image" src="img/quotes.jpg" width="100%" alt="Random quotes">
-              <div class="projects-list__legend">
-                <h3 class="projects-list__name">Quotes</h3>
-                <span class="projects-list__desc">Description</span>  
-              </div>
-            </a>
+            <h3 class="portfolio__name">Quotes</h3>
+            <p class="portfolio__desc">Description</p>  
           </li>
         </ul>
+      </section>
+      <section class="aboutme" id="aboutme">
+        <h2>About me</h2>
+        <p>Some facts about me)</p>  
       </section>
       <section class="contacts" id="contacts">
-        <h2>Contacts</h2>
-      </section>
+        <div class="contacts-container">
+          <h2>Contacts</h2>
+          <ul class="contacts__list">
+            <li class="contacts__item icon_mail">
+              <a class="contacts__link" href="mailto:andikatya@gmail.ru">andikatya@gmail.ru</a>
+            </li>
+            <li class="contacts__item icon_telegram">
+              <a class="contacts__link" href="https://t.me/AndiKatya">@AndiKatya</a>
+            </li>
+          </ul>  
+        </div>
+      </section>-->
     </main>
+    <footer class="footer">
+      <div class="footer-container center-aligned">
+        <p>Copyright 2020 © All rights reserved</p>
+      </div>
+    </footer>
   </body>
 </html>

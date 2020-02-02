@@ -1,0 +1,59 @@
+body {
+  .font-primary();
+  background: #ffffff;
+  margin: 0;
+}
+
+.main {
+  width: @mobile-width;
+}
+
+.center-aligned {
+  box-sizing: border-box;
+  width: @mobile-width;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+p {
+  font-size: 24px;
+  color: @grey;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+@media (min-width: @tablet-width) {
+  .center-aligned {
+   width: @tablet-width;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .center-aligned {
+  width: @desktop-width;
+  }
+}

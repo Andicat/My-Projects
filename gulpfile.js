@@ -29,10 +29,11 @@ gulp.task("css", function () {
     .pipe(postcss([
       autoprefixer()
     ]))
+    .pipe(gulp.dest("css"))
     .pipe(csso())
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("css"))
     .pipe(server.stream());
 });
 
@@ -105,7 +106,7 @@ gulp.task("server", function () {
     ui: false
   });
 
-  //gulp.watch("source/less/**/*.less", gulp.series("css"));
+  gulp.watch("source/less/**/*.less", gulp.series("css"));
   //gulp.watch("source/img/ico/*.svg", gulp.series("sprite", "html", "refresh"));
   //gulp.watch("source/*.html", gulp.series("html", "refresh"));
   gulp.watch("*.+(html|js|css)", gulp.series("html", "refresh"));
