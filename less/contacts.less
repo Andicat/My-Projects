@@ -1,0 +1,51 @@
+.contacts {
+  background-color: @light-green;
+  padding: 10px;
+  h2 {
+    color: @brown;
+  }
+}
+
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.contacts__item {
+  position: relative;
+  margin: 10px;
+  padding-left: 45px;
+  min-height: 35px;
+  &::before {
+    content: "";
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 0px;
+  }
+}
+
+.contacts__link {
+  font-size: 25px;
+  line-height: 35px;
+  color: @grey; 
+  &:hover,
+  &:focus {
+    color: @light-brown;
+    outline: none;
+    transition: 0.3s ease;
+  }
+}
+
+.icon_mail::before {
+  background-image: url("../img/icon-mail.svg"); 
+}
+
+.icon_telegram::before {
+  background-image: url("../img/icon-telegram.svg"); 
+}

@@ -22,7 +22,7 @@ var del = require("del");
 
 //создаем задачу, собирающую и минифицирующую css
 gulp.task("css", function () {
-  return gulp.src("source/less/style.less")
+  return gulp.src("less/style.less")
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(less())
@@ -38,7 +38,7 @@ gulp.task("css", function () {
 });
 
 gulp.task("images", function () {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
+  return gulp.src("img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 5}),
       imagemin.jpegtran({progressive: true}),
@@ -47,7 +47,7 @@ gulp.task("images", function () {
 });
 
 gulp.task("webp", function () {
-  return gulp.src("source/img/**/*.{png,jpg}")
+  return gulp.src("img/**/*.{png,jpg}")
     .pipe(webp({quality: 90}))
     .pipe(gulp.dest("build/img"));
 });
@@ -106,7 +106,7 @@ gulp.task("server", function () {
     ui: false
   });
 
-  gulp.watch("source/less/**/*.less", gulp.series("css"));
+  gulp.watch("less/**/*.less", gulp.series("css"));
   //gulp.watch("source/img/ico/*.svg", gulp.series("sprite", "html", "refresh"));
   //gulp.watch("source/*.html", gulp.series("html", "refresh"));
   gulp.watch("*.+(html|js|css)", gulp.series("html", "refresh"));
