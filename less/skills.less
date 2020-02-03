@@ -45,16 +45,20 @@
 }
 
 .skill__level {
-  display: block;
   background-color: @light-grey;
   min-width: calc(100% - 130px);
   height: 22px;
   margin: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 5px 6px rgba(0,0,0,0.2);
+
 }
 
 .skill__progress {
   background-color: @light-brown;
   height: 100%;
+  animation: growing 1s ease;
 }
 
 .skill__begin {
@@ -72,5 +76,20 @@
 @media (min-width: @tablet-width) {
   .skills__list {
     width: calc(100% / 2 - 20px);
+  }
+}
+
+@keyframes growing {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0;
+  }
+  70% {
+    transform: scaleX(1.05);
+    transform-origin: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 0;
   }
 }

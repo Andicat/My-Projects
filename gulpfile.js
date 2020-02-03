@@ -19,6 +19,7 @@ var svgstore = require("gulp-svgstore");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
+var gulpStylelint = require('gulp-stylelint');
 
 //создаем задачу, собирающую и минифицирующую css
 gulp.task("css", function () {
@@ -112,8 +113,20 @@ gulp.task("server", function () {
   gulp.watch("*.+(html|js|css)", gulp.series("html", "refresh"));
 });
 
+gulp.task('lint-css', function lintCssTask() {
+
+  return gulp
+    .src('css/**/*.css')
+    .pipe(gulpStylelint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }));
+});
+
 //gulp.task("build", gulp.series("clean", "copy", "css", "sprite", "minjs", "html"));
 //gulp.task("start", gulp.series("build", "server"));
 
 gulp.task("build", gulp.series("html"));
 gulp.task("start", gulp.series("build", "server"));
+gulp.task("test", gulp.series("lint-css"));
