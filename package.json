@@ -1,5 +1,5 @@
 {
-  "name": "myprojects",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Andicat/My-Projects.git"
+    "url": "git+https://github.com/Andicat/portfolio.git"
   },
   "author": "Katerina Andreeva",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Andicat/My-Projects/issues"
+    "url": "https://github.com/Andicat/portfolio/issues"
   },
-  "homepage": "https://github.com/Andicat/My-Projects#readme",
+  "homepage": "https://github.com/Andicat/portfolio#readme",
   "dependencies": {
     "gulp-plumber": "^1.2.1"
   },
