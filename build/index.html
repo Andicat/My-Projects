@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Первый маркетплейс запчастей для спецтехники">
+
+<link rel="preload" href="fonts/Roboto-regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="fonts/Roboto-bold.woff2" as="font" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/style.min.css">
+
+    <title>Andi-Portfolio</title>
+  </head>
+  <body>
+     <header class="header">
+  <section class="header__container center-aligned">
+    <img class="logo" src="img/logo.png" width="67" height="29" alt="Andi">
+    <nav class="nav">
+      <a class="nav__item active" href="#skills">Skills</a>
+      <a class="nav__item" href="#portfolio">Portfolio</a>
+      <a class="nav__item" href="#aboutme">About me</a>
+      <a class="nav__item" href="#contacts">Contacts</a>
+    </nav>
+  </section>
+</header>
+    <main class="main">
+      <h1 class="visually-hidden">Andreeva Katerina. Front-end lover.</h1>
+      <section class="intro">
+        <div class="intro__container center-aligned">
+          <div class="intro__photo">
+          <img src="img/photo.jpg" width="250px" alt="Katerina">
+        </div>
+        <div class="intro__description">
+          <h2>Hi, I'm Katerina</h2>
+          <p>front-end developer</p>
+        </div>
+        </div>
+      </section>
+      <section class="skills center-aligned" id='skills'>
+        <div class="skills__container">
+          <h2>Skills</h2>
+          <ul class='skills__list'>
+            <li class="skills__item">
+  <h3 class="skills__name"> HTML </h3>
+  <div class="skills__level">
+    <div class="skills__progress  skills__progress--medium "></div>
+  </div>
+</li>
+            <li class="skills__item">
+  <h3 class="skills__name"> CSS </h3>
+  <div class="skills__level">
+    <div class="skills__progress  skills__progress--medium "></div>
+  </div>
+</li>
+            <li class="skills__item">
+  <h3 class="skills__name"> JS </h3>
+  <div class="skills__level">
+    <div class="skills__progress  skills__progress--begin "></div>
+  </div>
+</li>
+            <li class="skills__item">
+  <h3 class="skills__name"> Photoshop </h3>
+  <div class="skills__level">
+    <div class="skills__progress  skills__progress--high "></div>
+  </div>
+</li>
+            <li class="skills__item">
+  <h3 class="skills__name"> Less </h3>
+  <div class="skills__level">
+    <div class="skills__progress  skills__progress--medium "></div>
+  </div>
+</li>
+            <li class="skills__item">
+  <h3 class="skills__name"> Sass </h3>
+  <div class="skills__level">
+    <div class="skills__progress  skills__progress--high "></div>
+  </div>
+</li>
+            <li class="skills__item">
+  <h3 class="skills__name"> Pug </h3>
+  <div class="skills__level">
+    <div class="skills__progress  skills__progress--medium "></div>
+  </div>
+</li>
+          </ul>          
+        </div>
+      </section>
+      <section class="portfolio center-aligned" id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio__container">
+          <ul class='portfolio__list'>
+            <li class="portfolio__item">
+              <a class="portfolio__link" href="https://andicat.github.io/technomart/">
+                <h3 class="portfolio__name">Technomart</h3>
+                <img class="portfolio__image" src="img/technomart.jpg" width="100%" alt="Technomart">
+                <p class="portfolio__desc"> HTML, CSS, js</p>
+              </a>
+            </li>
+            <li class="portfolio__item">
+              <a class="portfolio__link" href="https://andicat.github.io/sedona/">
+                <h3 class="portfolio__name">Sedona</h3>
+                <img class="portfolio__image" src="img/sedona.jpg" width="100%" alt="Sedona">
+                <p class="portfolio__desc">HTML, CSS, adaptive</p>  
+              </a>
+            </li>
+            <li class="portfolio__item">
+              <a class="portfolio__link" href="https://andicat.github.io/keksobooking/">
+                <h3 class="portfolio__name">Keksobooking</h3>
+                <img class="portfolio__image scroll" src="img/keksobooking.jpg" width="100%" alt="Keksobooking">
+                <p class="portfolio__desc">Js, form validation</p>  
+              </a>
+            </li>
+            <li class="portfolio__item">
+              <a class="portfolio__link" href="https://andicat.github.io/Quotes/">
+                <h3 class="portfolio__name">Quotes</h3>
+                <img class="portfolio__image" src="img/quotes.jpg" width="100%" alt="Random quotes">
+                <p class="portfolio__desc">API</p>  
+              </a>
+            </li>
+            <li class="portfolio__item">
+              <a class="portfolio__link" href="https://andicat.github.io/simon/">
+                <h3 class="portfolio__name">Simon-game</h3>
+                <img class="portfolio__image" src="img/simon.jpg" width="100%" alt="Simon game">
+                <p class="portfolio__desc">Js</p>  
+              </a>
+            </li>
+          </ul>          
+        </div>
+      </section>
+      <section class="aboutme" id="aboutme">
+        <h2>About me</h2>
+        <p>Some facts about me)</p>  
+      </section>
+      <section class="contacts" id="contacts">
+        <div class="contacts__container">
+          <h2>Contacts</h2>
+          <ul class="contacts__list">
+            <li class="contacts__item icon_mail">
+              <a class="contacts__link" href="mailto:andikatya@gmail.ru">andikatya@gmail.ru</a>
+            </li>
+            <li class="contacts__item icon_telegram">
+              <a class="contacts__link" href="https://t.me/AndiKatya">@AndiKatya</a>
+            </li>
+          </ul>  
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container center-aligned">
+        <p>Copyright 2020 © All rights reserved</p>
+      </div>
+    </footer>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
