@@ -1,6 +1,7 @@
 .contacts {
   background-color: $color-light-green;
   padding: 10px;
+
   h2 {
     color: $color-brown;
   }
@@ -20,20 +21,22 @@
   margin: 10px;
   padding-left: 45px;
   min-height: 35px;
+
   &::before {
     content: "";
     background-repeat: no-repeat;
     position: absolute;
     width: 35px;
     height: 35px;
-    left: 0px;
+    left: 0;
   }
 }
 
 .contacts__link {
   font-size: 25px;
   line-height: 35px;
-  color: $color-grey; 
+  color: $color-gray;
+
   &:hover,
   &:focus {
     color: $color-light-brown;
@@ -43,9 +46,9 @@
 }
 
 .icon_mail::before {
-  background-image: url("../img/icon-mail.svg"); 
+  background-image: url("../img/icon-mail.svg");
 }
 
 .icon_telegram::before {
-  background-image: url("../img/icon-telegram.svg"); 
+  background-image: url("../img/icon-telegram.svg");
 }
