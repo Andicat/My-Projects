@@ -5,6 +5,7 @@ import {initModals} from './modules/init-modals';
 import {header} from './modules/header';
 
 import {initSmoothScrolling} from './modules/scroll';
+import {initTasks} from './modules/tasks';
 
 // Utils
 // ---------------------------------
@@ -18,3 +19,4 @@ ieFooterNailing();
 initModals();
 header();
 initSmoothScrolling();
+initTasks();

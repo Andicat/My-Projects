@@ -448,12 +448,11 @@ ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .nav__item {
-    color: white;
+    color: #ffffff;
     font-weight: normal;
     font-style: italic;
     text-transform: uppercase;
     vertical-align: middle;
-    margin-left: 20px;
     margin: 10px; }
     .nav__item:hover, .nav__item:focus {
       color: #d08b62;
@@ -500,7 +499,7 @@ ul {
   .intro__photo {
     height: 250px;
     width: 250px;
-    border: 5px solid #fff;
+    border: 5px solid #ffffff;
     -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 50%;
@@ -645,7 +644,7 @@ ul {
     border-radius: 10px;
     -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    width: calc(100%/3 - 25px);
+    width: calc(100% / 3 - 25px);
     padding: 10px;
     margin: 0 25px 25px 0; }
     .portfolio__item:hover {
@@ -696,16 +695,46 @@ ul {
     margin: 0; }
   @media (max-width: 1199px) {
     .portfolio__item {
-      width: calc(100%/2 - 25px); } }
+      width: calc(100% / 2 - 25px); } }
   @media (max-width: 767px) {
     .portfolio__item {
       width: 100%; } }
 
 .aboutme {
   min-height: 200px;
-  padding: 10px; }
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
   .aboutme h2 {
     color: #297a67; }
+  .aboutme button {
+    margin: 15px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    height: 35px;
+    min-width: 150px;
+    border-radius: 3px;
+    border: none;
+    background-color: #297a67;
+    color: #ffffff; }
+  .aboutme div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
 
 .contacts {
   background-color: #e0ebe7;
@@ -741,7 +770,7 @@ ul {
     position: absolute;
     width: 35px;
     height: 35px;
-    left: 0px; }
+    left: 0; }
 
 .contacts__link {
   font-size: 25px;
