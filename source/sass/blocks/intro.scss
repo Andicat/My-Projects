@@ -6,26 +6,31 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 20px 10px;
+    padding: 0 10px;
+    position: relative;
   }
 
   &__photo {
-    height: 250px;
-    width: 250px;
+    position: absolute;
+    height: 160px;
+    width: 160px;
     border: 5px solid $color-white;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 35px;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
   }
 
   &__description {
+    //margin-left: 100px;
     h2 {
       color: $color-green;
       font-weight: normal;
       font-style: italic;
-      font-size: 48px;
-      line-height: 48px;
+      font-size: 36px;
+      line-height: normal;
       margin: 20px 0;
     }
 
@@ -44,7 +49,12 @@
     }
 
     &__photo {
-      margin: 0;
+      //margin: 0;
+      position: relative;
+      transform: none;
+      left: 0;
+      top: -15px;
+      margin-bottom: -15px;
     }
   }
 }

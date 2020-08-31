@@ -2,9 +2,6 @@
   background-color: $color-green;
 
   &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0 10px;
   }
 }
@@ -31,18 +28,12 @@
   }
 }
 
-
-.logo {
-  margin-left: 20px;
-}
-
 //mobile version
 @include viewport--mobile {
-  .header__container {
-    justify-content: center;
-  }
-
-  .logo {
-    display: none;
+  .nav {
+    padding-bottom: 15px;
+    &__item {
+      margin: 7px;
+    }
   }
 }
