@@ -25,23 +25,22 @@
     color: $color-gray;
     display: flex;
     align-items: center;
+
+    svg {
+      margin-right: 10px;
+      opacity: 0.8; 
+    }
   
     &:hover,
     &:focus {
       color: $color-light-brown;
       outline: none;
       transition: 0.3s ease;
-    }
-  }
 
-  &__icon {
-    margin-right: 10px;
-    fill: $color-gray; 
-
-    &:hover,
-    &:focus {
-      fill: $color-light-brown;
-      transition: 0.3s ease;
+      svg {
+        opacity: 1; 
+        transition: 0.3s ease;
+      }
     }
   }
 }
