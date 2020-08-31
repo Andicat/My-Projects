@@ -14,6 +14,11 @@
     <title>Andi-Portfolio</title>
   </head>
   <body>
+    <div style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-mail" viewBox="0 0 1000 1000">
+<g><path d="M499.1,10C229.5,10,10,229.5,10,499.1C10,770.5,229.5,990,499.1,990C768.8,990,990,770.5,990,499.1C990,229.5,770.5,10,499.1,10z M780.9,682.3H219.1V352.2l280,207.4l280-207.4v330.1H780.9z M499.1,526.8l-280-207.4h560L499.1,526.8z"/></g>
+</symbol><symbol id="icon-telegram" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></symbol></svg>
+    </div>
      <header class="header">
   <section class="header__container center-aligned">
     <nav class="nav">
@@ -144,11 +149,21 @@
         <div class="contacts__container">
           <h2>Contacts</h2>
           <ul class="contacts__list">
-            <li class="contacts__item icon_mail">
-              <a class="contacts__link" href="mailto:andikatya@gmail.ru">andikatya@gmail.ru</a>
+            <li class="contacts__item">
+              <a class="contacts__link" href="mailto:andikatya@gmail.ru">
+                <svg class="contacts__icon" width="35" height="35">
+                  <use xlink:href="#icon-mail"></use>
+                </svg>
+                <span>andikatya@gmail.ru</span>
+              </a>
             </li>
-            <li class="contacts__item icon_telegram">
-              <a class="contacts__link" href="https://t.me/AndiKatya">@AndiKatya</a>
+            <li class="contacts__item">
+              <a class="contacts__link" href="https://t.me/AndiKatya">
+                <svg class="contacts__icon" width="35" height="35">
+                  <use xlink:href="#icon-telegram"></use>
+                </svg>
+                <span>@AndiKatya</span>
+              </a>
             </li>
           </ul>  
         </div>

@@ -429,9 +429,15 @@ ul {
     vertical-align: middle;
     margin: 10px; }
     .nav__item:hover, .nav__item:focus {
-      color: #d08b62;
+      color: #d48456;
       outline: none;
       transition: 0.3s ease; }
+
+@media (max-width: 767px) {
+  .nav {
+    padding-bottom: 15px; }
+    .nav__item {
+      margin: 7px; } }
 
 .footer {
   background-color: #297a67;
@@ -452,8 +458,8 @@ ul {
     position: relative; }
   .intro__photo {
     position: absolute;
-    height: 170px;
-    width: 170px;
+    height: 160px;
+    width: 160px;
     border: 5px solid #ffffff;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 50%;
@@ -477,7 +483,11 @@ ul {
     .intro__container {
       flex-direction: column; }
     .intro__photo {
-      margin: 0; } }
+      position: relative;
+      transform: none;
+      left: 0;
+      top: -15px;
+      margin-bottom: -15px; } }
 
 .skills h2 {
   color: #865233;
@@ -510,8 +520,7 @@ ul {
   width: calc(50% - 20px); }
 
 .skills__name {
-  font-size: 20px;
-  line-height: 22px;
+  font-size: 18px;
   color: #5f5f5f;
   margin: 0;
   max-width: 110px;
@@ -520,9 +529,9 @@ ul {
   vertical-align: middle; }
 
 .skills__level {
-  background-color: #afafaf;
+  background-color: #cfcdcd;
   min-width: calc(100% - 130px);
-  height: 22px;
+  height: 18px;
   margin: 0;
   overflow: hidden;
   border-radius: 3px;
@@ -535,19 +544,21 @@ ul {
     background-color: #297a67; }
   .skills__progress--medium {
     width: 65%;
-    background-color: #d08b62; }
+    background-color: #d48456; }
   .skills__progress--begin {
     width: 35%;
     background-color: #297a67; }
 
 @media (max-width: 767px) {
   .skills__list {
-    width: 100%; } }
+    width: 100%; }
+  .skills__item {
+    width: calc(100% - 20px); } }
 
 .portfolio {
   padding: 10px; }
   .portfolio h2 {
-    color: #d08b62;
+    color: #d48456;
     margin: 15px; }
   .portfolio__container {
     background-color: #e0ebe7;
@@ -638,39 +649,28 @@ ul {
   padding: 10px; }
   .contacts h2 {
     color: #865233; }
-
-.contacts__list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin-top: 25px; }
-
-.contacts__item {
-  position: relative;
-  margin: 10px;
-  padding-left: 45px;
-  min-height: 35px; }
-  .contacts__item::before {
-    content: "";
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    left: 0; }
-
-.contacts__link {
-  font-size: 25px;
-  line-height: 35px;
-  color: #5f5f5f; }
-  .contacts__link:hover, .contacts__link:focus {
-    color: #d08b62;
-    outline: none;
-    transition: 0.3s ease; }
-
-.icon_mail::before {
-  background-image: url("../img/icon-mail.svg"); }
-
-.icon_telegram::before {
-  background-image: url("../img/icon-telegram.svg"); }
+  .contacts__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-top: 25px; }
+  .contacts__item {
+    margin: 10px; }
+  .contacts__link {
+    font-size: 25px;
+    line-height: 35px;
+    color: #5f5f5f;
+    display: flex;
+    align-items: center; }
+    .contacts__link:hover, .contacts__link:focus {
+      color: #d48456;
+      outline: none;
+      transition: 0.3s ease; }
+  .contacts__icon {
+    margin-right: 10px;
+    fill: #5f5f5f; }
+    .contacts__icon:hover, .contacts__icon:focus {
+      fill: #d48456;
+      transition: 0.3s ease; }

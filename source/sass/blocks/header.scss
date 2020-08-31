@@ -27,3 +27,13 @@
     }
   }
 }
+
+//mobile version
+@include viewport--mobile {
+  .nav {
+    padding-bottom: 15px;
+    &__item {
+      margin: 7px;
+    }
+  }
+}

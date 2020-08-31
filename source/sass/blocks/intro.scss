@@ -24,6 +24,7 @@
   }
 
   &__description {
+    //margin-left: 100px;
     h2 {
       color: $color-green;
       font-weight: normal;
@@ -48,7 +49,12 @@
     }
 
     &__photo {
-      margin: 0;
+      //margin: 0;
+      position: relative;
+      transform: none;
+      left: 0;
+      top: -15px;
+      margin-bottom: -15px;
     }
   }
 }

@@ -5,6 +5,9 @@
     <title>Andi-Portfolio</title>
   </head>
   <body>
+    <div style="display: none;">
+      @@include("build/img/sprite_auto.svg")
+    </div>
      @@include("source/html/base/header.html", {
       "main": false
     })
@@ -114,11 +117,21 @@
         <div class="contacts__container">
           <h2>Contacts</h2>
           <ul class="contacts__list">
-            <li class="contacts__item icon_mail">
-              <a class="contacts__link" href="mailto:andikatya@gmail.ru">andikatya@gmail.ru</a>
+            <li class="contacts__item">
+              <a class="contacts__link" href="mailto:andikatya@gmail.ru">
+                <svg class="contacts__icon" width="35" height="35">
+                  <use xlink:href="#icon-mail"></use>
+                </svg>
+                <span>andikatya@gmail.ru</span>
+              </a>
             </li>
-            <li class="contacts__item icon_telegram">
-              <a class="contacts__link" href="https://t.me/AndiKatya">@AndiKatya</a>
+            <li class="contacts__item">
+              <a class="contacts__link" href="https://t.me/AndiKatya">
+                <svg class="contacts__icon" width="35" height="35">
+                  <use xlink:href="#icon-telegram"></use>
+                </svg>
+                <span>@AndiKatya</span>
+              </a>
             </li>
           </ul>  
         </div>

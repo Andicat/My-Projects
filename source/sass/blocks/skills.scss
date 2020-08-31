@@ -31,8 +31,7 @@
   }
 
   &__name {
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 18px;
     color: $color-gray;
     margin: 0;
     max-width: 110px;
@@ -44,7 +43,7 @@
   &__level {
     background-color: $color-light-gray;
     min-width: calc(100% - 130px);
-    height: 22px;
+    height: 18px;
     margin: 0;
     overflow: hidden;
     border-radius: 3px;
@@ -74,6 +73,9 @@
   @include viewport--mobile {
     &__list {
       width: 100%;
+    }
+    &__item {
+      width: calc(100% - 20px);
     }
   }
 }
