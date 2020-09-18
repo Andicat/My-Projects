@@ -8,22 +8,4 @@
   h2 {
     color: $color-green;
   }
-
-  button {
-  	margin: 15px;
-  	
-    @include transition (all);
-    height: 35px;
-    min-width: 150px;
-    border-radius: 3px;
-    border: none;
-    background-color: $color-green;
-    color: $color-white;
-  }
-
-  div {
-  	display: flex;
-  	flex-direction: row;
-
-  }
 }

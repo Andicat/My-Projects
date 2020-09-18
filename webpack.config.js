@@ -9,7 +9,7 @@ module.exports = {
     vendor: `./js/vendor.js`,
   }, // Точка входа приложения
   output: {// Настройка выходного файла
-    filename: `[name].min.js`,
+    filename: `[name].js`,
     path: path.join(__dirname, `build/js`),
   },
   plugins: [
@@ -18,14 +18,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: {
-          loader: `babel-loader`,
-          options: {
-            presets: [`@babel/preset-env`],
-          },
-        },
+        
       },
     ],
   },
