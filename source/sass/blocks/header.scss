@@ -1,0 +1,39 @@
+.header {
+  background-color: $color-green;
+
+  &__container {
+    padding: 0 10px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__item {
+    color: $color-white;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin: 10px;
+
+    &:hover,
+    &:focus {
+      color: $color-light-brown;
+      outline: none;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+//mobile version
+@include viewport--mobile {
+  .nav {
+    padding-bottom: 15px;
+    &__item {
+      margin: 7px;
+    }
+  }
+}

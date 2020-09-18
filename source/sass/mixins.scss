@@ -1,0 +1,50 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// Desktop first
+@mixin viewport--tablet {
+  @media (max-width: $desktop-width - 1) {
+    @content;
+  }
+}
+
+@mixin viewport--mobile {
+  @media (max-width: $tablet-width - 1) {
+    @content;
+  }
+}
+
+@mixin reset-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin btn-reset {
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+// транзишн
+@mixin transition($args...) {
+  transition-property: $args;
+  transition-duration: 0.3s;
+}
+
+@mixin hidden-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent; /* make scrollbar transparent */
+  }
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}

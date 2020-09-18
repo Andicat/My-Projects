@@ -1,0 +1,43 @@
+body {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+  font-family: $font-family;
+  color: $color-black;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $color-black;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+p {
+  font-size: 24px;
+  color: $color-gray;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}

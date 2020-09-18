@@ -1,0 +1,81 @@
+.skills {
+  h2 {
+    color: $color-brown;
+    margin: 15px;
+    margin-bottom: 25px;
+  }
+
+  &__container {
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 22px;
+    width: calc(50% - 20px);
+  }
+
+  &__name {
+    font-size: 18px;
+    color: $color-gray;
+    margin: 0;
+    max-width: 110px;
+    margin-right: 20px;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  &__level {
+    background-color: $color-light-gray;
+    min-width: calc(100% - 130px);
+    height: 18px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  &__progress {
+    height: 100%;
+
+    &--high {
+      width: $high-level;
+      background-color: $color-green;
+    }
+
+    &--medium {
+      width: $medium-level;
+      background-color: $color-light-brown;
+    }
+
+    &--begin {
+      width: $begin-level;
+      background-color: $color-green;
+    }
+  }
+
+  //mobile version
+  @include viewport--mobile {
+    &__list {
+      width: 100%;
+    }
+    &__item {
+      width: calc(100% - 20px);
+    }
+  }
+}
