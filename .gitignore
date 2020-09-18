@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+node_modules
+=======
 .DS_Store
 .idea
 .vscode
@@ -11,3 +14,4 @@ npm-debug.*
 source/css/*.css
 source/css/*.map
 Thumbs.db
+>>>>>>> dd8ff7d16dad0925e38f29557f9cc38efdc0b49b
