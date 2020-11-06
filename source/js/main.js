@@ -13,3 +13,10 @@ ieFooterNailing();
 // ---------------------------------
 
 initSmoothScrolling();
+
+// Tasks
+// ---------------------------------
+import './modules/modal';
+import './modules/chess';
+import './modules/chess-knight';
+import './modules/elevator';

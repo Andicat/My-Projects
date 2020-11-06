@@ -156,6 +156,6 @@ gulp.task(`imagemin`, function () {
 // для отправки заказчику неминифицированного js "для чтения"
 gulp.task(`concat-js`, function () {
   return gulp.src([`source/js/main.js`, `source/js/utils/**/*.js`, `source/js/modules/**/*.js`])
-    .pipe(concat(`main.readonly.js`))
+    //.pipe(concat(`main.readonly.js`))
     .pipe(gulp.dest(`build/js`));
 });

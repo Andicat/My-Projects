@@ -1,0 +1,72 @@
+<!--Section task chess-->
+<section class="task modal" id="task-chess">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task chess">
+            <h5 class="task__title">Расстановка ферзей</h5>
+            <p class="task__description">Дана шахматная доска (8x8).
+                "Расстановкой ферзей" назовём такую расстановку 8 ферзей на шахматной доске,
+                при которой ни один из ферзей не может сбить ни одного другого ферзя.
+                (Ферзь бьёт в любом направлении - горизонтальном, вертикальном, диагональном)
+                1. Найдите все возможные расстановки.
+                2. Отобразите на веб-странице количество найденных расстановок.
+                3. Дайте возможность пользователю ввести номер расстановки или выбрать расстановку из списка.
+                4. Отобразите на веб-странице шахматную доску с выбранной расстановкой -
+                расставленными ферзями (любым способом).
+                5. (необязательно, если умеете) При нажатии мышью на любого из ферзей - подцвечивайте клетки доски, 
+                которые он "пробивает".</p>
+            <button class="chess__button button">Расстановка ферзей</button> 
+            <div class="chess__result">
+                <span class="chess__result-text"></span>
+                <input class="chess__combination" type="text" placeholder="Введите номер комбинации">
+                <button class="chess__button--combination button">Показать комбинацию</button> 
+            </div>
+        </div>
+      </div>
+</section>
+<!--END Section task chess-->
+<!--Section task chess knight-->
+<section class="task modal" id="task-chess-knight">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task chess chess--knight">
+            <h5 class="task__title">Обход конем шахматной доски</h5>
+            <p class="task__description">Дана шахматная доска (8x8).
+                Найдите программно один способ обойти все 64 клетки доски конём, чтобы в каждой
+                клетке конь побывал ровно 1 раз. Обход должен начинаться с любой угловой клетки.
+                Отобразите на веб-странице найденный способ (в каждой клеточке - номер хода,
+                на котором конь попадает в эту клеточку).
+                По нажатию кнопки - отобразите процесс обхода конём доски в динамике,
+                т.е. конь становится в угловую клетку и делает ходы по 2-3 в секунду;
+                клетки, в которых конь уже побывал, подцвечивайте</p>
+            <button class="chess__button button">Найти обход</button>
+            <div class="chess__result">
+              <span class="chess__result-text result"></span>
+              <button class="chess__button--go button">Вперед, конь!</button>
+            </div>
+          </div>
+      </div>
+</section>
+<!--END Section task chess knight-->
+<!--Section task elevator-->
+<section class="task modal" id="task-elevator">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task elevator">
+            <h5 class="task__title">Лифт</h5>
+            <p class="task__description">Строим дом с лифтом. Количество этажей дома должно настраиваться в программе.
+                На каждом этаже - две кнопки для вызова лифта, "вверх" и "вниз", которые
+                подсвечиваются, если нажаты мышью.
+                В лифте - кнопки с номерами этажей, которые подсвечиваются, если
+                нажаты мышью.
+                Одновременно может быть нажато несколько кнопок на разных этажах
+                и несколько кнопок внутри лифта. Запускаем лифт и пасссажиров.</p>
+            <div class="elevator__create">
+                <button class="elevator__create-house button">Построить дом</button>
+                <button class="elevator__create-passengers button" disabled>Пассажиры</button>
+            </div>
+            <div class="elevator__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task elevator-->

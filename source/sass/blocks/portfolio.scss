@@ -1,106 +1,119 @@
 .portfolio {
-  padding: 10px;
-
-  h2 {
-    color: $color-light-brown;
-    margin: 15px;
-  }
-
-  h3 {
-    color: $color-gray;
-    margin-top: 0;
-    margin-bottom: 25px;
-  }
-
-  &__container {
-    background-color: $color-light-green;
-    border-radius: 15px;
-    margin: 0;
-    padding: 25px;
-  }
-
-  &__list {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-right: -25px;
-
-    &:last-child {
-      margin-bottom: -25px;
-    }
-  }
-
-  &__item {
-    box-sizing: border-box;
-    background-color: $color-white;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    width: calc(100% / 3 - 25px);
     padding: 10px;
-    margin: 0 25px 25px 0;
-    transition: 0.3s ease;
 
-    &:hover {
-      box-shadow: none;
-      transition: 0.3s ease;
+    h2 {
+        color: $color-light-brown;
+        margin: 15px;
+    }
 
-      .portfolio__image {
-        width: 60%;
+    h3 {
+        color: $color-gray;
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+
+    &__container {
+        background-color: $color-light-green;
+        border-radius: 15px;
+        margin: 0;
+        padding: 25px;
+    }
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: -25px;
+
+        &:last-child {
+            margin-bottom: -25px;
+        }
+    }
+
+    &__item--link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        background-color: $color-white;
+        border-radius: 10px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        width: calc(100% / 3 - 25px);
+        min-height: 240px;
+        padding: 10px;
+        margin: 0 25px 25px 0;
+        transition: 0.3s ease;
+
+        &:hover {
+            box-shadow: none;
+            transition: 0.3s ease;
+
+            .portfolio__image {
+                width: 60%;
+                border: 1px solid $color-light-green;
+                border-radius: 10px;
+            }
+
+            .portfolio__name,
+            .portfolio__desc {
+                display: block;
+                transition: 0.3s ease;
+            }
+        }
+    }
+
+    &__item--task {
+        width: auto;
+        min-height: auto;
+        padding: 0;
+        margin: 0 25px 25px 0;
+    }
+
+    &__name {
+        display: none;
+        font-size: 18px;
+        font-style: italic;
+        color: $color-green;
+        margin: 5px;
+    }
+
+    &__desc {
+        display: none;
+        font-size: 16px;
+        color: $color-gray;
+        margin: 0;
+    }
+
+    &__link {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
         border: 1px solid $color-light-green;
         border-radius: 3px;
-      }
-
-      .portfolio__name,
-      .portfolio__desc {
-        display: block;
-        transition: 0.3s ease;
-      }
+        width: 100%;
+        overflow: hidden;
     }
-  }
 
-  &__name {
-    display: none;
-    font-size: 18px;
-    font-style: italic;
-    color: $color-green;
-    margin: 5px;
-  }
-
-  &__desc {
-    display: none;
-    font-size: 16px;
-    color: $color-gray;
-    margin: 0;
-  }
-
-  &__link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid $color-light-green;
-    border-radius: 3px;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  &__image {
-    width: 100%;
-    margin: 0;
-  }
+    &__image {
+        width: 100%;
+        margin: 0;
+    }
 
   //tablet version
   @include viewport--tablet {
-    &__item {
-      width: calc(100% / 2 - 25px);
+    &__item--link {
+        width: calc(100% / 2 - 25px);
+        min-height: 285px;
     }
   }
 
   //mobile version
   @include viewport--mobile {
-    &__item {
+    &__item--link {
       width: 100%;
     }
   }

@@ -151,13 +151,13 @@
             <li class="skills__item">
   <h3 class="skills__name"> JS </h3>
   <div class="skills__level">
-    <div class="skills__progress  skills__progress--begin "></div>
+    <div class="skills__progress  skills__progress--medium "></div>
   </div>
 </li>
             <li class="skills__item">
   <h3 class="skills__name"> Photoshop </h3>
   <div class="skills__level">
-    <div class="skills__progress  skills__progress--high "></div>
+    <div class="skills__progress  skills__progress--medium "></div>
   </div>
 </li>
             <li class="skills__item">
@@ -192,43 +192,52 @@
         <div class="portfolio__container">
           <h3>My educational projects</h3>
           <ul class='portfolio__list'>
-            <li class="portfolio__item">
+            <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/technomart/">
-                <h3 class="portfolio__name">Technomart</h3>
+                <h4 class="portfolio__name">Technomart</h4>
                 <img class="portfolio__image" src="img/technomart.jpg" width="100%" alt="Technomart">
-                <p class="portfolio__desc"> HTML, CSS, js</p>
+                <p class="portfolio__desc"> It was my first project. Technologies: HTML, CSS</p>
               </a>
-            </li>
-            <li class="portfolio__item">
+            </li>-->
+            <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/sedona/">
-                <h3 class="portfolio__name">Sedona</h3>
+                <h4 class="portfolio__name">Sedona</h4>
                 <img class="portfolio__image" src="img/sedona.jpg" width="100%" alt="Sedona">
-                <p class="portfolio__desc">HTML, CSS, adaptive</p>  
+                <p class="portfolio__desc">Technologies: Adaptive page, mobile-first, HTML, CSS, Less</p>  
               </a>
             </li>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/keksobooking/">
-                <h3 class="portfolio__name">Keksobooking</h3>
+                <h4 class="portfolio__name">Keksobooking</h4>
                 <img class="portfolio__image scroll" src="img/keksobooking.jpg" width="100%" alt="Keksobooking">
-                <p class="portfolio__desc">Js, form validation</p>  
+                <p class="portfolio__desc">Technologies: JavaScript, form validation, mouseEvent</p>  
               </a>
             </li>
-          </ul>
-          <h3>My training projects</h3>
-          <ul class='portfolio__list'>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/simon/">
+                <h4 class="portfolio__name">Simon-game</h4>
+                <img class="portfolio__image" src="img/simon.jpg" width="100%" alt="Simon game">
+                <p class="portfolio__desc">Simple game. Technologies: JavaScript, HTML, CSS</p>  
+              </a>
+            </li>
+            <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/Quotes/">
-                <h3 class="portfolio__name">Quotes</h3>
+                <h4 class="portfolio__name">Quotes</h4>
                 <img class="portfolio__image" src="img/quotes.jpg" width="100%" alt="Random quotes">
                 <p class="portfolio__desc">API</p>  
               </a>
+            </li>-->
+          </ul>
+          <h3>My JavaScript tasks</h3>
+          <ul class="portfolio__list">
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link" data-task="task-chess" href="#">Шахматы: расстановка ферзей</a>
             </li>
-            <li class="portfolio__item">
-              <a class="portfolio__link" href="https://andicat.github.io/simon/">
-                <h3 class="portfolio__name">Simon-game</h3>
-                <img class="portfolio__image" src="img/simon.jpg" width="100%" alt="Simon game">
-                <p class="portfolio__desc">Js</p>  
-              </a>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link" data-task="task-chess-knight" href="#">Шахматы: обход конем доски</a>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link" data-task="task-elevator" href="#">Лифт</a>
             </li>
           </ul>      
         </div>
@@ -266,6 +275,78 @@
         <p>Copyright 2020 © All rights reserved</p>
       </div>
     </footer>
+    <!--Section task chess-->
+<section class="task modal" id="task-chess">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task chess">
+            <h5 class="task__title">Расстановка ферзей</h5>
+            <p class="task__description">Дана шахматная доска (8x8).
+                "Расстановкой ферзей" назовём такую расстановку 8 ферзей на шахматной доске,
+                при которой ни один из ферзей не может сбить ни одного другого ферзя.
+                (Ферзь бьёт в любом направлении - горизонтальном, вертикальном, диагональном)
+                1. Найдите все возможные расстановки.
+                2. Отобразите на веб-странице количество найденных расстановок.
+                3. Дайте возможность пользователю ввести номер расстановки или выбрать расстановку из списка.
+                4. Отобразите на веб-странице шахматную доску с выбранной расстановкой -
+                расставленными ферзями (любым способом).
+                5. (необязательно, если умеете) При нажатии мышью на любого из ферзей - подцвечивайте клетки доски, 
+                которые он "пробивает".</p>
+            <button class="chess__button button">Расстановка ферзей</button> 
+            <div class="chess__result">
+                <span class="chess__result-text"></span>
+                <input class="chess__combination" type="text" placeholder="Введите номер комбинации">
+                <button class="chess__button--combination button">Показать комбинацию</button> 
+            </div>
+        </div>
+      </div>
+</section>
+<!--END Section task chess-->
+<!--Section task chess knight-->
+<section class="task modal" id="task-chess-knight">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task chess chess--knight">
+            <h5 class="task__title">Обход конем шахматной доски</h5>
+            <p class="task__description">Дана шахматная доска (8x8).
+                Найдите программно один способ обойти все 64 клетки доски конём, чтобы в каждой
+                клетке конь побывал ровно 1 раз. Обход должен начинаться с любой угловой клетки.
+                Отобразите на веб-странице найденный способ (в каждой клеточке - номер хода,
+                на котором конь попадает в эту клеточку).
+                По нажатию кнопки - отобразите процесс обхода конём доски в динамике,
+                т.е. конь становится в угловую клетку и делает ходы по 2-3 в секунду;
+                клетки, в которых конь уже побывал, подцвечивайте</p>
+            <button class="chess__button button">Найти обход</button>
+            <div class="chess__result">
+              <span class="chess__result-text result"></span>
+              <button class="chess__button--go button">Вперед, конь!</button>
+            </div>
+          </div>
+      </div>
+</section>
+<!--END Section task chess knight-->
+<!--Section task elevator-->
+<section class="task modal" id="task-elevator">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task elevator">
+            <h5 class="task__title">Лифт</h5>
+            <p class="task__description">Строим дом с лифтом. Количество этажей дома должно настраиваться в программе.
+                На каждом этаже - две кнопки для вызова лифта, "вверх" и "вниз", которые
+                подсвечиваются, если нажаты мышью.
+                В лифте - кнопки с номерами этажей, которые подсвечиваются, если
+                нажаты мышью.
+                Одновременно может быть нажато несколько кнопок на разных этажах
+                и несколько кнопок внутри лифта. Запускаем лифт и пасссажиров.</p>
+            <div class="elevator__create">
+                <button class="elevator__create-house button">Построить дом</button>
+                <button class="elevator__create-passengers button" disabled>Пассажиры</button>
+            </div>
+            <div class="elevator__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task elevator-->
     <script src="js/vendor.js"></script>
     <script src="js/main.js"></script>
   </body>

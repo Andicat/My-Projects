@@ -37,11 +37,11 @@
               "name": "CSS"
             })
             @@include("source/html/components/skill.html", {
-              "mod": "begin",
+              "mod": "medium",
               "name": "JS"
             })
             @@include("source/html/components/skill.html", {
-              "mod": "high",
+              "mod": "medium",
               "name": "Photoshop"
             })
             @@include("source/html/components/skill.html", {
@@ -68,43 +68,52 @@
         <div class="portfolio__container">
           <h3>My educational projects</h3>
           <ul class='portfolio__list'>
-            <li class="portfolio__item">
+            <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/technomart/">
-                <h3 class="portfolio__name">Technomart</h3>
+                <h4 class="portfolio__name">Technomart</h4>
                 <img class="portfolio__image" src="img/technomart.jpg" width="100%" alt="Technomart">
-                <p class="portfolio__desc"> HTML, CSS, js</p>
+                <p class="portfolio__desc"> It was my first project. Technologies: HTML, CSS</p>
               </a>
-            </li>
-            <li class="portfolio__item">
+            </li>-->
+            <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/sedona/">
-                <h3 class="portfolio__name">Sedona</h3>
+                <h4 class="portfolio__name">Sedona</h4>
                 <img class="portfolio__image" src="img/sedona.jpg" width="100%" alt="Sedona">
-                <p class="portfolio__desc">HTML, CSS, adaptive</p>  
+                <p class="portfolio__desc">Technologies: Adaptive page, mobile-first, HTML, CSS, Less</p>  
               </a>
             </li>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/keksobooking/">
-                <h3 class="portfolio__name">Keksobooking</h3>
+                <h4 class="portfolio__name">Keksobooking</h4>
                 <img class="portfolio__image scroll" src="img/keksobooking.jpg" width="100%" alt="Keksobooking">
-                <p class="portfolio__desc">Js, form validation</p>  
+                <p class="portfolio__desc">Technologies: JavaScript, form validation, mouseEvent</p>  
               </a>
             </li>
-          </ul>
-          <h3>My training projects</h3>
-          <ul class='portfolio__list'>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/simon/">
+                <h4 class="portfolio__name">Simon-game</h4>
+                <img class="portfolio__image" src="img/simon.jpg" width="100%" alt="Simon game">
+                <p class="portfolio__desc">Simple game. Technologies: JavaScript, HTML, CSS</p>  
+              </a>
+            </li>
+            <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/Quotes/">
-                <h3 class="portfolio__name">Quotes</h3>
+                <h4 class="portfolio__name">Quotes</h4>
                 <img class="portfolio__image" src="img/quotes.jpg" width="100%" alt="Random quotes">
                 <p class="portfolio__desc">API</p>  
               </a>
+            </li>-->
+          </ul>
+          <h3>My JavaScript tasks</h3>
+          <ul class="portfolio__list">
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link" data-task="task-chess" href="#">Шахматы: расстановка ферзей</a>
             </li>
-            <li class="portfolio__item">
-              <a class="portfolio__link" href="https://andicat.github.io/simon/">
-                <h3 class="portfolio__name">Simon-game</h3>
-                <img class="portfolio__image" src="img/simon.jpg" width="100%" alt="Simon game">
-                <p class="portfolio__desc">Js</p>  
-              </a>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link" data-task="task-chess-knight" href="#">Шахматы: обход конем доски</a>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link" data-task="task-elevator" href="#">Лифт</a>
             </li>
           </ul>      
         </div>
@@ -142,6 +151,7 @@
         <p>Copyright 2020 © All rights reserved</p>
       </div>
     </footer>
+    @@include("source/html/components/tasks.html")
     <script src="js/vendor.js"></script>
     <script src="js/main.js"></script>
   </body>
