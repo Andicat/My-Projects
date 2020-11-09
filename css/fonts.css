@@ -1,0 +1,14 @@
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Vladivostok";
+  src: url("../fonts/vladivostok-regular.woff2") format("woff2"), url("../fonts/vladivostok-regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: bold;
+  font-family: "Vladivostok";
+  src: url("../fonts/vladivostok-bold.woff2") format("woff2"), url("../fonts/vladivostok-bold.woff") format("woff");
+}
+/*# sourceMappingURL=fonts.css.map */

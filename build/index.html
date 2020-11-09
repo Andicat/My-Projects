@@ -239,6 +239,9 @@
             <li class="portfolio__item portfolio__item--task">
               <a class="task-link" data-task="task-elevator" href="#">Лифт</a>
             </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link" data-task="task-move-resize" href="#">Move & Resize</a>
+            </li>
           </ul>      
         </div>
       </section>
@@ -334,6 +337,29 @@
     </div>
 </section>
 <!--END Section task elevator-->
+<!--Section task move&resize-->
+<section class="task modal" id="task-move-resize">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task move-resize">
+            <h5 class="task__title">Move & Resize</h5>
+            <p class="task__description">Обработка событий мыши, перемещение, изменение размеров, отражение, масштабирование картинки в определенных границах.</p>
+            <div class="move-resize__container">
+                <div class="move-resize__image" data-action="image">
+                  <div class="move-resize__control move-resize__control--left-top" data-action="left-top"></div>
+                  <div class="move-resize__control move-resize__control--top" data-action="top"></div>
+                  <div class="move-resize__control move-resize__control--right-top" data-action="right-top"></div>
+                  <div class="move-resize__control move-resize__control--right" data-action="right"></div>
+                  <div class="move-resize__control move-resize__control--right-bottom" data-action="right-bottom"></div>
+                  <div class="move-resize__control move-resize__control--bottom" data-action="bottom"></div>
+                  <div class="move-resize__control move-resize__control--left-bottom" data-action="left-bottom"></div>
+                  <div class="move-resize__control move-resize__control--left" data-action="left"></div>
+                </div>
+              </div>
+        </div>
+    </div>
+</section>
+<!--END Section task move&resize-->
     <script src="js/vendor.js"></script>
     <script src="js/script.js"></script>
   </body>
