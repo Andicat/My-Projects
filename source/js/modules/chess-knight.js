@@ -26,7 +26,7 @@
     } catch {
         return;
     }
-            
+
     function chessKnight () {
 
         const CHESS_SIZE = 8;

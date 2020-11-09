@@ -505,7 +505,7 @@ ul {
   display: none;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 50px;
+  padding: 20px;
   max-width: 100vw; }
   .modal__inner {
     width: 800px;
@@ -647,16 +647,16 @@ ul {
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2); }
 
 .skills__progress {
-  height: 100%; }
-  .skills__progress--high {
-    width: 90%;
-    background-color: #297a67; }
-  .skills__progress--medium {
-    width: 75%;
-    background-color: #d48456; }
+  height: 100%;
+  background-color: #335f74; }
+  .skills__progress--start {
+    width: 20%; }
   .skills__progress--begin {
-    width: 40%;
-    background-color: #335f74; }
+    width: 40%; }
+  .skills__progress--medium {
+    width: 70%; }
+  .skills__progress--high {
+    width: 90%; }
 
 @media (max-width: 767px) {
   .skills__list {
@@ -762,7 +762,7 @@ ul {
   transition: 0.3s ease; }
   .task-link:hover {
     box-shadow: none;
-    background-color: #d48456;
+    background-color: rgba(51, 95, 116, 0.8);
     transition: 0.3s ease; }
 
 .task {

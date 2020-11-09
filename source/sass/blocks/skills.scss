@@ -52,20 +52,22 @@
 
   &__progress {
     height: 100%;
+    background-color: $color-blue;
 
-    &--high {
-      width: $high-level;
-      background-color: $color-green;
-    }
-
-    &--medium {
-      width: $medium-level;
-      background-color: $color-light-brown;
+    &--start {
+      width: $start-level;
     }
 
     &--begin {
       width: $begin-level;
-      background-color: $color-blue;
+    }
+
+    &--medium {
+      width: $medium-level;
+    }
+
+    &--high {
+      width: $high-level;
     }
   }
 

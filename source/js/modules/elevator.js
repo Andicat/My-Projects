@@ -43,6 +43,8 @@ G+
     var newHouse;
     var FLATS = 9;
     var PASSENGERS = 10;
+
+    var taskModal = document.getElementById("task-elevator");
     
     class House {
 
@@ -143,6 +145,12 @@ G+
             //движение лифта
             function moveElevator (speed) {
                 clearTimeout(timerId);
+                //проверим не закрыто ли окно с задачей
+                if (!taskModal.classList.contains("modal--show")) {
+                    cntHouse.innerHTML = "";
+                    return;
+                }
+                    
                 timerId = setTimeout(function () {
                     //доезжаем до этажа
                     if (elevator.offsetTop!==nextStop) {
@@ -152,14 +160,14 @@ G+
                     }
                     //этажи впереди по направлению
                     nextFlats = Object.keys(activeFlats).filter( function(f) {
-                            if (direction==="up" && f > flatCurr) {
-                                return true;
-                            };
-                            if (direction==="down" && f < flatCurr) {
-                                return true;
-                            };
-                            return false;
-                        }).sort( function(a,b) { return (direction==="up"?a-b:b-a);});
+                        if (direction==="up" && f > flatCurr) {
+                            return true;
+                        };
+                        if (direction==="down" && f < flatCurr) {
+                            return true;
+                        };
+                        return false;
+                    }).sort( function(a,b) { return (direction==="up"?a-b:b-a);});
                     
                     //нужно ли останавливаться на этом этаже?
                     if (flatCurr in activeFlats) {
