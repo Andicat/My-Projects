@@ -1,9 +1,14 @@
 .move-resize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
 
     &__container {
         box-sizing: border-box;
         position: relative;
         height: 500px;
+        width: 100%;
         box-sizing: border-box;
         outline: 1px solid rgb(105, 129, 57);
         margin-top: 20px;
@@ -14,8 +19,8 @@
         position: absolute;
         width: 400px;
         height: 300px;
-        top: 100px;
-        left: 300px;
+        top: 50px;
+        left: 50px;
         outline: 1px solid rgb(105, 129, 57);
 
         &::before {
@@ -161,14 +166,12 @@
     }
 }
 
-/*@include viewport--tablet {
+@include viewport--tablet {
     .move-resize {
         height: 600px;
         &__image {
             width: 200px;
             height: 150px;
-            top: 50px;
-            left: 150px;
         }
     }
-}*/
+}

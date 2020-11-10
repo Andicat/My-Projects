@@ -745,7 +745,7 @@ ul {
       width: calc(100% / 2 - 25px);
       min-height: 285px; } }
   @media (max-width: 767px) {
-    .portfolio__item--link {
+    .portfolio__item--link, .portfolio__item--task {
       width: 100%; } }
 
 .task-link {
@@ -1078,122 +1078,121 @@ ul {
   100% {
     width: 50%; } }
 
-.move-resize__container {
-  box-sizing: border-box;
-  position: relative;
-  height: 500px;
-  box-sizing: border-box;
-  outline: 1px solid #698139;
-  margin-top: 20px; }
-
-.move-resize__image {
-  box-sizing: border-box;
-  position: absolute;
-  width: 400px;
-  height: 300px;
-  top: 100px;
-  left: 300px;
-  outline: 1px solid #698139; }
-  .move-resize__image::before {
-    content: "";
-    position: absolute;
+.move-resize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px; }
+  .move-resize__container {
+    box-sizing: border-box;
+    position: relative;
+    height: 500px;
     width: 100%;
-    height: 100%;
-    left: 0%;
-    background-image: url("../img/shiba.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center; }
-  .move-resize__image:hover {
-    cursor: pointer; }
-  .move-resize__image--mirrorX::before {
-    transform: scaleX(-1); }
-  .move-resize__image--mirrorY::before {
-    transform: scaleY(-1); }
-  .move-resize__image--mirrorX.move-resize__image--mirrorY::before {
-    transform: scale(-1, -1); }
-
-.move-resize__control {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #698139;
-  position: absolute;
-  border: 1px solid black; }
-  .move-resize__control::before {
-    display: none;
-    content: "";
+    box-sizing: border-box;
+    outline: 1px solid #698139;
+    margin-top: 20px; }
+  .move-resize__image {
+    box-sizing: border-box;
     position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    left: 50%;
-    background-image: url("../img/arrows.svg");
-    background-size: cover;
-    transform: translate(-50%, -50%); }
-  .move-resize__control:hover, .move-resize__control:active, .move-resize__control--active {
-    width: 0;
-    height: 0; }
-    .move-resize__control:hover::before, .move-resize__control:active::before, .move-resize__control--active::before {
-      display: block; }
-  .move-resize__control--non-active:active, .move-resize__control--non-active:hover {
+    width: 400px;
+    height: 300px;
+    top: 50px;
+    left: 50px;
+    outline: 1px solid #698139; }
+    .move-resize__image::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0%;
+      background-image: url("../img/shiba.jpg");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .move-resize__image:hover {
+      cursor: pointer; }
+    .move-resize__image--mirrorX::before {
+      transform: scaleX(-1); }
+    .move-resize__image--mirrorY::before {
+      transform: scaleY(-1); }
+    .move-resize__image--mirrorX.move-resize__image--mirrorY::before {
+      transform: scale(-1, -1); }
+  .move-resize__control {
     width: 12px;
-    height: 12px; }
-    .move-resize__control--non-active:active::before, .move-resize__control--non-active:hover::before {
-      display: none; }
-  .move-resize__control--left-top {
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%); }
-    .move-resize__control--left-top::before {
-      transform: translate(-50%, -50%) rotate(45deg); }
-  .move-resize__control--top {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    .move-resize__control--top::before {
-      transform: translate(-50%, -50%) rotate(90deg); }
-  .move-resize__control--right-top {
-    top: 0;
-    right: 0;
-    transform: translate(50%, -50%); }
-    .move-resize__control--right-top::before {
-      transform: translate(-50%, -50%) rotate(-45deg); }
-  .move-resize__control--right {
-    top: 50%;
-    right: 0;
-    transform: translate(50%, -50%); }
-  .move-resize__control--right-bottom {
-    bottom: 0;
-    right: 0;
-    transform: translate(50%, 50%); }
-    .move-resize__control--right-bottom::before {
-      transform: translate(-50%, -50%) rotate(45deg); }
-  .move-resize__control--bottom {
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%); }
-    .move-resize__control--bottom::before {
-      transform: translate(-50%, -50%) rotate(90deg); }
-  .move-resize__control--left-bottom {
-    bottom: 0;
-    left: 0;
-    transform: translate(-50%, 50%); }
-    .move-resize__control--left-bottom::before {
-      transform: translate(-50%, -50%) rotate(-45deg); }
-  .move-resize__control--left {
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%); }
+    height: 12px;
+    border-radius: 50%;
+    background-color: #698139;
+    position: absolute;
+    border: 1px solid black; }
+    .move-resize__control::before {
+      display: none;
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      background-image: url("../img/arrows.svg");
+      background-size: cover;
+      transform: translate(-50%, -50%); }
+    .move-resize__control:hover, .move-resize__control:active, .move-resize__control--active {
+      width: 0;
+      height: 0; }
+      .move-resize__control:hover::before, .move-resize__control:active::before, .move-resize__control--active::before {
+        display: block; }
+    .move-resize__control--non-active:active, .move-resize__control--non-active:hover {
+      width: 12px;
+      height: 12px; }
+      .move-resize__control--non-active:active::before, .move-resize__control--non-active:hover::before {
+        display: none; }
+    .move-resize__control--left-top {
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%); }
+      .move-resize__control--left-top::before {
+        transform: translate(-50%, -50%) rotate(45deg); }
+    .move-resize__control--top {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .move-resize__control--top::before {
+        transform: translate(-50%, -50%) rotate(90deg); }
+    .move-resize__control--right-top {
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%); }
+      .move-resize__control--right-top::before {
+        transform: translate(-50%, -50%) rotate(-45deg); }
+    .move-resize__control--right {
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%); }
+    .move-resize__control--right-bottom {
+      bottom: 0;
+      right: 0;
+      transform: translate(50%, 50%); }
+      .move-resize__control--right-bottom::before {
+        transform: translate(-50%, -50%) rotate(45deg); }
+    .move-resize__control--bottom {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%); }
+      .move-resize__control--bottom::before {
+        transform: translate(-50%, -50%) rotate(90deg); }
+    .move-resize__control--left-bottom {
+      bottom: 0;
+      left: 0;
+      transform: translate(-50%, 50%); }
+      .move-resize__control--left-bottom::before {
+        transform: translate(-50%, -50%) rotate(-45deg); }
+    .move-resize__control--left {
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%); }
 
-/*@include viewport--tablet {
-    .move-resize {
-        height: 600px;
-        &__image {
-            width: 200px;
-            height: 150px;
-            top: 50px;
-            left: 150px;
-        }
-    }
-}*/
+@media (max-width: 1199px) {
+  .move-resize {
+    height: 600px; }
+    .move-resize__image {
+      width: 200px;
+      height: 150px; } }
