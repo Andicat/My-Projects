@@ -576,6 +576,8 @@ ul {
     top: 50%;
     left: 15px;
     transform: translateY(-50%); }
+    .intro__photo img {
+      width: 100%; }
   .intro__description h2 {
     color: #297a67;
     font-weight: normal;
