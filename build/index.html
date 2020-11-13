@@ -242,6 +242,9 @@
             <li class="portfolio__item portfolio__item--task">
               <a class="task-link" data-task="task-move-resize" href="#">Move & Resize</a>
             </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link" data-task="task-clock" href="#">Render clock</a>
+            </li>
           </ul>      
         </div>
       </section>
@@ -360,6 +363,22 @@
     </div>
 </section>
 <!--END Section task move&resize-->
+<!--Section task clock-->
+<section class="task modal" id="task-clock">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task clock">
+            <h5 class="task__title">Render Clock with different ways</h5>
+            <p class="task__description">Создадим часы, показывающие текущее время и идущие в реальном времени часы методами DOM(первый вариант) и с использованием SVG(второй вариант).</p>
+            <div class="clock__buttons">
+                <button class="button clock__button-dom">Render Clock DOM</button>
+                <button class="button clock__button-svg">Render Clock SVG</button>
+              </div>
+              <div class="clock__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task clock-->
     <script src="js/vendor.js"></script>
     <script src="js/script.js"></script>
   </body>
