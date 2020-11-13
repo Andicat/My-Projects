@@ -1207,7 +1207,8 @@ ul {
   .clock__container {
     display: flex;
     justify-content: center;
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: 500px; }
   .clock__buttons {
     text-align: center; }
   .clock__figure {
@@ -1230,3 +1231,6 @@ ul {
   .clock__digital {
     position: absolute;
     font-size: 24px; }
+  @media (max-width: 1199px) {
+    .clock__container {
+      width: 300px; } }

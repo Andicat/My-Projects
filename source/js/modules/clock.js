@@ -79,7 +79,6 @@
 
             var clockCenterX = clock.offsetWidth/2;
             var clockCenterY = clock.offsetHeight/2;
-            console.log(arrow.offsetHeight);
 
             arrow.style.left = Math.round(clockCenterX - arrow.offsetWidth/2)+'px';
             arrow.style.top = Math.round(clockCenterY - arrow.offsetHeight*0.95)+'px';
@@ -289,12 +288,14 @@
     btnClockDOM.addEventListener('click', function() {
         clearInterval(timer);
         cntClock.innerHTML = "";
+        //const CLOCK_SIZE = cntClock.offsetWidth;
         renderClockDOM(cntClock);
     });
 
     btnClockSVG.addEventListener('click', function() {
         clearInterval(timer);
         cntClock.innerHTML = "";
+        //const CLOCK_SIZE = cntClock.offsetWidth;
         renderClockSVG(cntClock);
     });
 
