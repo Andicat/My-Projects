@@ -963,6 +963,10 @@ ul {
   background-position-x: 10px;
 }
 
+.task-link--clock {
+  background-image: url("../img/clock.svg");
+}
+
 .task {
   width: 100%;
 }

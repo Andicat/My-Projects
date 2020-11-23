@@ -788,6 +788,9 @@ ul {
   .task-link--dnd {
     background-image: url("../img/butterfly-3.svg");
     background-position-x: 10px; }
+  .task-link--clock {
+    background-image: url("../img/clock.svg");
+    background-position-x: 5px; }
 
 .task {
   width: 100%; }
