@@ -1,5 +1,6 @@
 .portfolio {
     padding: 10px;
+    padding-bottom: 30px;
 
     h2 {
         color: $color-light-brown;
@@ -25,6 +26,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: stretch;
         margin-right: -25px;
 
         &:last-child {
@@ -65,8 +67,8 @@
     }
 
     &__item--task {
-        width: auto;
-        min-height: auto;
+        display: flex;
+        width: calc(100% / 3 - 25px);
         padding: 0;
         margin: 0 25px 25px 0;
     }

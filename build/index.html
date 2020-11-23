@@ -231,24 +231,27 @@
           <h3>My JavaScript tasks</h3>
           <ul class="portfolio__list">
             <li class="portfolio__item portfolio__item--task">
-              <a class="task-link" data-task="task-chess" href="#">Шахматы: расстановка ферзей</a>
+              <a class="task-link task-link--queen" data-task="task-chess" href="#">Шахматы: расстановка ферзей</a>
             </li>
             <li class="portfolio__item portfolio__item--task">
-              <a class="task-link" data-task="task-chess-knight" href="#">Шахматы: обход конем доски</a>
+              <a class="task-link task-link--knight" data-task="task-chess-knight" href="#">Шахматы: обход конем доски</a>
             </li>
             <li class="portfolio__item portfolio__item--task">
-              <a class="task-link" data-task="task-elevator" href="#">Лифт</a>
+              <a class="task-link task-link--elevator" data-task="task-elevator" href="#">Лифт и пассажиры</a>
             </li>
             <li class="portfolio__item portfolio__item--task">
-              <a class="task-link" data-task="task-move-resize" href="#">Move & Resize</a>
+              <a class="task-link task-link--move" data-task="task-move-resize" href="#">Move & Resize</a>
             </li>
+            <!--<li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--dnd" data-task="task-drag-drop" href="#">Drag & Drop</a>
+            </li>-->
           </ul>      
         </div>
       </section>
-      <section class="aboutme" id="aboutme">
+      <!--<section class="aboutme" id="aboutme">
         <h2>About me</h2>
         <p>Some facts about me)</p>
-      </section>
+      </section>-->
       <section class="contacts" id="contacts">
         <div class="contacts__container">
           <h2>Contacts</h2>
@@ -355,7 +358,34 @@
                   <div class="move-resize__control move-resize__control--left-bottom" data-action="left-bottom"></div>
                   <div class="move-resize__control move-resize__control--left" data-action="left"></div>
                 </div>
-              </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--END Section task move&resize-->
+<!--Section task drag&drop-->
+<section class="task modal" id="task-drag-drop">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task drag-drop">
+            <h5 class="task__title">Drag & Drop</h5>
+            <p class="task__description">Перетаскивание в пределах</p>
+            <div class="drag-drop__container">
+                <image class="drag-drop__image" src = "img/butterfly-1.svg" width = "100px" height = "70px" ></image>
+                <image class="drag-drop__image" src = "img/butterfly-2.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-3.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-4.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-5.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-6.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-7.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-8.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-9.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-10.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-11.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-12.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-13.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-14.svg" width = "100px" height = "70px"></image>
+            </div>
         </div>
     </div>
 </section>
