@@ -115,7 +115,8 @@
 
   //mobile version
   @include viewport--mobile {
-    &__item--link {
+    &__item--link,
+    &__item--task {
       width: 100%;
     }
   }

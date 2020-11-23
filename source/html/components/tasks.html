@@ -12,7 +12,7 @@
             <div class="chess__result">
                 <span class="chess__result-text"></span>
                 <input class="chess__combination" type="text" placeholder="Введите номер комбинации">
-                <button class="chess__button--combination button">Показать комбинацию</button> 
+                <button class="button chess__button chess__button--combination">Показать комбинацию</button> 
             </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
             <button class="chess__button button">Найти обход</button>
             <div class="chess__result">
               <span class="chess__result-text result"></span>
-              <button class="chess__button--go button">Вперед, конь!</button>
+              <button class="button chess__button chess__button--go">Вперед, конь!</button>
             </div>
           </div>
       </div>
@@ -107,3 +107,19 @@
     </div>
 </section>
 <!--END Section task move&resize-->
+<!--Section task clock-->
+<section class="task modal" id="task-clock">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task clock">
+            <h5 class="task__title">Render Clock with different ways</h5>
+            <p class="task__description">Создадим часы, показывающие текущее время и идущие в реальном времени часы методами DOM(первый вариант) и с использованием SVG(второй вариант).</p>
+            <div class="clock__buttons">
+                <button class="button clock__button-dom">Render Clock DOM</button>
+                <button class="button clock__button-svg">Render Clock SVG</button>
+              </div>
+              <div class="clock__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task clock-->

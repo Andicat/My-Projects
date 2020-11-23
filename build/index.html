@@ -124,7 +124,7 @@
       <section class="intro">
         <div class="intro__container center-aligned">
           <div class="intro__photo">
-          <img src="img/photo.jpg" width="100%" alt="Katerina">
+          <img src="img/photo.jpg" alt="Katerina">
         </div>
         <div class="intro__description">
           <h2>Hi, I'm Katerina</h2>
@@ -149,7 +149,7 @@
   </div>
 </li>
             <li class="skills__item">
-  <h3 class="skills__name"> JS </h3>
+  <h3 class="skills__name"> JavaScript </h3>
   <div class="skills__level">
     <div class="skills__progress  skills__progress--medium "></div>
   </div>
@@ -202,21 +202,21 @@
             <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/sedona/">
                 <h4 class="portfolio__name">Sedona</h4>
-                <img class="portfolio__image" src="img/sedona.jpg" width="100%" alt="Sedona">
+                <img class="portfolio__image" src="img/sedona.jpg" alt="Sedona">
                 <p class="portfolio__desc">Technologies: Adaptive page, mobile-first, HTML, CSS, Less</p>  
               </a>
             </li>
             <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/keksobooking/">
                 <h4 class="portfolio__name">Keksobooking</h4>
-                <img class="portfolio__image scroll" src="img/keksobooking.jpg" width="100%" alt="Keksobooking">
+                <img class="portfolio__image scroll" src="img/keksobooking.jpg" alt="Keksobooking">
                 <p class="portfolio__desc">Technologies: JavaScript, form validation, mouseEvent</p>  
               </a>
             </li>
             <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/simon/">
                 <h4 class="portfolio__name">Simon-game</h4>
-                <img class="portfolio__image" src="img/simon.jpg" width="100%" alt="Simon game">
+                <img class="portfolio__image" src="img/simon.jpg" alt="Simon game">
                 <p class="portfolio__desc">Simple game. Technologies: JavaScript, HTML, CSS</p>  
               </a>
             </li>
@@ -245,6 +245,9 @@
             <!--<li class="portfolio__item portfolio__item--task">
               <a class="task-link task-link--dnd" data-task="task-drag-drop" href="#">Drag & Drop</a>
             </li>-->
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link" data-task="task-clock" href="#">Render clock</a>
+            </li>
           </ul>      
         </div>
       </section>
@@ -295,7 +298,7 @@
             <div class="chess__result">
                 <span class="chess__result-text"></span>
                 <input class="chess__combination" type="text" placeholder="Введите номер комбинации">
-                <button class="chess__button--combination button">Показать комбинацию</button> 
+                <button class="button chess__button chess__button--combination">Показать комбинацию</button> 
             </div>
         </div>
       </div>
@@ -314,7 +317,7 @@
             <button class="chess__button button">Найти обход</button>
             <div class="chess__result">
               <span class="chess__result-text result"></span>
-              <button class="chess__button--go button">Вперед, конь!</button>
+              <button class="button chess__button chess__button--go">Вперед, конь!</button>
             </div>
           </div>
       </div>
@@ -390,6 +393,22 @@
     </div>
 </section>
 <!--END Section task move&resize-->
+<!--Section task clock-->
+<section class="task modal" id="task-clock">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task clock">
+            <h5 class="task__title">Render Clock with different ways</h5>
+            <p class="task__description">Создадим часы, показывающие текущее время и идущие в реальном времени часы методами DOM(первый вариант) и с использованием SVG(второй вариант).</p>
+            <div class="clock__buttons">
+                <button class="button clock__button-dom">Render Clock DOM</button>
+                <button class="button clock__button-svg">Render Clock SVG</button>
+              </div>
+              <div class="clock__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task clock-->
     <script src="js/vendor.js"></script>
     <script src="js/script.js"></script>
   </body>

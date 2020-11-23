@@ -675,6 +675,10 @@ ul {
   transform: translateY(-50%);
 }
 
+.intro__photo img {
+  width: 100%;
+}
+
 .intro__description h2 {
   color: #297a67;
   font-weight: normal;
@@ -858,8 +862,8 @@ ul {
 }
 
 .portfolio__item--task {
+  display: flex;
   width: calc(100% / 3 - 25px);
-  min-height: auto;
   padding: 0;
   margin: 0 25px 25px 0;
 }
@@ -904,24 +908,28 @@ ul {
 }
 
 @media (max-width: 767px) {
-  .portfolio__item--link {
+  .portfolio__item--link, .portfolio__item--task {
     width: 100%;
   }
 }
 
 .task-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   color: #ffffff;
   font-size: 24px;
   font-style: italic;
   font-weight: 400;
   text-align: center;
+  vertical-align: middle;
   background-color: #335f74;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   padding: 10px 20px;
   transition: 0.3s ease;
-  padding-left: 50px;
+  padding-left: 60px;
   background-repeat: no-repeat;
   background-size: auto 80%;
   background-position: center left;
@@ -935,6 +943,24 @@ ul {
 
 .task-link--queen {
   background-image: url("../img/queen.svg");
+}
+
+.task-link--knight {
+  background-image: url("../img/knight.svg");
+}
+
+.task-link--elevator {
+  background-image: url("../img/man.svg");
+}
+
+.task-link--move {
+  background-image: url("../img/arrows.svg");
+  background-position-x: 10px;
+}
+
+.task-link--dnd {
+  background-image: url("../img/butterfly-3.svg");
+  background-position-x: 10px;
 }
 
 .task {
@@ -1355,10 +1381,18 @@ ul {
   }
 }
 
+.move-resize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
 .move-resize__container {
   box-sizing: border-box;
   position: relative;
   height: 500px;
+  width: 100%;
   box-sizing: border-box;
   outline: 1px solid #698139;
   margin-top: 20px;
@@ -1369,8 +1403,8 @@ ul {
   position: absolute;
   width: 400px;
   height: 300px;
-  top: 100px;
-  left: 300px;
+  top: 50px;
+  left: 50px;
   outline: 1px solid #698139;
 }
 
@@ -1514,15 +1548,115 @@ ul {
   transform: translate(-50%, -50%);
 }
 
-/*@include viewport--tablet {
-    .move-resize {
-        height: 600px;
-        &__image {
-            width: 200px;
-            height: 150px;
-            top: 50px;
-            left: 150px;
-        }
-    }
-}*/
+@media (max-width: 1199px) {
+  .move-resize {
+    height: 600px;
+  }
+  .move-resize__image {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+.drag-drop {
+  width: calc(100vw - 100px);
+  min-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.drag-drop__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  box-sizing: border-box;
+  position: relative;
+  flex-grow: 1;
+  outline: 1px solid #698139;
+}
+
+.drag-drop__title {
+  display: block;
+  font-size: 24px;
+  line-height: normal;
+  font-weight: 600;
+  margin: 10px;
+}
+
+.drag-drop__image {
+  box-sizing: border-box;
+  display: block;
+}
+
+.drag-drop__image--drag:hover {
+  cursor: grab;
+}
+
+.drag-drop__image--drag:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 767px) {
+  .drag-drop {
+    width: calc(100vw - 40px);
+    min-height: calc(100vh - 100px);
+  }
+  .drag-drop__image {
+    width: 80px;
+    height: 55px;
+  }
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+.clock__container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 500px;
+}
+
+.clock__buttons {
+  text-align: center;
+}
+
+.clock__figure {
+  position: relative;
+  background-color: palegoldenrod;
+  fill: #acbbd3;
+  border-radius: 50%;
+}
+
+.clock__number {
+  background-color: #e2c337;
+  fill: #5d55a5;
+  border-radius: 50%;
+  position: absolute;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock__arrow {
+  position: absolute;
+  background-color: black;
+}
+
+.clock__digital {
+  position: absolute;
+  font-size: 24px;
+}
+
+@media (max-width: 1199px) {
+  .clock__container {
+    width: 300px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
