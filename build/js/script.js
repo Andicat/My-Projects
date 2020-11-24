@@ -1409,14 +1409,18 @@ G+
         mutations.forEach(function(mutation) {
             if(mutation.attributeName == "class"){
                 if (mutation.target.classList.contains('modal--show')) {
-                    //console.log("class added!");
+                    //debugger;
+                    //console.log(mutation.target.getAttribute("id") + " OPEN!");
                     return;
                 }
-                //console.log("class removed!");
+                //console.log(mutation.target.getAttribute("id") + " CLOSE!");
             }
         });
     });
     
+    //modalFormList.forEach( modal =>  observer.observe(modal, {attributes: true}));
+    // поток событий с информацией о погоде
+    //var weatherEvents = new EventEmitter();
     
     //закрытие модальных окон по кнопке закрытия
     for (var i = 0; i < closeButtonsList.length; i++) {
@@ -1444,7 +1448,6 @@ G+
             evt.preventDefault();
             document.body.classList.add('stop-scrolling');
             taskModal.classList.add('modal--show');
-            observer.observe(taskModal, {attributes: true});
         });
     }
 
@@ -1461,7 +1464,9 @@ G+
     function closeModals() {
         for (var i = 0; i < modalFormList.length; i++) {
             modalForm = modalFormList[i];
-            modalForm.classList.remove('modal--show');
+            if (modalForm.classList.contains("modal--show")) {
+                modalForm.classList.remove('modal--show');
+            }
             document.body.classList.remove('stop-scrolling');
         }
     }
