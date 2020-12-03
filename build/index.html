@@ -248,6 +248,9 @@
             <li class="portfolio__item portfolio__item--task">
               <a class="task-link task-link--clock" data-task="task-clock" href="#">Создание часов разными способами</a>
             </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--tennis" data-task="task-tennis" href="#">Создание игры "Теннис" разными способами</a>
+            </li>
           </ul>      
         </div>
       </section>
@@ -398,7 +401,7 @@
     <div class="modal__inner">
         <button class="modal__button-close" type="button">Закрыть</button>
         <div class="task clock">
-            <h5 class="task__title">Render Clock with different ways</h5>
+            <h5 class="task__title">Render Clock by different ways</h5>
             <p class="task__description">Создадим часы, показывающие текущее время и идущие в реальном времени часы методами: <i> DOM, SVG, Canvas</i></p>
             <div class="clock__buttons">
                 <button class="button clock__button-dom">Render Clock DOM</button>
@@ -410,6 +413,24 @@
     </div>
 </section>
 <!--END Section task clock-->
+<!--Section task tennis-->
+<section class="task modal" id="task-tennis">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task tennis">
+            <h5 class="task__title">Render Tennis-game by different ways</h5>
+            <p class="task__description">Создадим игру в теннис методами: <i> DOM, SVG, Canvas</i>. Управление левой ракеткой — клавишами Shift (вверх) и Ctrl (вниз),
+                правой ракеткой — «стрелка вверх» и «стрелка вниз».</p>
+            <div class="tennis__buttons">
+                <button class="button tennis__button-dom">Render Tennis DOM</button>
+                <button class="button tennis__button-svg">Render Tennis SVG</button>
+                <button class="button tennis__button-canvas">Render Tennis Canvas</button>
+              </div>
+              <div class="tennis__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task tennis-->
     <script src="js/vendor.js"></script>
     <script src="js/script.js"></script>
   </body>

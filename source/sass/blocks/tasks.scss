@@ -49,7 +49,14 @@
 
     &--clock {
         background-image: url("../img/clock.svg");
+        background-position-x: 10px;
+        background-size: auto 70%;
+    }
+
+    &--tennis {
+        background-image: url("../img/tennis.svg");
         background-position-x: 5px;
+        background-size: auto 70%;
     }
 }
 

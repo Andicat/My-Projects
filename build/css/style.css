@@ -790,7 +790,12 @@ ul {
     background-position-x: 10px; }
   .task-link--clock {
     background-image: url("../img/clock.svg");
-    background-position-x: 5px; }
+    background-position-x: 10px;
+    background-size: auto 70%; }
+  .task-link--tennis {
+    background-image: url("../img/tennis.svg");
+    background-position-x: 5px;
+    background-size: auto 70%; }
 
 .task {
   width: 100%; }
@@ -1297,3 +1302,50 @@ ul {
   @media (max-width: 1199px) {
     .clock__container {
       width: 300px; } }
+
+.tennis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px; }
+  .tennis__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; }
+  .tennis__buttons {
+    margin-bottom: 20px; }
+  .tennis__playground {
+    outline: 2px solid #333;
+    position: relative;
+    margin: 0 auto; }
+  .tennis__scoreboard {
+    margin-bottom: 10px;
+    font-style: normal; }
+  .tennis__start {
+    margin: 10px auto;
+    transition-property: all;
+    transition-duration: 0.3s;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 15px;
+    padding: 10px 20px;
+    min-width: 200px;
+    border-radius: 5px;
+    border: none;
+    background-color: #335f74;
+    color: #ffffff;
+    cursor: pointer; }
+    .tennis__start:hover, .tennis__start:focus {
+      outline: none;
+      opacity: 0.9; }
+  @media (max-width: 1199px) {
+    .tennis__container {
+      width: 300px; }
+    .tennis__buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .tennis__buttons .button {
+        margin: 15px 0 0 0; } }
