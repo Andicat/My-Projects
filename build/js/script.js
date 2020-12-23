@@ -1431,8 +1431,8 @@ G+
     // закрытие модальных окон по esc
     window.addEventListener("keydown", function(evt) {
         if (evt.keyCode === 27) {
-        evt.preventDefault();
-        closeModals();
+            evt.preventDefault();
+            closeModals();
         }
     });
 
@@ -1538,10 +1538,10 @@ G+
     //вешаем обработчики мышки на странице
     document.addEventListener('mousedown', onMouseDown);
 
-    function onMouseDown(evt) { 
-        evt.preventDefault();
+    function onMouseDown(evt) {
         setAction(evt.target.getAttribute("data-action"));
         if (action) {
+            evt.preventDefault();
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
             //начальные координаты мышки

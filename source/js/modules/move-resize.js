@@ -58,10 +58,10 @@
     //вешаем обработчики мышки на странице
     document.addEventListener('mousedown', onMouseDown);
 
-    function onMouseDown(evt) { 
-        evt.preventDefault();
+    function onMouseDown(evt) {
         setAction(evt.target.getAttribute("data-action"));
         if (action) {
+            evt.preventDefault();
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
             //начальные координаты мышки
