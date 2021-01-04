@@ -204,6 +204,13 @@
         <div class="portfolio__container">
           <h3>My educational projects</h3>
           <ul class='portfolio__list'>
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/FD-2-Project">
+                <h4 class="portfolio__name">Scale-game</h4>
+                <img class="portfolio__image" src="img/scale.jpg" alt="Scale game">
+                <p class="portfolio__desc">Technologies: JavaScript ES6, Animation, Canvas, MVC, SPA, AJAX, Sass</p>  
+              </a>
+            </li>
             <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/technomart/">
                 <h4 class="portfolio__name">Technomart</h4>
@@ -258,7 +265,10 @@
               <a class="task-link task-link--dnd" data-task="task-drag-drop" href="#">Drag & Drop</a>
             </li>-->
             <li class="portfolio__item portfolio__item--task">
-              <a class="task-link task-link--clock" data-task="task-clock" href="#">Render clock</a>
+              <a class="task-link task-link--clock" data-task="task-clock" href="#">Создание часов разными способами</a>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--tennis" data-task="task-tennis" href="#">Создание игры "Теннис" разными способами</a>
             </li>
           </ul>      
         </div>
@@ -309,7 +319,7 @@
             <button class="chess__button button">Расстановка ферзей</button> 
             <div class="chess__result">
                 <span class="chess__result-text"></span>
-                <input class="chess__combination" type="text" placeholder="Введите номер комбинации">
+                <input class="chess__combination" type="text" placeholder="Введите номер комбинации"></input>
                 <button class="button chess__button chess__button--combination">Показать комбинацию</button> 
             </div>
         </div>
@@ -410,7 +420,7 @@
     <div class="modal__inner">
         <button class="modal__button-close" type="button">Закрыть</button>
         <div class="task clock">
-            <h5 class="task__title">Render Clock with different ways</h5>
+            <h5 class="task__title">Render Clock by different ways</h5>
             <p class="task__description">Создадим часы, показывающие текущее время и идущие в реальном времени часы методами: <i> DOM, SVG, Canvas</i></p>
             <div class="clock__buttons">
                 <button class="button clock__button-dom">Render Clock DOM</button>
@@ -422,6 +432,24 @@
     </div>
 </section>
 <!--END Section task clock-->
+<!--Section task tennis-->
+<section class="task modal" id="task-tennis">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task tennis">
+            <h5 class="task__title">Render Tennis-game by different ways</h5>
+            <p class="task__description">Создадим игру в теннис методами: <i> DOM, SVG, Canvas</i>. Управление левой ракеткой — клавишами Shift (вверх) и Ctrl (вниз),
+                правой ракеткой — «стрелка вверх» и «стрелка вниз».</p>
+            <div class="tennis__buttons">
+                <button class="button tennis__button-dom">Render Tennis DOM</button>
+                <button class="button tennis__button-svg">Render Tennis SVG</button>
+                <button class="button tennis__button-canvas">Render Tennis Canvas</button>
+              </div>
+              <div class="tennis__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task tennis-->
     <script src="js/vendor.js"></script>
     <script src="js/script.js"></script>
   </body>
