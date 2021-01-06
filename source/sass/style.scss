@@ -11,14 +11,25 @@
 @import "global/fonts";
 @import "global/typography";
 @import "global/utils";
-@import "global/overlay";
+@import "global/global";
 
 // Blocks
 //---------------------------------
 @import "blocks/header";
 @import "blocks/footer";
+@import "blocks/modal";
 @import "blocks/intro";
 @import "blocks/skills";
 @import "blocks/portfolio";
+@import "blocks/tasks";
 @import "blocks/aboutme";
 @import "blocks/contacts";
+
+// Tasks
+//---------------------------------
+@import "tasks/chess";
+@import "tasks/elevator";
+@import "tasks/move-resize";
+@import "tasks/drag-drop";
+@import "tasks/clock";
+@import "tasks/tennis";

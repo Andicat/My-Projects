@@ -12,11 +12,11 @@
       "main": false
     })
     <main class="main">
-      <h1 class="visually-hidden">Andreeva Katerina. Front-end lover.</h1>
+      <h1 class="visually-hidden">Andreeva Ekaterina. Front-end lover.</h1>
       <section class="intro">
         <div class="intro__container center-aligned">
           <div class="intro__photo">
-          <img src="img/photo.jpg" width="100%" alt="Katerina">
+          <img src="img/photo.jpg" alt="Katerina">
         </div>
         <div class="intro__description">
           <h2>Hi, I'm Katerina</h2>
@@ -33,16 +33,24 @@
               "name": "HTML"
             })
             @@include("source/html/components/skill.html", {
-              "mod": "medium",
+              "mod": "start",
+              "name": "React"
+            })
+            @@include("source/html/components/skill.html", {
+              "mod": "high",
               "name": "CSS"
             })
             @@include("source/html/components/skill.html", {
               "mod": "begin",
-              "name": "JS"
+              "name": "Gulp/Webpack"
             })
             @@include("source/html/components/skill.html", {
               "mod": "high",
-              "name": "Photoshop"
+              "name": "JavaScript"
+            })
+            @@include("source/html/components/skill.html", {
+              "mod": "medium",
+              "name": "Less"
             })
             @@include("source/html/components/skill.html", {
               "mod": "high",
@@ -50,14 +58,14 @@
             })
             @@include("source/html/components/skill.html", {
               "mod": "medium",
-              "name": "Less"
+              "name": "Photoshop"
             })
             @@include("source/html/components/skill.html", {
               "mod": "medium",
               "name": "Pug"
             })
             @@include("source/html/components/skill.html", {
-              "mod": "begin",
+              "mod": "start",
               "name": "WordPress"
             })
           </ul>          
@@ -68,51 +76,79 @@
         <div class="portfolio__container">
           <h3>My educational projects</h3>
           <ul class='portfolio__list'>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/FD-2-Project">
+                <h4 class="portfolio__name">Scale-game</h4>
+                <img class="portfolio__image" src="img/scale.jpg" alt="Scale game">
+                <p class="portfolio__desc">Technologies: JavaScript ES6, Animation, Canvas, MVC, SPA, AJAX, Sass</p>  
+              </a>
+            </li>
+            <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/technomart/">
-                <h3 class="portfolio__name">Technomart</h3>
+                <h4 class="portfolio__name">Technomart</h4>
                 <img class="portfolio__image" src="img/technomart.jpg" width="100%" alt="Technomart">
-                <p class="portfolio__desc"> HTML, CSS, js</p>
+                <p class="portfolio__desc"> It was my first project. Technologies: HTML, CSS</p>
               </a>
-            </li>
-            <li class="portfolio__item">
+            </li>-->
+            <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/sedona/">
-                <h3 class="portfolio__name">Sedona</h3>
-                <img class="portfolio__image" src="img/sedona.jpg" width="100%" alt="Sedona">
-                <p class="portfolio__desc">HTML, CSS, adaptive</p>  
+                <h4 class="portfolio__name">Sedona</h4>
+                <img class="portfolio__image" src="img/sedona.jpg" alt="Sedona">
+                <p class="portfolio__desc">Technologies: Adaptive page, mobile-first, HTML, CSS, Less</p>  
               </a>
             </li>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/keksobooking/">
-                <h3 class="portfolio__name">Keksobooking</h3>
-                <img class="portfolio__image scroll" src="img/keksobooking.jpg" width="100%" alt="Keksobooking">
-                <p class="portfolio__desc">Js, form validation</p>  
+                <h4 class="portfolio__name">Keksobooking</h4>
+                <img class="portfolio__image scroll" src="img/keksobooking.jpg" alt="Keksobooking">
+                <p class="portfolio__desc">Technologies: JavaScript, form validation, mouseEvent</p>  
               </a>
             </li>
-          </ul>
-          <h3>My training projects</h3>
-          <ul class='portfolio__list'>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/simon/">
+                <h4 class="portfolio__name">Simon-game</h4>
+                <img class="portfolio__image" src="img/simon.jpg" alt="Simon game">
+                <p class="portfolio__desc">Simple game. Technologies: JavaScript, HTML, CSS</p>  
+              </a>
+            </li>
+            <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/Quotes/">
-                <h3 class="portfolio__name">Quotes</h3>
+                <h4 class="portfolio__name">Quotes</h4>
                 <img class="portfolio__image" src="img/quotes.jpg" width="100%" alt="Random quotes">
                 <p class="portfolio__desc">API</p>  
               </a>
+            </li>-->
+          </ul>
+          <h3>My JavaScript tasks</h3>
+          <ul class="portfolio__list">
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--queen" data-task="task-chess" href="#">Шахматы: расстановка ферзей</a>
             </li>
-            <li class="portfolio__item">
-              <a class="portfolio__link" href="https://andicat.github.io/simon/">
-                <h3 class="portfolio__name">Simon-game</h3>
-                <img class="portfolio__image" src="img/simon.jpg" width="100%" alt="Simon game">
-                <p class="portfolio__desc">Js</p>  
-              </a>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--knight" data-task="task-chess-knight" href="#">Шахматы: обход конем доски</a>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--elevator" data-task="task-elevator" href="#">Лифт и пассажиры</a>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--move" data-task="task-move-resize" href="#">Move & Resize</a>
+            </li>
+            <!--<li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--dnd" data-task="task-drag-drop" href="#">Drag & Drop</a>
+            </li>-->
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--clock" data-task="task-clock" href="#">Создание часов разными способами</a>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--tennis" data-task="task-tennis" href="#">Создание игры "Теннис" разными способами</a>
             </li>
           </ul>      
         </div>
       </section>
-      <section class="aboutme" id="aboutme">
+      <!--<section class="aboutme" id="aboutme">
         <h2>About me</h2>
         <p>Some facts about me)</p>
-      </section>
+      </section>-->
       <section class="contacts" id="contacts">
         <div class="contacts__container">
           <h2>Contacts</h2>
@@ -139,10 +175,11 @@
     </main>
     <footer class="footer">
       <div class="footer__container center-aligned">
-        <p>Copyright 2020 © All rights reserved</p>
+        <p>Ekaterina Andreeva 2020 ©</p>
       </div>
     </footer>
+    @@include("source/html/components/tasks.html")
     <script src="js/vendor.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

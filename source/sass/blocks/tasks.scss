@@ -1,0 +1,92 @@
+.task-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: $color-white;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $color-blue;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    padding: 10px 20px;
+    transition: 0.3s ease;
+    padding-left: 60px;
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    background-position: center left;
+
+    &:hover {
+        box-shadow: none;
+        background-color: rgba($color-blue,0.8);
+        transition: 0.3s ease;
+    }
+
+    &--queen {
+        background-image: url("../img/queen.svg");
+    }
+
+    &--knight {
+        background-image: url("../img/knight.svg");
+    }
+
+    &--elevator {
+        background-image: url("../img/man.svg");
+    }
+
+    &--move {
+        background-image: url("../img/arrows.svg");
+        background-position-x: 10px;
+    }
+
+    &--dnd {
+        background-image: url("../img/butterfly-3.svg");
+        background-position-x: 10px;
+    }
+
+    &--clock {
+        background-image: url("../img/clock.svg");
+        background-position-x: 10px;
+        background-size: auto 70%;
+    }
+
+    &--tennis {
+        background-image: url("../img/tennis.svg");
+        background-position-x: 5px;
+        background-size: auto 70%;
+    }
+}
+
+.task {
+    width: 100%;
+
+    &__title {
+        font-size: 16px;
+        font-weight: 700;
+        font-style: italic;
+        color: $color-blue;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        font-size: 14px;
+        font-weight: normal;
+        text-indent: 12px;
+        line-height: normal;
+        margin: 0;
+    }
+}
+
+
+//tablet version
+@include viewport--tablet {
+}
+
+//mobile version
+@include viewport--mobile {
+
+}

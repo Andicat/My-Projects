@@ -1,0 +1,67 @@
+.tennis {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    
+    
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    &__buttons {
+        margin-bottom: 20px;
+    }
+
+    &__playground {
+        outline: 2px solid #333;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    &__scoreboard {
+        margin-bottom: 10px;
+        font-style: normal;
+    }
+
+    &__start {
+        margin: 10px auto;
+        @include transition(all);
+        font-size: 16px;
+        text-transform: uppercase;
+        margin: 15px;
+        padding: 10px 20px;
+        min-width: 200px;
+        border-radius: 5px;
+        border: none;
+        background-color: $color-blue;
+        color: $color-white;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            opacity: 0.9;
+        }
+    }
+
+     //tablet version
+     @include viewport--tablet {
+        &__container {
+            width: 300px;
+        }
+        &__buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .button {
+                margin: 15px 0 0 0;
+            }
+        }
+    }
+}
+

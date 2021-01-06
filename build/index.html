@@ -6,10 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="description" content="Первый маркетплейс запчастей для спецтехники">
 
-<!--<link href="favicon/fox.svg" rel="icon" sizes="32x32" type="image/png">-->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
-<link rel="preload" href="fonts/Roboto-regular.woff2" as="font" crossorigin="anonymous">
-<link rel="preload" href="fonts/Roboto-bold.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" crossorigin="anonymous">
 
 <link rel="stylesheet" href="css/style.min.css">
 
@@ -119,7 +124,7 @@
       <section class="intro">
         <div class="intro__container center-aligned">
           <div class="intro__photo">
-          <img src="img/photo.jpg" width="100%" alt="Katerina">
+          <img src="img/photo.jpg" alt="Katerina">
         </div>
         <div class="intro__description">
           <h2>Hi, I'm Katerina</h2>
@@ -138,21 +143,33 @@
   </div>
 </li>
             <li class="skills__item">
-  <h3 class="skills__name"> CSS </h3>
+  <h3 class="skills__name"> React </h3>
   <div class="skills__level">
-    <div class="skills__progress  skills__progress--medium "></div>
+    <div class="skills__progress  skills__progress--start "></div>
   </div>
 </li>
             <li class="skills__item">
-  <h3 class="skills__name"> JS </h3>
+  <h3 class="skills__name"> CSS </h3>
+  <div class="skills__level">
+    <div class="skills__progress  skills__progress--high "></div>
+  </div>
+</li>
+            <li class="skills__item">
+  <h3 class="skills__name"> Gulp/Webpack </h3>
   <div class="skills__level">
     <div class="skills__progress  skills__progress--begin "></div>
   </div>
 </li>
             <li class="skills__item">
-  <h3 class="skills__name"> Photoshop </h3>
+  <h3 class="skills__name"> JavaScript </h3>
   <div class="skills__level">
     <div class="skills__progress  skills__progress--high "></div>
+  </div>
+</li>
+            <li class="skills__item">
+  <h3 class="skills__name"> Less </h3>
+  <div class="skills__level">
+    <div class="skills__progress  skills__progress--medium "></div>
   </div>
 </li>
             <li class="skills__item">
@@ -162,7 +179,7 @@
   </div>
 </li>
             <li class="skills__item">
-  <h3 class="skills__name"> Less </h3>
+  <h3 class="skills__name"> Photoshop </h3>
   <div class="skills__level">
     <div class="skills__progress  skills__progress--medium "></div>
   </div>
@@ -176,7 +193,7 @@
             <li class="skills__item">
   <h3 class="skills__name"> WordPress </h3>
   <div class="skills__level">
-    <div class="skills__progress  skills__progress--begin "></div>
+    <div class="skills__progress  skills__progress--start "></div>
   </div>
 </li>
           </ul>          
@@ -187,51 +204,79 @@
         <div class="portfolio__container">
           <h3>My educational projects</h3>
           <ul class='portfolio__list'>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/FD-2-Project">
+                <h4 class="portfolio__name">Scale-game</h4>
+                <img class="portfolio__image" src="img/scale.jpg" alt="Scale game">
+                <p class="portfolio__desc">Technologies: JavaScript ES6, Animation, Canvas, MVC, SPA, AJAX, Sass</p>  
+              </a>
+            </li>
+            <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/technomart/">
-                <h3 class="portfolio__name">Technomart</h3>
+                <h4 class="portfolio__name">Technomart</h4>
                 <img class="portfolio__image" src="img/technomart.jpg" width="100%" alt="Technomart">
-                <p class="portfolio__desc"> HTML, CSS, js</p>
+                <p class="portfolio__desc"> It was my first project. Technologies: HTML, CSS</p>
               </a>
-            </li>
-            <li class="portfolio__item">
+            </li>-->
+            <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/sedona/">
-                <h3 class="portfolio__name">Sedona</h3>
-                <img class="portfolio__image" src="img/sedona.jpg" width="100%" alt="Sedona">
-                <p class="portfolio__desc">HTML, CSS, adaptive</p>  
+                <h4 class="portfolio__name">Sedona</h4>
+                <img class="portfolio__image" src="img/sedona.jpg" alt="Sedona">
+                <p class="portfolio__desc">Technologies: Adaptive page, mobile-first, HTML, CSS, Less</p>  
               </a>
             </li>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/keksobooking/">
-                <h3 class="portfolio__name">Keksobooking</h3>
-                <img class="portfolio__image scroll" src="img/keksobooking.jpg" width="100%" alt="Keksobooking">
-                <p class="portfolio__desc">Js, form validation</p>  
+                <h4 class="portfolio__name">Keksobooking</h4>
+                <img class="portfolio__image scroll" src="img/keksobooking.jpg" alt="Keksobooking">
+                <p class="portfolio__desc">Technologies: JavaScript, form validation, mouseEvent</p>  
               </a>
             </li>
-          </ul>
-          <h3>My training projects</h3>
-          <ul class='portfolio__list'>
-            <li class="portfolio__item">
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/simon/">
+                <h4 class="portfolio__name">Simon-game</h4>
+                <img class="portfolio__image" src="img/simon.jpg" alt="Simon game">
+                <p class="portfolio__desc">Simple game. Technologies: JavaScript, HTML, CSS</p>  
+              </a>
+            </li>
+            <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/Quotes/">
-                <h3 class="portfolio__name">Quotes</h3>
+                <h4 class="portfolio__name">Quotes</h4>
                 <img class="portfolio__image" src="img/quotes.jpg" width="100%" alt="Random quotes">
                 <p class="portfolio__desc">API</p>  
               </a>
+            </li>-->
+          </ul>
+          <h3>My JavaScript tasks</h3>
+          <ul class="portfolio__list">
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--queen" data-task="task-chess" href="#">Шахматы: расстановка ферзей</a>
             </li>
-            <li class="portfolio__item">
-              <a class="portfolio__link" href="https://andicat.github.io/simon/">
-                <h3 class="portfolio__name">Simon-game</h3>
-                <img class="portfolio__image" src="img/simon.jpg" width="100%" alt="Simon game">
-                <p class="portfolio__desc">Js</p>  
-              </a>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--knight" data-task="task-chess-knight" href="#">Шахматы: обход конем доски</a>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--elevator" data-task="task-elevator" href="#">Лифт и пассажиры</a>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--move" data-task="task-move-resize" href="#">Move & Resize</a>
+            </li>
+            <!--<li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--dnd" data-task="task-drag-drop" href="#">Drag & Drop</a>
+            </li>-->
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--clock" data-task="task-clock" href="#">Создание часов разными способами</a>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="task-link task-link--tennis" data-task="task-tennis" href="#">Создание игры "Теннис" разными способами</a>
             </li>
           </ul>      
         </div>
       </section>
-      <section class="aboutme" id="aboutme">
+      <!--<section class="aboutme" id="aboutme">
         <h2>About me</h2>
         <p>Some facts about me)</p>
-      </section>
+      </section>-->
       <section class="contacts" id="contacts">
         <div class="contacts__container">
           <h2>Contacts</h2>
@@ -261,7 +306,151 @@
         <p>Copyright 2020 © All rights reserved</p>
       </div>
     </footer>
+    <!--Section task chess-->
+<section class="task modal" id="task-chess">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task chess">
+            <h5 class="task__title">Расстановка ферзей</h5>
+            <p class="task__description">"Расстановка ферзей" - такая расстановка 8 ферзей на шахматной доске (8х8),
+                при которой ни один из ферзей не может сбить ни одного другого ферзя. Ферзь бьёт в любом направлении - горизонтальном, вертикальном, диагональном.
+                Найдем все возможные расстановки, дадим возможность пользователю ввести номер расстановки. Отобразим шахматную доску с выбранной расстановкой -
+                расставленными ферзями. При нажатии мышью на любого из ферзей - подсветим клетки доски, которые он "пробивает".</p>
+            <button class="chess__button button">Расстановка ферзей</button> 
+            <div class="chess__result">
+                <span class="chess__result-text"></span>
+                <input class="chess__combination" type="text" placeholder="Введите номер комбинации"></input>
+                <button class="button chess__button chess__button--combination">Показать комбинацию</button> 
+            </div>
+        </div>
+      </div>
+</section>
+<!--END Section task chess-->
+<!--Section task chess knight-->
+<section class="task modal" id="task-chess-knight">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task chess chess--knight">
+            <h5 class="task__title">Обход конем шахматной доски</h5>
+            <p class="task__description">Найдем программно один способ обойти все 64 клетки доски конём, чтобы в каждой
+                клетке конь побывал ровно 1 раз. Обход должен начинаться с любой угловой клетки.
+                Отобразим найденный способ (в каждой клеточке - номер хода, на котором конь попадает в эту клеточку).
+                По нажатию кнопки - отобразим процесс обхода конём доски в динамике. Клетки, в которых конь уже побывал, подсветим.</p>
+            <button class="chess__button button">Найти обход</button>
+            <div class="chess__result">
+              <span class="chess__result-text result"></span>
+              <button class="button chess__button chess__button--go">Вперед, конь!</button>
+            </div>
+          </div>
+      </div>
+</section>
+<!--END Section task chess knight-->
+<!--Section task elevator-->
+<section class="task modal" id="task-elevator">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task elevator">
+            <h5 class="task__title">Лифт</h5>
+            <p class="task__description">Построим программно дом, лифт (количество этажей дома настраивается программно).
+                На каждом этаже - две кнопки для вызова лифта, "вверх" и "вниз", которые подсвечиваются, если нажаты мышью.
+                В лифте - кнопки с номерами этажей, которые подсвечиваются, если нажаты мышью.
+                Одновременно может быть нажато несколько кнопок на разных этажах и несколько кнопок внутри лифта.
+                Добавим пасссажиров и запустим лифт.</p>
+            <div class="elevator__create">
+                <button class="elevator__create-house button">Построить дом</button>
+                <button class="elevator__create-passengers button" disabled>Пассажиры</button>
+            </div>
+            <div class="elevator__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task elevator-->
+<!--Section task move&resize-->
+<section class="task modal" id="task-move-resize">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task move-resize">
+            <h5 class="task__title">Move & Resize</h5>
+            <p class="task__description">Обработка событий мыши, перемещение, изменение размеров, отражение, масштабирование картинки в определенных границах.</p>
+            <div class="move-resize__container">
+                <div class="move-resize__image" data-action="image">
+                  <div class="move-resize__control move-resize__control--left-top" data-action="left-top"></div>
+                  <div class="move-resize__control move-resize__control--top" data-action="top"></div>
+                  <div class="move-resize__control move-resize__control--right-top" data-action="right-top"></div>
+                  <div class="move-resize__control move-resize__control--right" data-action="right"></div>
+                  <div class="move-resize__control move-resize__control--right-bottom" data-action="right-bottom"></div>
+                  <div class="move-resize__control move-resize__control--bottom" data-action="bottom"></div>
+                  <div class="move-resize__control move-resize__control--left-bottom" data-action="left-bottom"></div>
+                  <div class="move-resize__control move-resize__control--left" data-action="left"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--END Section task move&resize-->
+<!--Section task drag&drop-->
+<section class="task modal" id="task-drag-drop">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task drag-drop">
+            <h5 class="task__title">Drag & Drop</h5>
+            <p class="task__description">Перетаскивание в пределах</p>
+            <div class="drag-drop__container">
+                <image class="drag-drop__image" src = "img/butterfly-1.svg" width = "100px" height = "70px" ></image>
+                <image class="drag-drop__image" src = "img/butterfly-2.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-3.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-4.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-5.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-6.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-7.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-8.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-9.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-10.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-11.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-12.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-13.svg" width = "100px" height = "70px"></image>
+                <image class="drag-drop__image" src = "img/butterfly-14.svg" width = "100px" height = "70px"></image>
+            </div>
+        </div>
+    </div>
+</section>
+<!--END Section task move&resize-->
+<!--Section task clock-->
+<section class="task modal" id="task-clock">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task clock">
+            <h5 class="task__title">Render Clock by different ways</h5>
+            <p class="task__description">Создадим часы, показывающие текущее время и идущие в реальном времени часы методами: <i> DOM, SVG, Canvas</i></p>
+            <div class="clock__buttons">
+                <button class="button clock__button-dom">Render Clock DOM</button>
+                <button class="button clock__button-svg">Render Clock SVG</button>
+                <button class="button clock__button-canvas">Render Clock Canvas</button>
+              </div>
+              <div class="clock__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task clock-->
+<!--Section task tennis-->
+<section class="task modal" id="task-tennis">
+    <div class="modal__inner">
+        <button class="modal__button-close" type="button">Закрыть</button>
+        <div class="task tennis">
+            <h5 class="task__title">Render Tennis-game by different ways</h5>
+            <p class="task__description">Создадим игру в теннис методами: <i> DOM, SVG, Canvas</i>. Управление левой ракеткой — клавишами Shift (вверх) и Ctrl (вниз),
+                правой ракеткой — «стрелка вверх» и «стрелка вниз».</p>
+            <div class="tennis__buttons">
+                <button class="button tennis__button-dom">Render Tennis DOM</button>
+                <button class="button tennis__button-svg">Render Tennis SVG</button>
+                <button class="button tennis__button-canvas">Render Tennis Canvas</button>
+              </div>
+              <div class="tennis__container"></div>
+        </div>
+    </div>
+</section>
+<!--END Section task tennis-->
     <script src="js/vendor.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
