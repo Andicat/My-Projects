@@ -454,5 +454,34 @@
     <script src="https://fe.it-academy.by/JQ/jquery.js"></script>
     <script src="js/vendor.js"></script>
     <script src="js/script.js"></script>
+  <script>
+// In this example, if you make an ajax request to the following website
+var myUrl = 'http://gd.geobytes.com/GetCityDetails?callback=?';
+//  But if you make it from a browser, then it will work without problem ...
+
+// However to make it work, we are going to use the cors-anywhere free service to bypass this
+var proxy = 'https://cors-anywhere.herokuapp.com/';
+
+// Execute request
+var oReq = new XMLHttpRequest();
+
+oReq.addEventListener("load", function getUserIp() {    
+	//document.write(this.responseText);
+	geoRaw = this.responseText;
+	geoFormatted = (geoRaw.substring(2)).slice(0, -2);
+	geoJson = JSON.parse(geoFormatted);
+	//console.log(geoFormatted);
+	//console.log(geoJson);
+	userIp = geoJson.geobytesipaddress;
+	console.log(userIp);
+	return userIp;
+});
+
+// Or post, etc
+oReq.open("GET", proxy + myUrl);
+oReq.send();
+</script>
+
+
   </body>
 </html>
