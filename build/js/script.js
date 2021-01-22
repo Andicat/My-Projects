@@ -2616,4 +2616,32 @@ G+
         cntTennis.innerHTML = "";
         renderTennisSVG(cntTennis);
     });
+
+// In this example, if you make an ajax request to the following website
+var myUrl = 'http://www.geoplugin.net/json.gp?ip=216.58.209.68';
+//  But if you make it from a browser, then it will work without problem ...
+
+// However to make it work, we are going to use the cors-anywhere free service to bypass this
+var proxy = 'https://cors-anywhere.herokuapp.com/';
+
+/*Maybe try this:
+cors-anywhere-master/server.js line 26
+requireHeader : ['origin', 'x-requested-with']
+just empty the array
+requireHeader : []
+Fo*r me its still not working but this is what I can suggest now..*/
+
+$.ajax({
+    // The proxy url expects as first URL parameter the URL to be bypassed
+	// https://cors-anywhere.herokuapp.com/{my-url-to-bypass}
+	//receiveReq.setRequestHeader("Origin", "*");
+	url: proxy + myUrl,
+	complete:function(data){
+        console.log(data);
+    }
+});
+
+
+
+
 })();
