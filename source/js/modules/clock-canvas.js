@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //======================================CLOCK==================================
 /*
@@ -8,15 +8,15 @@
 (function () {
 
     try {
-        var blockClock = document.querySelector(".clock");
-        var btnClockCanvas = blockClock.querySelector(".clock__button-canvas");
-        var cntClock = blockClock.querySelector(".clock__container");
+        var blockClock = document.querySelector('.clock');
+        var btnClockCanvas = blockClock.querySelector('.clock__button-canvas');
+        var cntClock = blockClock.querySelector('.clock__container');
     } catch {
         return;
     }
 
     var timer;
-    const CLOCK_SIZE = window.matchMedia("(max-width: 768px)").matches ? 300 : 500;
+    const CLOCK_SIZE = window.matchMedia('(max-width: 768px)').matches ? 300 : 500;
     const HOURS = 12;
     const SIZES = {
         clock: CLOCK_SIZE,
@@ -29,28 +29,28 @@
         arrowHourWidth: CLOCK_SIZE*0.03,
     };
     const COLORS = {
-        clock: "#ee9c77",
-        number: "#e7723c",
-        arrow: "black",
-        center: "brown",
+        clock: '#ee9c77',
+        number: '#e7723c',
+        arrow: 'black',
+        center: 'brown',
     }
 
     // дополняет строку слева нулями до нужной длины len 
     function str0l(val,len) {
         var strVal = val.toString();
         while (strVal.length < len) {
-            strVal = "0" + strVal;
+            strVal = '0' + strVal;
         }
         return strVal;
     }
 
     function initClockCanvas(cntClock) {
 
-        var clockCanvas = document.createElement("canvas");
-        clockCanvas.setAttribute("width",SIZES.clock);
-        clockCanvas.setAttribute("height",SIZES.clock);
+        var clockCanvas = document.createElement('canvas');
+        clockCanvas.setAttribute('width',SIZES.clock);
+        clockCanvas.setAttribute('height',SIZES.clock);
         cntClock.appendChild(clockCanvas);
-        var context = clockCanvas.getContext("2d");
+        var context = clockCanvas.getContext('2d');
 
         var clockCenterX = SIZES.clock/2;
         var clockCenterY = SIZES.clock/2;
@@ -63,7 +63,7 @@
             var arrowX2 = clockCenterX + (arrowHeight*0.95)*Math.sin(angle);
             var arrowY2 = clockCenterY - (arrowHeight*0.95)*Math.cos(angle);
             context.lineWidth = arrowWidth;
-            context.lineCap = "round";
+            context.lineCap = 'round';
             context.beginPath();
             context.moveTo(arrowX1,arrowY1);
             context.lineTo(arrowX2,arrowY2);
@@ -81,7 +81,7 @@
             var secAngle = (360/60)*sec;
             var minAngle = (360/60)*min + (360/60/60)*sec;
             var hourAngle = (360/HOURS)*hour + (360/HOURS/60)*min;
-            var timeDigital =  str0l(hour,2) + ":" + str0l(min,2) + ":" + str0l(sec,2);
+            var timeDigital =  str0l(hour,2) + ':' + str0l(min,2) + ':' + str0l(sec,2);
         
             //рисуем часы
             context.fillStyle = COLORS.clock;
@@ -103,7 +103,7 @@
                 context.fill();
                 //рисуем цифры в кружочках
                 context.fillStyle = COLORS.arrow;
-                context.font = SIZES.font + "px Roboto";
+                context.font = SIZES.font + 'px Roboto';
                 var textMeasures = context.measureText(i);
                 var textWidth = textMeasures.width;
                 var textHeight = textMeasures.actualBoundingBoxAscent + textMeasures.actualBoundingBoxDescent;
@@ -126,7 +126,7 @@
             
             //рисуем цифровые часы
             context.fillStyle = COLORS.arrow;
-            context.font ="italic " + context.font;
+            context.font ='italic ' + context.font;
             var textMeasures = context.measureText(timeDigital);
             var textWidth = textMeasures.width;
             context.fillText(timeDigital, SIZES.clock/2 - textWidth/2, Math.round(SIZES.clock/1.3));
@@ -137,9 +137,9 @@
         drawClockCanvas();
     }
 
-    btnClockCanvas.addEventListener("click", function() {
+    btnClockCanvas.addEventListener('click', function() {
         clearInterval(timer);
-        cntClock.innerHTML = "";
+        cntClock.innerHTML = '';
         initClockCanvas(cntClock);
     });
 })();

@@ -58,6 +58,12 @@
         background-position-x: 5px;
         background-size: auto 70%;
     }
+
+    &--github {
+        background-image: url("../img/github.svg");
+        background-position-x: 5px;
+        background-size: auto 100%;
+    }
 }
 
 .task {

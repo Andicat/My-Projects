@@ -36,13 +36,13 @@
         //выводит результат
         function showResult(result) {
             if (result.length) {
-                btnChess.classList.add("hidden");
-                textChessResult.innerHTML = "Путь найден!"; 
-                resultChess.classList.add("chess__result--show");
+                btnChess.classList.add('hidden');
+                textChessResult.innerHTML = 'Путь найден!'; 
+                resultChess.classList.add('chess__result--show');
                 result.forEach(function (ceil,i) {
                     chessCeils[ceil-1].innerHTML = i+1;
                 });
-                btnGoKnight.addEventListener("click", showKnightWalk);
+                btnGoKnight.addEventListener('click', showKnightWalk);
             }
         }
 
@@ -71,14 +71,14 @@
                         i++;
                     }
                     if (!result[i]) {
-                        ceil.classList.add("chess__ceil--red");
+                        ceil.classList.add('chess__ceil--red');
                     }
                 }
                 
                 if (newCeil) {
                     //определим начально направление хода коня
-                    chessCeils[result[i-1]-1].style.fontSize = "";
-                    chessCeils[result[i-1]-1].classList.add("chess__ceil--red");
+                    chessCeils[result[i-1]-1].style.fontSize = '';
+                    chessCeils[result[i-1]-1].classList.add('chess__ceil--red');
                     var row = Math.abs(ceil.offsetLeft - knight.offsetLeft);
                     var col = Math.abs(ceil.offsetTop - knight.offsetTop);
                     goRow = (row > col) ? true: false;    
@@ -109,12 +109,12 @@
         
         //Рисует путь коня по шахматной доске
         function showKnightWalk() {
-            knight.style.left = ""; 
-            knight.style.top = ""; 
-            knight.classList.remove("chess__knight--hidden");
+            knight.style.left = ''; 
+            knight.style.top = ''; 
+            knight.classList.remove('chess__knight--hidden');
             chessCeils.forEach(function(e) {
-                e.classList.remove("chess__ceil--red");
-                e.style.fontSize = "0px";
+                e.classList.remove('chess__ceil--red');
+                e.style.fontSize = '0px';
             })  
             clearTimeout(timerId);
             step(1,true); 
@@ -127,21 +127,21 @@
             if (cntChessBoard) {
                 blockchess.removeChild(cntChessBoard);
             }
-            divBoard.className = "chess__board chess__board--knight";
+            divBoard.className = 'chess__board chess__board--knight';
 
             for  (var i = 1; i <= CHESS_SIZE*CHESS_SIZE; i++) {
                 var nextStepArr = nextSteps(i);
                 board.push({step:i, stepsArr:nextStepArr});
                 var divCeil = document.createElement('div');
-                var colorOfCeil = colorOfCeil==="black"?"white":"black";
+                var colorOfCeil = colorOfCeil==='black'?'white':'black';
                 if ((i-1)%8===0) {
-                    var colorOfCeil = colorOfCeil==="black"?"white":"black";
+                    var colorOfCeil = colorOfCeil==='black'?'white':'black';
                 }
-                divCeil.className = "chess__ceil chess__ceil--knight chess__ceil--" + colorOfCeil;
+                divCeil.className = 'chess__ceil chess__ceil--knight chess__ceil--' + colorOfCeil;
                 divBoard.appendChild(divCeil);
             };
             var divKnight = document.createElement('div');
-            divKnight.className = "chess__ceil chess__knight chess__knight--hidden";
+            divKnight.className = 'chess__ceil chess__knight chess__knight--hidden';
             divBoard.appendChild(divKnight);
             blockchess.appendChild(divBoard);
             cntChessBoard = divBoard;
@@ -158,7 +158,7 @@
             var row = Math.ceil(ceil/CHESS_SIZE);
             var col = (ceil-(row-1)*CHESS_SIZE);
            
-            //ходы "по горизонтали"
+            //ходы 'по горизонтали'
             if ((row-1)>=1) {
                 //левый верхний ход
                 if((col-2)>=1) {
@@ -183,7 +183,7 @@
                     steps.push(next);
                 }
             }
-            //ходы "по вертикали"
+            //ходы 'по вертикали'
             if ((row-2)>=1) {
                 //левый верхний ход
                 if((col-1)>=1) {
@@ -218,7 +218,7 @@
                 result = combinationCurr;
                 return;
             }
-            //сортируем клетки по "многоходовости". Конь шагает в самую "многоходовую" клетку 
+            //сортируем клетки по 'многоходовости'. Конь шагает в самую 'многоходовую' клетку 
             function sf (a,b) {
                 var bl = (board.filter(v => v.step == b)[0].stepsArr.length);
                 var al = board.filter(v => v.step == a)[0].stepsArr.length;

@@ -19,7 +19,7 @@ function chessQueens () {
     
     if (cntChessBoard) {
         cntChessBoard.remove();
-        inputComb.value = "";    
+        inputComb.value = '';    
     }
     
     const CHESS_SIZE = 8;
@@ -27,11 +27,11 @@ function chessQueens () {
 
     //выводит количество комбинаций
     function showResult(combinations) {
-        resultChessText.innerHTML = "Найдено комбинаций: " + combinations.length; 
+        resultChessText.innerHTML = 'Найдено комбинаций: ' + combinations.length; 
         if (combinations.length) {
-            resultChess.classList.add("chess__result--show");
+            resultChess.classList.add('chess__result--show');
         }
-        btnComb.addEventListener("click", showCombination);
+        btnComb.addEventListener('click', showCombination);
     }
     
     //рисует комбинацию на шахматной доске
@@ -42,27 +42,27 @@ function chessQueens () {
         }
                                 
         chessCeils.forEach(function(e) {
-            e.classList.remove("chess__ceil--red");
-            e.classList.remove("chess__queen");
+            e.classList.remove('chess__ceil--red');
+            e.classList.remove('chess__queen');
         })
 
         if (combinations[cmbNumber-1]) {
             combinations[cmbNumber-1].forEach( function(q) {
                 var ceil = chessCeils[q.ceil];
-                ceil.classList.add("chess__queen");
-                ceil.addEventListener("click", function(evt) { showBattlefield(evt,q) })
+                ceil.classList.add('chess__queen');
+                ceil.addEventListener('click', function(evt) { showBattlefield(evt,q) })
             })
         }
     };
 
-    //рисует "поле боя" ферзя
+    //рисует 'поле боя' ферзя
     function showBattlefield(evt,q) {
         chessCeils.forEach(function(e) {
-            e.classList.remove("chess__ceil--red");
+            e.classList.remove('chess__ceil--red');
         })
-        evt.target.classList.add("chess__ceil--red");
+        evt.target.classList.add('chess__ceil--red');
         q.battlefield.forEach(function(b) {
-            chessCeils[b].classList.add("chess__ceil--red");
+            chessCeils[b].classList.add('chess__ceil--red');
         })
     }
 
@@ -70,14 +70,14 @@ function chessQueens () {
     function initBoard() {
         var board = [];
         var divBoard = document.createElement('div');
-        divBoard.className = "chess__board";
+        divBoard.className = 'chess__board';
 
         for  (var i = 0; i< CHESS_SIZE; i++) {
             var row = [];
             for  (var j = 0; j< CHESS_SIZE; j++) {
                 row.push(i*CHESS_SIZE+j);
                 var divCeil = document.createElement('div');
-                divCeil.className = "chess__ceil " + ((i%2 + j%2)===1? "chess__ceil--black" : "chess__ceil--white");
+                divCeil.className = 'chess__ceil ' + ((i%2 + j%2)===1? 'chess__ceil--black' : 'chess__ceil--white');
                 divBoard.appendChild(divCeil);
             }
             board.push(row);    
@@ -89,7 +89,7 @@ function chessQueens () {
         return board;
     }
 
-    //поиск "поля боя" для ферзя
+    //поиск 'поля боя' для ферзя
     function disableCeils(ceilCurr) {
         var battlefield = [];
         
@@ -132,7 +132,7 @@ function chessQueens () {
         var rowCurr = board[0];
         for (var i = 0; i < rowCurr.length; i++) {
             var ceil = rowCurr[i];
-            //массив "поля боя" для ферзя ceil
+            //массив 'поля боя' для ферзя ceil
             var battleField = disableCeils(ceil);
             //удаляем с доски клетки
             var boardCurr = [];
@@ -156,13 +156,13 @@ function chessQueens () {
                 combinations.push(queensCurr);
                 continue;
             }
-            findCombinations(queensCurr,boardCurr,text + "     ",count+1); 
+            findCombinations(queensCurr,boardCurr,text + '     ',count+1); 
         }
         return;
     };
 
     var board = initBoard();
-    findCombinations([],board,"",1);
+    findCombinations([],board,'',1);
     showResult(combinations);
 }
 

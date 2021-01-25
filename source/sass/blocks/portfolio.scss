@@ -117,6 +117,7 @@
     &__item--link,
     &__item--task {
       width: 100%;
+      min-height: auto;
     }
   }
 }

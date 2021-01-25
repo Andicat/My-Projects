@@ -27,7 +27,7 @@
     }
 
     var timer;
-    const TENNIS_SIZE = window.matchMedia("(max-width: 768px)").matches?300:600;
+    const TENNIS_SIZE = window.matchMedia('(max-width: 768px)').matches?300:600;
     const SPEED = 5;
     const SIZES = {
         playgroundWidth: TENNIS_SIZE,
@@ -38,10 +38,10 @@
         scoreboardFontSize: TENNIS_SIZE*0.1,
     };
     const COLORS = {
-        playground: "#eae3d8",
-        playerLeft: "#3d677b",
-        playerRight: "#c28f48",
-        ball: "#9a4832",
+        playground: '#eae3d8',
+        playerLeft: '#3d677b',
+        playerRight: '#c28f48',
+        ball: '#9a4832',
     }
 
     //мячик
@@ -56,21 +56,21 @@
             this.height = height;
             this.speedX = speed;
             this.speedY = speed;
-            this.elem = document.createElement("div");
-            this.elem.style.width = this.width + "px";
-            this.elem.style.height = this.height + "px";
+            this.elem = document.createElement('div');
+            this.elem.style.width = this.width + 'px';
+            this.elem.style.height = this.height + 'px';
             this.elem.style.backgroundColor = color;
-            this.elem.style.position = "absolute";
-            this.elem.style.borderRadius = "50%";
-            this.elem.style.transform = "translate(-50%,-50%)";
+            this.elem.style.position = 'absolute';
+            this.elem.style.borderRadius = '50%';
+            this.elem.style.transform = 'translate(-50%,-50%)';
             cnt.appendChild(this.elem);
         };
 
         moveTo = function (posX,posY) {
             this.posX = posX;
             this.posY = posY;
-            this.elem.style.left = this.posX + "px";
-            this.elem.style.top = this.posY + "px";
+            this.elem.style.left = this.posX + 'px';
+            this.elem.style.top = this.posY + 'px';
         };
       
     }
@@ -86,21 +86,21 @@
         create = function(cnt,color,width,height) {
             this.width = width;
             this.height = height;
-            this.elem = document.createElement("div");
-            this.elem.classList.add("tennis__player");
-            this.elem.style.width = this.width + "px";
-            this.elem.style.height = this.height + "px";
+            this.elem = document.createElement('div');
+            this.elem.classList.add('tennis__player');
+            this.elem.style.width = this.width + 'px';
+            this.elem.style.height = this.height + 'px';
             this.elem.style.backgroundColor = color;
-            this.elem.style.borderRadius = this.width/2 + "px";
-            this.elem.style.position = "absolute";
+            this.elem.style.borderRadius = this.width/2 + 'px';
+            this.elem.style.position = 'absolute';
             cnt.appendChild(this.elem);
         };
 
         moveTo = function (posX, posY) {
             this.posX = posX;
             this.posY = posY;
-            this.elem.style.left = this.posX + "px";
-            this.elem.style.top = this.posY + "px";
+            this.elem.style.left = this.posX + 'px';
+            this.elem.style.top = this.posY + 'px';
         };
       
     }
@@ -114,28 +114,28 @@
         var scoreRight = 0;
 
         //создаем табло
-        var scoreboard = document.createElement("span");
-        scoreboard.classList.add("tennis__scoreboard");
-        scoreboard.style.fontSize = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.height = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.lineHeight = "normal";
+        var scoreboard = document.createElement('span');
+        scoreboard.classList.add('tennis__scoreboard');
+        scoreboard.style.fontSize = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.height = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.lineHeight = 'normal';
         cnt.appendChild(scoreboard);
         updateScore();
 
         //создаем корт
-        var tennis = document.createElement("div");
-        tennis.classList.add("tennis__playground");
-        tennis.style.width = pgWidth + "px";
-        tennis.style.height = pgHeight + "px";
+        var tennis = document.createElement('div');
+        tennis.classList.add('tennis__playground');
+        tennis.style.width = pgWidth + 'px';
+        tennis.style.height = pgHeight + 'px';
         tennis.style.backgroundColor = COLORS.playground;
         cnt.appendChild(tennis);
 
         //создаем кнопку старта
-        var btnStart = document.createElement("button");
-        btnStart.classList.add("tennis__start");
-        btnStart.textContent = "Start";
+        var btnStart = document.createElement('button');
+        btnStart.classList.add('tennis__start');
+        btnStart.textContent = 'Start';
         cnt.appendChild(btnStart);
-        btnStart.addEventListener("click", startGame);
+        btnStart.addEventListener('click', startGame);
         
         //создаем ракетку 1
         var playerLeft = new Player();
@@ -154,7 +154,7 @@
 
         //обновление табло
         function updateScore() {
-            scoreboard.textContent =  scoreLeft + ":" + scoreRight;
+            scoreboard.textContent =  scoreLeft + ':' + scoreRight;
         }
 
         //движение ракетки
@@ -181,7 +181,7 @@
         }
 
         //клавиши
-        window.addEventListener("keydown", function(evt) {
+        window.addEventListener('keydown', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = SPEED;
@@ -200,7 +200,7 @@
             };
         });
 
-        window.addEventListener("keyup", function(evt) {
+        window.addEventListener('keyup', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = 0;
@@ -288,7 +288,7 @@
 
     btnTennisDOM.addEventListener('click', function() {
         clearInterval(timer);
-        cntTennis.innerHTML = "";
+        cntTennis.innerHTML = '';
         renderTennisDOM(cntTennis);
     });
 })();

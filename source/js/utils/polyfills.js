@@ -16,7 +16,7 @@ const polyfills = () => {
       value: function(searchElement, fromIndex) {
 
         if (this == null) {
-          throw new TypeError('"this" is null or not defined');
+          throw new TypeError(''this' is null or not defined');
         }
 
         var o = Object(this);
