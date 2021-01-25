@@ -27,7 +27,7 @@
     }
 
     var timer;
-    const TENNIS_SIZE = window.matchMedia("(max-width: 768px)").matches?300:600;
+    const TENNIS_SIZE = window.matchMedia('(max-width: 768px)').matches?300:600;
     const SPEED = 5;
     const SIZES = {
         playgroundWidth: TENNIS_SIZE,
@@ -38,10 +38,10 @@
         scoreboardFontSize: TENNIS_SIZE*0.1,
     };
     const COLORS = {
-        playground: "#eae3d8",
-        playerLeft: "#d5a129",
-        playerRight: "#787132",
-        ball: "#9b4e23",
+        playground: '#eae3d8',
+        playerLeft: '#d5a129',
+        playerRight: '#787132',
+        ball: '#9b4e23',
     }
 
     //мячик
@@ -83,7 +83,7 @@
         draw = function() {
             this.cnt.strokeStyle = this.color;
             this.cnt.lineWidth = this.width;
-            this.cnt.lineCap = "round";
+            this.cnt.lineCap = 'round';
             this.cnt.beginPath();
             this.cnt.moveTo(this.posX,this.posY);
             this.cnt.lineTo(this.posX,this.posY + this.height);
@@ -100,28 +100,28 @@
         var scoreRight = 0;
 
         //создаем табло
-        var scoreboard = document.createElement("span");
-        scoreboard.classList.add("tennis__scoreboard");
-        scoreboard.style.fontSize = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.height = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.lineHeight = "normal";
+        var scoreboard = document.createElement('span');
+        scoreboard.classList.add('tennis__scoreboard');
+        scoreboard.style.fontSize = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.height = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.lineHeight = 'normal';
         cnt.appendChild(scoreboard);
         updateScore();
 
         //создаем канвас
-        var tennisCanvas = document.createElement("canvas");
-        tennisCanvas.classList.add("tennis__playground");
-        tennisCanvas.setAttribute("width",pgWidth);
-        tennisCanvas.setAttribute("height",pgHeight);
+        var tennisCanvas = document.createElement('canvas');
+        tennisCanvas.classList.add('tennis__playground');
+        tennisCanvas.setAttribute('width',pgWidth);
+        tennisCanvas.setAttribute('height',pgHeight);
         cnt.appendChild(tennisCanvas);
-        var context = tennisCanvas.getContext("2d");
+        var context = tennisCanvas.getContext('2d');
 
         //создаем кнопку старта
-        var btnStart = document.createElement("button");
-        btnStart.classList.add("tennis__start");
-        btnStart.textContent = "Start";
+        var btnStart = document.createElement('button');
+        btnStart.classList.add('tennis__start');
+        btnStart.textContent = 'Start';
         cnt.appendChild(btnStart);
-        btnStart.addEventListener("click", startGame);
+        btnStart.addEventListener('click', startGame);
 
         //создаем левую ракетку
         var playerLeft = new Player(context,COLORS.playerLeft,SIZES.playerWidth,SIZES.playerHeight,SIZES.playerWidth/2,pgHeight/2 - SIZES.playerHeight/2);
@@ -132,7 +132,7 @@
       
         //обновление табло
         function updateScore() {
-            scoreboard.textContent =  scoreLeft + ":" + scoreRight;
+            scoreboard.textContent =  scoreLeft + ':' + scoreRight;
         }
 
         //создание рисунка на канвасе
@@ -171,7 +171,7 @@
         }
 
         //клавиши
-        window.addEventListener("keydown", function(evt) {
+        window.addEventListener('keydown', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = SPEED;
@@ -190,7 +190,7 @@
             };
         });
 
-        window.addEventListener("keyup", function(evt) {
+        window.addEventListener('keyup', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = 0;
@@ -281,7 +281,7 @@
 
     btnTennisSVG.addEventListener('click', function() {
         clearInterval(timer);
-        cntTennis.innerHTML = "";
+        cntTennis.innerHTML = '';
         renderTennisSVG(cntTennis);
     });
 })();

@@ -36,13 +36,13 @@
         //выводит результат
         function showResult(result) {
             if (result.length) {
-                btnChess.classList.add("hidden");
-                textChessResult.innerHTML = "Путь найден!"; 
-                resultChess.classList.add("chess__result--show");
+                btnChess.classList.add('hidden');
+                textChessResult.innerHTML = 'Путь найден!'; 
+                resultChess.classList.add('chess__result--show');
                 result.forEach(function (ceil,i) {
                     chessCeils[ceil-1].innerHTML = i+1;
                 });
-                btnGoKnight.addEventListener("click", showKnightWalk);
+                btnGoKnight.addEventListener('click', showKnightWalk);
             }
         }
 
@@ -71,14 +71,14 @@
                         i++;
                     }
                     if (!result[i]) {
-                        ceil.classList.add("chess__ceil--red");
+                        ceil.classList.add('chess__ceil--red');
                     }
                 }
                 
                 if (newCeil) {
                     //определим начально направление хода коня
-                    chessCeils[result[i-1]-1].style.fontSize = "";
-                    chessCeils[result[i-1]-1].classList.add("chess__ceil--red");
+                    chessCeils[result[i-1]-1].style.fontSize = '';
+                    chessCeils[result[i-1]-1].classList.add('chess__ceil--red');
                     var row = Math.abs(ceil.offsetLeft - knight.offsetLeft);
                     var col = Math.abs(ceil.offsetTop - knight.offsetTop);
                     goRow = (row > col) ? true: false;    
@@ -109,12 +109,12 @@
         
         //Рисует путь коня по шахматной доске
         function showKnightWalk() {
-            knight.style.left = ""; 
-            knight.style.top = ""; 
-            knight.classList.remove("chess__knight--hidden");
+            knight.style.left = ''; 
+            knight.style.top = ''; 
+            knight.classList.remove('chess__knight--hidden');
             chessCeils.forEach(function(e) {
-                e.classList.remove("chess__ceil--red");
-                e.style.fontSize = "0px";
+                e.classList.remove('chess__ceil--red');
+                e.style.fontSize = '0px';
             })  
             clearTimeout(timerId);
             step(1,true); 
@@ -127,21 +127,21 @@
             if (cntChessBoard) {
                 blockchess.removeChild(cntChessBoard);
             }
-            divBoard.className = "chess__board chess__board--knight";
+            divBoard.className = 'chess__board chess__board--knight';
 
             for  (var i = 1; i <= CHESS_SIZE*CHESS_SIZE; i++) {
                 var nextStepArr = nextSteps(i);
                 board.push({step:i, stepsArr:nextStepArr});
                 var divCeil = document.createElement('div');
-                var colorOfCeil = colorOfCeil==="black"?"white":"black";
+                var colorOfCeil = colorOfCeil==='black'?'white':'black';
                 if ((i-1)%8===0) {
-                    var colorOfCeil = colorOfCeil==="black"?"white":"black";
+                    var colorOfCeil = colorOfCeil==='black'?'white':'black';
                 }
-                divCeil.className = "chess__ceil chess__ceil--knight chess__ceil--" + colorOfCeil;
+                divCeil.className = 'chess__ceil chess__ceil--knight chess__ceil--' + colorOfCeil;
                 divBoard.appendChild(divCeil);
             };
             var divKnight = document.createElement('div');
-            divKnight.className = "chess__ceil chess__knight chess__knight--hidden";
+            divKnight.className = 'chess__ceil chess__knight chess__knight--hidden';
             divBoard.appendChild(divKnight);
             blockchess.appendChild(divBoard);
             cntChessBoard = divBoard;
@@ -158,7 +158,7 @@
             var row = Math.ceil(ceil/CHESS_SIZE);
             var col = (ceil-(row-1)*CHESS_SIZE);
            
-            //ходы "по горизонтали"
+            //ходы 'по горизонтали'
             if ((row-1)>=1) {
                 //левый верхний ход
                 if((col-2)>=1) {
@@ -183,7 +183,7 @@
                     steps.push(next);
                 }
             }
-            //ходы "по вертикали"
+            //ходы 'по вертикали'
             if ((row-2)>=1) {
                 //левый верхний ход
                 if((col-1)>=1) {
@@ -218,7 +218,7 @@
                 result = combinationCurr;
                 return;
             }
-            //сортируем клетки по "многоходовости". Конь шагает в самую "многоходовую" клетку 
+            //сортируем клетки по 'многоходовости'. Конь шагает в самую 'многоходовую' клетку 
             function sf (a,b) {
                 var bl = (board.filter(v => v.step == b)[0].stepsArr.length);
                 var al = board.filter(v => v.step == a)[0].stepsArr.length;
@@ -280,7 +280,7 @@ function chessQueens () {
     
     if (cntChessBoard) {
         cntChessBoard.remove();
-        inputComb.value = "";    
+        inputComb.value = '';    
     }
     
     const CHESS_SIZE = 8;
@@ -288,11 +288,11 @@ function chessQueens () {
 
     //выводит количество комбинаций
     function showResult(combinations) {
-        resultChessText.innerHTML = "Найдено комбинаций: " + combinations.length; 
+        resultChessText.innerHTML = 'Найдено комбинаций: ' + combinations.length; 
         if (combinations.length) {
-            resultChess.classList.add("chess__result--show");
+            resultChess.classList.add('chess__result--show');
         }
-        btnComb.addEventListener("click", showCombination);
+        btnComb.addEventListener('click', showCombination);
     }
     
     //рисует комбинацию на шахматной доске
@@ -303,27 +303,27 @@ function chessQueens () {
         }
                                 
         chessCeils.forEach(function(e) {
-            e.classList.remove("chess__ceil--red");
-            e.classList.remove("chess__queen");
+            e.classList.remove('chess__ceil--red');
+            e.classList.remove('chess__queen');
         })
 
         if (combinations[cmbNumber-1]) {
             combinations[cmbNumber-1].forEach( function(q) {
                 var ceil = chessCeils[q.ceil];
-                ceil.classList.add("chess__queen");
-                ceil.addEventListener("click", function(evt) { showBattlefield(evt,q) })
+                ceil.classList.add('chess__queen');
+                ceil.addEventListener('click', function(evt) { showBattlefield(evt,q) })
             })
         }
     };
 
-    //рисует "поле боя" ферзя
+    //рисует 'поле боя' ферзя
     function showBattlefield(evt,q) {
         chessCeils.forEach(function(e) {
-            e.classList.remove("chess__ceil--red");
+            e.classList.remove('chess__ceil--red');
         })
-        evt.target.classList.add("chess__ceil--red");
+        evt.target.classList.add('chess__ceil--red');
         q.battlefield.forEach(function(b) {
-            chessCeils[b].classList.add("chess__ceil--red");
+            chessCeils[b].classList.add('chess__ceil--red');
         })
     }
 
@@ -331,14 +331,14 @@ function chessQueens () {
     function initBoard() {
         var board = [];
         var divBoard = document.createElement('div');
-        divBoard.className = "chess__board";
+        divBoard.className = 'chess__board';
 
         for  (var i = 0; i< CHESS_SIZE; i++) {
             var row = [];
             for  (var j = 0; j< CHESS_SIZE; j++) {
                 row.push(i*CHESS_SIZE+j);
                 var divCeil = document.createElement('div');
-                divCeil.className = "chess__ceil " + ((i%2 + j%2)===1? "chess__ceil--black" : "chess__ceil--white");
+                divCeil.className = 'chess__ceil ' + ((i%2 + j%2)===1? 'chess__ceil--black' : 'chess__ceil--white');
                 divBoard.appendChild(divCeil);
             }
             board.push(row);    
@@ -350,7 +350,7 @@ function chessQueens () {
         return board;
     }
 
-    //поиск "поля боя" для ферзя
+    //поиск 'поля боя' для ферзя
     function disableCeils(ceilCurr) {
         var battlefield = [];
         
@@ -393,7 +393,7 @@ function chessQueens () {
         var rowCurr = board[0];
         for (var i = 0; i < rowCurr.length; i++) {
             var ceil = rowCurr[i];
-            //массив "поля боя" для ферзя ceil
+            //массив 'поля боя' для ферзя ceil
             var battleField = disableCeils(ceil);
             //удаляем с доски клетки
             var boardCurr = [];
@@ -417,13 +417,13 @@ function chessQueens () {
                 combinations.push(queensCurr);
                 continue;
             }
-            findCombinations(queensCurr,boardCurr,text + "     ",count+1); 
+            findCombinations(queensCurr,boardCurr,text + '     ',count+1); 
         }
         return;
     };
 
     var board = initBoard();
-    findCombinations([],board,"",1);
+    findCombinations([],board,'',1);
     showResult(combinations);
 }
 
@@ -435,7 +435,7 @@ if (btnChess) {
 
 })();
 
-"use strict";
+'use strict';
 
 //======================================CLOCK==================================
 /*
@@ -445,15 +445,15 @@ if (btnChess) {
 (function () {
 
     try {
-        var blockClock = document.querySelector(".clock");
-        var btnClockCanvas = blockClock.querySelector(".clock__button-canvas");
-        var cntClock = blockClock.querySelector(".clock__container");
+        var blockClock = document.querySelector('.clock');
+        var btnClockCanvas = blockClock.querySelector('.clock__button-canvas');
+        var cntClock = blockClock.querySelector('.clock__container');
     } catch {
         return;
     }
 
     var timer;
-    const CLOCK_SIZE = window.matchMedia("(max-width: 768px)").matches ? 300 : 500;
+    const CLOCK_SIZE = window.matchMedia('(max-width: 768px)').matches ? 300 : 500;
     const HOURS = 12;
     const SIZES = {
         clock: CLOCK_SIZE,
@@ -466,28 +466,28 @@ if (btnChess) {
         arrowHourWidth: CLOCK_SIZE*0.03,
     };
     const COLORS = {
-        clock: "#ee9c77",
-        number: "#e7723c",
-        arrow: "black",
-        center: "brown",
+        clock: '#ee9c77',
+        number: '#e7723c',
+        arrow: 'black',
+        center: 'brown',
     }
 
     // дополняет строку слева нулями до нужной длины len 
     function str0l(val,len) {
         var strVal = val.toString();
         while (strVal.length < len) {
-            strVal = "0" + strVal;
+            strVal = '0' + strVal;
         }
         return strVal;
     }
 
     function initClockCanvas(cntClock) {
 
-        var clockCanvas = document.createElement("canvas");
-        clockCanvas.setAttribute("width",SIZES.clock);
-        clockCanvas.setAttribute("height",SIZES.clock);
+        var clockCanvas = document.createElement('canvas');
+        clockCanvas.setAttribute('width',SIZES.clock);
+        clockCanvas.setAttribute('height',SIZES.clock);
         cntClock.appendChild(clockCanvas);
-        var context = clockCanvas.getContext("2d");
+        var context = clockCanvas.getContext('2d');
 
         var clockCenterX = SIZES.clock/2;
         var clockCenterY = SIZES.clock/2;
@@ -500,7 +500,7 @@ if (btnChess) {
             var arrowX2 = clockCenterX + (arrowHeight*0.95)*Math.sin(angle);
             var arrowY2 = clockCenterY - (arrowHeight*0.95)*Math.cos(angle);
             context.lineWidth = arrowWidth;
-            context.lineCap = "round";
+            context.lineCap = 'round';
             context.beginPath();
             context.moveTo(arrowX1,arrowY1);
             context.lineTo(arrowX2,arrowY2);
@@ -518,7 +518,7 @@ if (btnChess) {
             var secAngle = (360/60)*sec;
             var minAngle = (360/60)*min + (360/60/60)*sec;
             var hourAngle = (360/HOURS)*hour + (360/HOURS/60)*min;
-            var timeDigital =  str0l(hour,2) + ":" + str0l(min,2) + ":" + str0l(sec,2);
+            var timeDigital =  str0l(hour,2) + ':' + str0l(min,2) + ':' + str0l(sec,2);
         
             //рисуем часы
             context.fillStyle = COLORS.clock;
@@ -540,7 +540,7 @@ if (btnChess) {
                 context.fill();
                 //рисуем цифры в кружочках
                 context.fillStyle = COLORS.arrow;
-                context.font = SIZES.font + "px Roboto";
+                context.font = SIZES.font + 'px Roboto';
                 var textMeasures = context.measureText(i);
                 var textWidth = textMeasures.width;
                 var textHeight = textMeasures.actualBoundingBoxAscent + textMeasures.actualBoundingBoxDescent;
@@ -563,7 +563,7 @@ if (btnChess) {
             
             //рисуем цифровые часы
             context.fillStyle = COLORS.arrow;
-            context.font ="italic " + context.font;
+            context.font ='italic ' + context.font;
             var textMeasures = context.measureText(timeDigital);
             var textWidth = textMeasures.width;
             context.fillText(timeDigital, SIZES.clock/2 - textWidth/2, Math.round(SIZES.clock/1.3));
@@ -574,9 +574,9 @@ if (btnChess) {
         drawClockCanvas();
     }
 
-    btnClockCanvas.addEventListener("click", function() {
+    btnClockCanvas.addEventListener('click', function() {
         clearInterval(timer);
-        cntClock.innerHTML = "";
+        cntClock.innerHTML = '';
         initClockCanvas(cntClock);
     });
 })();
@@ -605,7 +605,7 @@ if (btnChess) {
     }
 
     var timer;
-    const CLOCK_SIZE = window.matchMedia("(max-width: 768px)").matches?300:500;
+    const CLOCK_SIZE = window.matchMedia('(max-width: 768px)').matches?300:500;
     const ARROW_SEC_LENGHT = CLOCK_SIZE*0.4;
     const ARROW_MIN_LENGHT = CLOCK_SIZE*0.35;
     const ARROW_HOUR_LENGHT = CLOCK_SIZE*0.3;
@@ -635,9 +635,9 @@ if (btnChess) {
             var minAngle = (360/60)*min + (360/60/60)*sec;
             var hourAngle = (360/12)*hour + (360/12/60)*min;
             digital.textContent =  str0l(hour,2) + ':' + str0l(min,2) + ':' + str0l(sec,2);
-            arrowSec.style.transform = "rotate(" + secAngle + "deg)";
-            arrowMin.style.transform = "rotate(" + minAngle + "deg)";
-            arrowHour.style.transform = "rotate(" + hourAngle + "deg)";
+            arrowSec.style.transform = 'rotate(' + secAngle + 'deg)';
+            arrowMin.style.transform = 'rotate(' + minAngle + 'deg)';
+            arrowHour.style.transform = 'rotate(' + hourAngle + 'deg)';
             timer = setTimeout(runTime,1000);
         };
 
@@ -669,29 +669,29 @@ if (btnChess) {
 
         //создание стрелки
         function createArrow (arrowWidth, arrowHeight) {
-            var arrow = document.createElement("div");
-            arrow.classList.add("clock__arrow");
-            arrow.style.width = arrowWidth + "px";
-            arrow.style.borderRadius = arrowWidth + "px";
-            arrow.style.height = (arrowHeight + arrowWidth) + "px";
-            arrow.style.transformOrigin = Math.round(arrowWidth/2) + "px " + (arrowHeight + arrowWidth)*0.95 + "px";
+            var arrow = document.createElement('div');
+            arrow.classList.add('clock__arrow');
+            arrow.style.width = arrowWidth + 'px';
+            arrow.style.borderRadius = arrowWidth + 'px';
+            arrow.style.height = (arrowHeight + arrowWidth) + 'px';
+            arrow.style.transformOrigin = Math.round(arrowWidth/2) + 'px ' + (arrowHeight + arrowWidth)*0.95 + 'px';
             return arrow;
         }
 
         //создаем часы
-        var clock = document.createElement("div");
-        clock.classList.add("clock__figure");
-        clock.style.width = CLOCK_SIZE + "px";
-        clock.style.height = CLOCK_SIZE + "px";
+        var clock = document.createElement('div');
+        clock.classList.add('clock__figure');
+        clock.style.width = CLOCK_SIZE + 'px';
+        clock.style.height = CLOCK_SIZE + 'px';
         cnt.appendChild(clock);
         
         //создаем циферблат
         for (var i = 1; i <= 12; i++) {
-            var nmb = document.createElement("div");
-            nmb.classList.add("clock__number");
-            nmb.style.width = CLOCK_SIZE/10 + "px";
-            nmb.style.height = CLOCK_SIZE/10 + "px";
-            nmb.style.fontSize = CLOCK_SIZE/20 + "px";
+            var nmb = document.createElement('div');
+            nmb.classList.add('clock__number');
+            nmb.style.width = CLOCK_SIZE/10 + 'px';
+            nmb.style.height = CLOCK_SIZE/10 + 'px';
+            nmb.style.fontSize = CLOCK_SIZE/20 + 'px';
             nmb.textContent = i;
             clock.appendChild(nmb);
             posNmb(clock,nmb,i);
@@ -709,24 +709,24 @@ if (btnChess) {
         posArrow(clock,arrowSec);
 
         //создаем центр
-        var center = document.createElement("div");
-        center.style.width = ARROW_SEC_WIDTH + "px";
-        center.style.height = ARROW_SEC_WIDTH + "px";
-        center.style.backgroundColor = "brown";
-        center.style.position = "absolute";
-        center.style.borderRadius = "50%";
-        center.style.top = (CLOCK_SIZE/2) + "px";
-        center.style.left = (CLOCK_SIZE/2) + "px";
-        center.style.transform = "translate(-50%,-50%)";
+        var center = document.createElement('div');
+        center.style.width = ARROW_SEC_WIDTH + 'px';
+        center.style.height = ARROW_SEC_WIDTH + 'px';
+        center.style.backgroundColor = 'brown';
+        center.style.position = 'absolute';
+        center.style.borderRadius = '50%';
+        center.style.top = (CLOCK_SIZE/2) + 'px';
+        center.style.left = (CLOCK_SIZE/2) + 'px';
+        center.style.transform = 'translate(-50%,-50%)';
         clock.appendChild(center);
 
         //создаем цифровые часы
-        var digital = document.createElement("div");
-        digital.classList.add("clock__digital");
-        digital.style.top = (CLOCK_SIZE - CLOCK_SIZE/10*3) + "px";
-        digital.style.left = CLOCK_SIZE/2 + "px";
-        digital.style.fontSize = CLOCK_SIZE/20 + "px";
-        digital.style.transform = "translateX(-50%)";
+        var digital = document.createElement('div');
+        digital.classList.add('clock__digital');
+        digital.style.top = (CLOCK_SIZE - CLOCK_SIZE/10*3) + 'px';
+        digital.style.left = CLOCK_SIZE/2 + 'px';
+        digital.style.fontSize = CLOCK_SIZE/20 + 'px';
+        digital.style.transform = 'translateX(-50%)';
         clock.appendChild(digital);
         
         //запускаем часы
@@ -766,10 +766,10 @@ if (btnChess) {
             var arCenterX2 = clockCenterX + (arLenght*0.95)*Math.sin(angle);
             var arCenterY2 = clockCenterY - (arLenght*0.95)*Math.cos(angle);
 
-            ar.setAttribute("x1", Math.round(arCenterX1));
-            ar.setAttribute("y1", Math.round(arCenterY1));
-            ar.setAttribute("x2", Math.round(arCenterX2));
-            ar.setAttribute("y2", Math.round(arCenterY2));
+            ar.setAttribute('x1', Math.round(arCenterX1));
+            ar.setAttribute('y1', Math.round(arCenterY1));
+            ar.setAttribute('x2', Math.round(arCenterX2));
+            ar.setAttribute('y2', Math.round(arCenterY2));
         }
 
         //позиционирование цифры
@@ -786,52 +786,52 @@ if (btnChess) {
 
             var nmbSizes = nmb.getBoundingClientRect();
 
-            nmb.setAttribute("x", Math.round(nmbCenterX - nmbSizes.width/2));
-            nmb.setAttribute("y", Math.round(nmbCenterY - nmbSizes.height/2 ));
+            nmb.setAttribute('x', Math.round(nmbCenterX - nmbSizes.width/2));
+            nmb.setAttribute('y', Math.round(nmbCenterY - nmbSizes.height/2 ));
         }
 
         //создание стрелки
         function createArrow (arrowWidth, arrowHeight) {
-            var arrow = document.createElementNS("http://www.w3.org/2000/svg","line");
-            arrow.setAttribute("x1",CLOCK_SIZE/2);
-            arrow.setAttribute("y1",CLOCK_SIZE/2);
-            arrow.setAttribute("x2",CLOCK_SIZE/2);
-            arrow.setAttribute("y2",CLOCK_SIZE/2 - arrowHeight);
-            arrow.setAttribute("stroke-width",arrowWidth);
-            arrow.setAttribute("stroke-linecap","round");
-            arrow.setAttribute("stroke","black");
+            var arrow = document.createElementNS('http://www.w3.org/2000/svg','line');
+            arrow.setAttribute('x1',CLOCK_SIZE/2);
+            arrow.setAttribute('y1',CLOCK_SIZE/2);
+            arrow.setAttribute('x2',CLOCK_SIZE/2);
+            arrow.setAttribute('y2',CLOCK_SIZE/2 - arrowHeight);
+            arrow.setAttribute('stroke-width',arrowWidth);
+            arrow.setAttribute('stroke-linecap','round');
+            arrow.setAttribute('stroke','black');
             return arrow;
         }
 
         //создаем часы
-        var clockSvg = document.createElementNS("http://www.w3.org/2000/svg","svg");
-        clockSvg.setAttribute("width",CLOCK_SIZE);
-        clockSvg.setAttribute("height",CLOCK_SIZE);
-        clockSvg.setAttribute("xmlns","http://www.w3.org/2000/svg");
+        var clockSvg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+        clockSvg.setAttribute('width',CLOCK_SIZE);
+        clockSvg.setAttribute('height',CLOCK_SIZE);
+        clockSvg.setAttribute('xmlns','http://www.w3.org/2000/svg');
         cnt.appendChild(clockSvg);
-        var clock = document.createElementNS("http://www.w3.org/2000/svg","circle");
-        clock.classList.add("clock__figure");
-        clock.setAttribute("cx",CLOCK_SIZE/2);
-        clock.setAttribute("cy",CLOCK_SIZE/2);
-        clock.setAttribute("r",CLOCK_SIZE/2);
+        var clock = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        clock.classList.add('clock__figure');
+        clock.setAttribute('cx',CLOCK_SIZE/2);
+        clock.setAttribute('cy',CLOCK_SIZE/2);
+        clock.setAttribute('r',CLOCK_SIZE/2);
         clockSvg.appendChild(clock);
         
         //создаем циферблат
         for (var i = 1; i <= 12; i++) {
-            var nmbGroup = document.createElementNS("http://www.w3.org/2000/svg","svg");
-            nmbGroup.classList.add("clock__number");
-            nmbGroup.setAttribute("width",CLOCK_SIZE/10);
-            nmbGroup.setAttribute("height",CLOCK_SIZE/10);
-            var nmbCircle = document.createElementNS("http://www.w3.org/2000/svg","circle");
-            nmbCircle.setAttribute("cx",CLOCK_SIZE/20);
-            nmbCircle.setAttribute("cy",CLOCK_SIZE/20);
-            nmbCircle.setAttribute("r",CLOCK_SIZE/20);
-            var nmbText = document.createElementNS("http://www.w3.org/2000/svg","text");
-            nmbText.setAttribute("x",CLOCK_SIZE/20);
-            nmbText.setAttribute("y",CLOCK_SIZE/20*1.35);
-            nmbText.setAttribute("text-anchor","middle");
-            nmbText.setAttribute("font-size",CLOCK_SIZE/20);
-            nmbText.setAttribute("fill","black");
+            var nmbGroup = document.createElementNS('http://www.w3.org/2000/svg','svg');
+            nmbGroup.classList.add('clock__number');
+            nmbGroup.setAttribute('width',CLOCK_SIZE/10);
+            nmbGroup.setAttribute('height',CLOCK_SIZE/10);
+            var nmbCircle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+            nmbCircle.setAttribute('cx',CLOCK_SIZE/20);
+            nmbCircle.setAttribute('cy',CLOCK_SIZE/20);
+            nmbCircle.setAttribute('r',CLOCK_SIZE/20);
+            var nmbText = document.createElementNS('http://www.w3.org/2000/svg','text');
+            nmbText.setAttribute('x',CLOCK_SIZE/20);
+            nmbText.setAttribute('y',CLOCK_SIZE/20*1.35);
+            nmbText.setAttribute('text-anchor','middle');
+            nmbText.setAttribute('font-size',CLOCK_SIZE/20);
+            nmbText.setAttribute('fill','black');
             nmbText.textContent = i;
             nmbGroup.appendChild(nmbCircle);
             nmbGroup.appendChild(nmbText);
@@ -848,20 +848,20 @@ if (btnChess) {
         clockSvg.appendChild(arrowSec);
 
         //создаем центр
-        var center = document.createElementNS("http://www.w3.org/2000/svg","circle");
-        center.setAttribute("cx",CLOCK_SIZE/2);
-        center.setAttribute("cy",CLOCK_SIZE/2);
-        center.setAttribute("r",ARROW_SEC_WIDTH/2);
-        center.setAttribute("fill","brown");
+        var center = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        center.setAttribute('cx',CLOCK_SIZE/2);
+        center.setAttribute('cy',CLOCK_SIZE/2);
+        center.setAttribute('r',ARROW_SEC_WIDTH/2);
+        center.setAttribute('fill','brown');
         clockSvg.appendChild(center);
         
         //создаем цифровые часы
-        var digital = document.createElementNS("http://www.w3.org/2000/svg","text");
-        digital.setAttribute("x",CLOCK_SIZE/2);
-        digital.setAttribute("y",CLOCK_SIZE/1.35);
-        digital.setAttribute("text-anchor","middle");
-        digital.setAttribute("font-size",CLOCK_SIZE/20);
-        digital.setAttribute("fill","black");
+        var digital = document.createElementNS('http://www.w3.org/2000/svg','text');
+        digital.setAttribute('x',CLOCK_SIZE/2);
+        digital.setAttribute('y',CLOCK_SIZE/1.35);
+        digital.setAttribute('text-anchor','middle');
+        digital.setAttribute('font-size',CLOCK_SIZE/20);
+        digital.setAttribute('fill','black');
         clockSvg.appendChild(digital);
         
         //запускаем часы
@@ -870,14 +870,14 @@ if (btnChess) {
 
     btnClockDOM.addEventListener('click', function() {
         clearInterval(timer);
-        cntClock.innerHTML = "";
+        cntClock.innerHTML = '';
         //const CLOCK_SIZE = cntClock.offsetWidth;
         renderClockDOM(cntClock);
     });
 
     btnClockSVG.addEventListener('click', function() {
         clearInterval(timer);
-        cntClock.innerHTML = "";
+        cntClock.innerHTML = '';
         //const CLOCK_SIZE = cntClock.offsetWidth;
         renderClockSVG(cntClock);
     });
@@ -926,20 +926,20 @@ E2+
 
     function onLoadDoc() {
         for (var i = imageList.length-1; i >= 0; i--) {
-            imageList[i].style.top = imageList[i].offsetTop + "px";
-            imageList[i].style.left = imageList[i].offsetLeft + "px";
-            imageList[i].style.position = "absolute";
-            imageList[i].classList.add("drag-drop__image--drag");
-            imageList[i].setAttribute("data-dragged",true);
+            imageList[i].style.top = imageList[i].offsetTop + 'px';
+            imageList[i].style.left = imageList[i].offsetLeft + 'px';
+            imageList[i].style.position = 'absolute';
+            imageList[i].classList.add('drag-drop__image--drag');
+            imageList[i].setAttribute('data-dragged',true);
         }
         //вешаем обработчики событий на контэйнер
-        cntImages.addEventListener("mousedown", startMove);
+        cntImages.addEventListener('mousedown', startMove);
         cntImages.addEventListener('touchstart',startMove);
     }
     
     function startMove(evt) {
         //если эта одна из картинок, то начинаем перетаскивание
-        if (evt.target.getAttribute("data-dragged")) {
+        if (evt.target.getAttribute('data-dragged')) {
             evt.preventDefault();
             if (evt instanceof TouchEvent) {
                 evt = evt.changedTouches[0];
@@ -992,8 +992,8 @@ E2+
         var leftShift = Math.max(image.offsetLeft + mouseShift.x,0);
         var topShift = Math.max(image.offsetTop + mouseShift.y,0);
         //перемещаем объект
-        image.style.top = Math.min(topShift, limits.bottom) + "px";
-        image.style.left = Math.min(leftShift, limits.right) + "px";
+        image.style.top = Math.min(topShift, limits.bottom) + 'px';
+        image.style.left = Math.min(leftShift, limits.right) + 'px';
     }
 
     function endMove(evt) {
@@ -1013,9 +1013,9 @@ E2+
 G+
 На экране - 9 этажей дома и лифт.
 Количество этажей дома должно настраиваться в программе.
-На каждом этаже - две кнопки для вызова лифта, "вверх" и "вниз", которые
+На каждом этаже - две кнопки для вызова лифта, 'вверх' и 'вниз', которые
 подсвечиваются, если нажаты мышью.
-В лифте - кнопки с номерами этажей, "1"-"9", которые подсвечиваются, если
+В лифте - кнопки с номерами этажей, '1'-'9', которые подсвечиваются, если
 нажаты мышью.
 Одновременно может быть нажато несколько кнопок на разных этажах
 и несколько кнопок внутри лифта.
@@ -1026,7 +1026,7 @@ G+
 1. Если лифт стоит, он поедет в ту сторону, откуда вызван первой же нажатой
    кнопкой.
 2. Если лифт едет вверх, он будет ехать вверх, пока есть кого подбирать
-   по пути вверх (т.е. этажи, где нажата кнопка "вверх")
+   по пути вверх (т.е. этажи, где нажата кнопка 'вверх')
    или есть кого высаживать (т.е. в нём нажаты кнопки верхних этажей).
    Как только больше некого подбирать или высаживать по пути вверх,
    лифт начинает ехать вниз (если опять же есть кого подбирать/высаживать
@@ -1052,7 +1052,7 @@ G+
     var FLATS = 9;
     var PASSENGERS = 10;
 
-    var taskModal = document.getElementById("task-elevator");
+    var taskModal = document.getElementById('task-elevator');
     
     class House {
 
@@ -1067,7 +1067,7 @@ G+
             var activeFlats = {};
             var nextFlats = [];
             var timerId;
-            var direction = "";
+            var direction = '';
             var flatCurr = 1;
             var elevator;
             var nextStop;
@@ -1077,30 +1077,30 @@ G+
             //остановка лифта
             function openElevator(flat) {
                 //открываем двери лифта
-                elevator.classList.add("house__elevator--open");
+                elevator.classList.add('house__elevator--open');
                 //после того как откроется лифт
                 setTimeout(() => {
                     //есть кого высаживать?
-                    var personsElevator = elevator.querySelectorAll(".person");
+                    var personsElevator = elevator.querySelectorAll('.person');
                     personsElevator.forEach(p => {
-                        var personDestination = p.getAttribute("data-destination");
+                        var personDestination = p.getAttribute('data-destination');
                         if (Number(personDestination)===flatCurr) {
                             elevator.removeChild(p);
                         }
                     });
                     //забираем пассажиров и нажимаем кнопки лифта (везем их куда им нужно)
-                    var persons = flat.querySelectorAll(".person");
+                    var persons = flat.querySelectorAll('.person');
                     persons.forEach(p => {
-                        var personDirection = p.getAttribute("data-direction");
-                        var personDestination = p.getAttribute("data-destination");
+                        var personDirection = p.getAttribute('data-direction');
+                        var personDestination = p.getAttribute('data-destination');
                         //забираем всех кому по пути или всех, если это
                         if (direction===personDirection) {
-                            var elevatorButton = document.getElementById("elevator-" + personDestination);
+                            var elevatorButton = document.getElementById('elevator-' + personDestination);
                             elevatorButton.click();
                             flat.removeChild(p);
                             elevator.appendChild(p);
                         } else if (nextFlats.length===0) {
-                            var elevatorButton = document.getElementById("elevator-" + personDestination);
+                            var elevatorButton = document.getElementById('elevator-' + personDestination);
                             elevatorButton.click();
                             flat.removeChild(p);
                             elevator.appendChild(p);
@@ -1110,7 +1110,7 @@ G+
 
                 //закрываем двери через секунду
                 setTimeout(() => {
-                    elevator.classList.remove("house__elevator--open");
+                    elevator.classList.remove('house__elevator--open');
                     continueMove();
                 }, 1000);
             }
@@ -1120,32 +1120,32 @@ G+
 
                 //этажи впереди по направлению
                 nextFlats = Object.keys(activeFlats).filter( function(f) {
-                    if (direction==="up" && f > flatCurr) {
+                    if (direction==='up' && f > flatCurr) {
                         return true;
                     };
-                    if (direction==="down" && f < flatCurr) {
+                    if (direction==='down' && f < flatCurr) {
                         return true;
                     };
                     return false;
-                }).sort( function(a,b) { return (direction==="up"?a-b:b-a);});
+                }).sort( function(a,b) { return (direction==='up'?a-b:b-a);});
 
                 if (nextFlats.length > 0) {
-                    nextStop = elevator.offsetTop + (direction==="up"?-elevatorHeight:+elevatorHeight);
-                    flatCurr = direction==="up"?flatCurr+1:flatCurr-1;
+                    nextStop = elevator.offsetTop + (direction==='up'?-elevatorHeight:+elevatorHeight);
+                    flatCurr = direction==='up'?flatCurr+1:flatCurr-1;
                     moveElevator(50); 
                     return;
                 }
                 //меняем направление и едем в другую сторону
                 if (Object.keys(activeFlats).length > 0) {
-                    direction = direction==="up"?"down":"up";
-                    nextStop = elevator.offsetTop + (direction==="up"?-elevatorHeight:+elevatorHeight);
-                    flatCurr = direction==="up"?flatCurr+1:flatCurr-1;
+                    direction = direction==='up'?'down':'up';
+                    nextStop = elevator.offsetTop + (direction==='up'?-elevatorHeight:+elevatorHeight);
+                    flatCurr = direction==='up'?flatCurr+1:flatCurr-1;
                     moveElevator(50);
                     return;
                 }
                 //останавливаемся
                 if (Object.keys(activeFlats).length===0) {
-                    direction = "";
+                    direction = '';
                     return;
                 }
             }
@@ -1154,41 +1154,41 @@ G+
             function moveElevator (speed) {
                 clearTimeout(timerId);
                 //проверим не закрыто ли окно с задачей
-                if (!taskModal.classList.contains("modal--show")) {
-                    cntHouse.innerHTML = "";
+                if (!taskModal.classList.contains('modal--show')) {
+                    cntHouse.innerHTML = '';
                     return;
                 }
                     
                 timerId = setTimeout(function () {
                     //доезжаем до этажа
                     if (elevator.offsetTop!==nextStop) {
-                        elevator.style.top = elevator.offsetTop + (direction==="up"?-elevatorStep:+elevatorStep) + "px";
+                        elevator.style.top = elevator.offsetTop + (direction==='up'?-elevatorStep:+elevatorStep) + 'px';
                         moveElevator(50);
                         return;
                     }
                     //этажи впереди по направлению
                     nextFlats = Object.keys(activeFlats).filter( function(f) {
-                        if (direction==="up" && f > flatCurr) {
+                        if (direction==='up' && f > flatCurr) {
                             return true;
                         };
-                        if (direction==="down" && f < flatCurr) {
+                        if (direction==='down' && f < flatCurr) {
                             return true;
                         };
                         return false;
-                    }).sort( function(a,b) { return (direction==="up"?a-b:b-a);});
+                    }).sort( function(a,b) { return (direction==='up'?a-b:b-a);});
                     
                     //нужно ли останавливаться на этом этаже?
                     if (flatCurr in activeFlats) {
                         var isFlatActive = false;
                         var isOpen = false;
                         var disableAllButtons = (nextFlats.length===0 || Object.keys(activeFlats).length===0);
-                        var flatButtons = document.querySelectorAll(".button-" + flatCurr);
+                        var flatButtons = document.querySelectorAll('.button-' + flatCurr);
                         //отключаем нажатые кнопки
                         flatButtons.forEach (b => {
-                            if (b.classList.contains("active")) {
-                                var bMode = b.getAttribute("data-mode");
+                            if (b.classList.contains('active')) {
+                                var bMode = b.getAttribute('data-mode');
                                 if (bMode===null || bMode===direction || disableAllButtons) {
-                                    b.classList.remove("active");
+                                    b.classList.remove('active');
                                     isOpen = true;
                                 } else {
                                     isFlatActive = true;
@@ -1209,8 +1209,8 @@ G+
                     
                     //не останавливаемся, определяем следующий этаж
                     if (!(flatCurr in activeFlats)) {
-                        nextStop = elevator.offsetTop + (direction==="up"?-elevatorHeight:+elevatorHeight);
-                        flatCurr = direction==="up"?flatCurr+1:flatCurr-1;
+                        nextStop = elevator.offsetTop + (direction==='up'?-elevatorHeight:+elevatorHeight);
+                        flatCurr = direction==='up'?flatCurr+1:flatCurr-1;
                         moveElevator(50);        
                     }
                 }, speed)
@@ -1218,17 +1218,17 @@ G+
 
             //нажимаем кнопку
             function pushBtn(evt) {
-                if (!evt.target.classList.contains("active")) {
-                    var btnFlatNumber = Number(evt.target.getAttribute("data-number"));
-                    var btnDirection = evt.target.getAttribute("data-mode");
-                    btnDirection = btnDirection ? btnDirection : (btnFlatNumber>flatCurr ? "up" : "down");
-                    evt.target.classList.add("active");
+                if (!evt.target.classList.contains('active')) {
+                    var btnFlatNumber = Number(evt.target.getAttribute('data-number'));
+                    var btnDirection = evt.target.getAttribute('data-mode');
+                    btnDirection = btnDirection ? btnDirection : (btnFlatNumber>flatCurr ? 'up' : 'down');
+                    evt.target.classList.add('active');
                     if (!(btnFlatNumber in activeFlats)) {
                         activeFlats[btnFlatNumber] = true;
                     }
                     //запускаем лифт, если он стоит
-                    if (direction==="") {
-                        direction = (btnFlatNumber===flatCurr ? btnDirection : (btnFlatNumber>flatCurr ? "up" : "down"));
+                    if (direction==='') {
+                        direction = (btnFlatNumber===flatCurr ? btnDirection : (btnFlatNumber>flatCurr ? 'up' : 'down'));
                         nextStop = elevator.offsetTop;
                         moveElevator(50); 
                     }
@@ -1237,59 +1237,59 @@ G+
 
             //создаем кнопку
             function createButton(cnt,type,nmb) {
-                var button = document.createElement("div");
-                button.classList.add("button-" + nmb);
-                if (type==="elevator") {
-                    button.classList.add("elevator__button");
-                    button.setAttribute("id","elevator-" + nmb);
+                var button = document.createElement('div');
+                button.classList.add('button-' + nmb);
+                if (type==='elevator') {
+                    button.classList.add('elevator__button');
+                    button.setAttribute('id','elevator-' + nmb);
                     button.textContent = nmb;
                 } else {
-                    button.classList.add("flat__button");
-                    button.classList.add("flat__button--" + type);
-                    button.setAttribute("data-mode",type);
+                    button.classList.add('flat__button');
+                    button.classList.add('flat__button--' + type);
+                    button.setAttribute('data-mode',type);
                 }
-                button.setAttribute("data-number",nmb);
-                button.addEventListener("click", pushBtn);
+                button.setAttribute('data-number',nmb);
+                button.addEventListener('click', pushBtn);
                 cnt.appendChild(button);
             };
 
             //создаем дом
             function create (cnt,flatsCount) {
-                var house = document.createElement("div");
-                house.classList.add("house");
+                var house = document.createElement('div');
+                house.classList.add('house');
                 //создаем этажи
-                var flats = document.createElement("div");
-                flats.classList.add("house__flats");
+                var flats = document.createElement('div');
+                flats.classList.add('house__flats');
                 for (var i = flatsCount; i >= 1; i--) {
-                    var flat = document.createElement("div");
-                    flat.classList.add("flat");
-                    flat.setAttribute("id","flat-" + i);
-                    var flatNumber = document.createElement("span");
-                    flatNumber.classList.add("flat__number");
+                    var flat = document.createElement('div');
+                    flat.classList.add('flat');
+                    flat.setAttribute('id','flat-' + i);
+                    var flatNumber = document.createElement('span');
+                    flatNumber.classList.add('flat__number');
                     flatNumber.textContent = i;
                     flat.appendChild(flatNumber);
                     //создаем кнопки лифта на этаже
-                    var flatButtons = document.createElement("div");
-                    flatButtons.classList.add("flat__buttons");
+                    var flatButtons = document.createElement('div');
+                    flatButtons.classList.add('flat__buttons');
                     if (i<flatsCount) {
-                        createButton(flatButtons,"up",i);
+                        createButton(flatButtons,'up',i);
                     }
                     if (i>1) {
-                        createButton(flatButtons,"down",i);
+                        createButton(flatButtons,'down',i);
                     }
                     flat.appendChild(flatButtons);
                     flats.appendChild(flat);
                 };
                 //создаем лифт
-                var shaft = document.createElement("div");
-                shaft.classList.add("house__shaft");
-                elevator = document.createElement("div");
-                elevator.classList.add("house__elevator");
+                var shaft = document.createElement('div');
+                shaft.classList.add('house__shaft');
+                elevator = document.createElement('div');
+                elevator.classList.add('house__elevator');
                 //создаем кнопки в лифте
-                var elevatorButtons = document.createElement("div");
-                elevatorButtons.classList.add("elevator__buttons");
+                var elevatorButtons = document.createElement('div');
+                elevatorButtons.classList.add('elevator__buttons');
                 for (var i = flatsCount; i >= 1; i--) {
-                    createButton(elevatorButtons,"elevator",i);  
+                    createButton(elevatorButtons,'elevator',i);  
                 }
                 shaft.appendChild(elevator);
                 house.appendChild(flats);
@@ -1299,53 +1299,53 @@ G+
             };
 
             create(this.cnt,this.flatsCount);
-            flats = this.cnt.querySelectorAll(".flat");
+            flats = this.cnt.querySelectorAll('.flat');
         }
 
         goPeople = function () {
 
             var timerPerson;
             var personCount = 0;
-            var flats = this.cnt.querySelectorAll(".flat");
+            var flats = this.cnt.querySelectorAll('.flat');
             
             function randomDiap(n,m) {
                 return Math.floor(Math.random()*(m-n+1))+n;
             }
 
-            btnCreatePassengers.setAttribute("disabled",true);
+            btnCreatePassengers.setAttribute('disabled',true);
 
             //создаем пассажира
             function createPerson(temp,flats) {
                 clearTimeout(timerPerson);
                 timerPerson = setTimeout( function() {
-                    var person = document.createElement("div");
-                    person.classList.add("person");
+                    var person = document.createElement('div');
+                    person.classList.add('person');
                     //этаж для пассажира рандомно
                     var flatNumber = randomDiap(1,FLATS);
                     var flat = flats[FLATS - flatNumber];
                     //выбор кнопки на этаже для пассажира рандомно
-                    var flatButtons = flat.querySelectorAll(".flat__button");
+                    var flatButtons = flat.querySelectorAll('.flat__button');
                     var flatButton = flatButtons[randomDiap(0,flatButtons.length-1)];
                     flatButton.click();
                     //этаж назначения для пассажира рамдомно
-                    var direction = flatButton.getAttribute("data-mode");
-                    person.setAttribute("data-direction",direction);
-                    var flatDestination = randomDiap(direction==="up"?(flatNumber+1):1,direction==="up"?FLATS:(flatNumber-1));
-                    person.setAttribute("data-destination",flatDestination);
-                    var dest = document.createElement("span");
-                    dest.classList.add("person__dest");
+                    var direction = flatButton.getAttribute('data-mode');
+                    person.setAttribute('data-direction',direction);
+                    var flatDestination = randomDiap(direction==='up'?(flatNumber+1):1,direction==='up'?FLATS:(flatNumber-1));
+                    person.setAttribute('data-destination',flatDestination);
+                    var dest = document.createElement('span');
+                    dest.classList.add('person__dest');
                     dest.textContent = flatDestination;
-                    //console.log("person on " + flatNumber + " go " + direction + " " + flatDestination);
+                    //console.log('person on ' + flatNumber + ' go ' + direction + ' ' + flatDestination);
                     person.appendChild(dest);
                     flat.appendChild(person);
                     personCount++;
-                    btnCreatePassengers.textContent = (PASSENGERS - personCount) + " пассажиров";
+                    btnCreatePassengers.textContent = (PASSENGERS - personCount) + ' пассажиров';
                     if (personCount < PASSENGERS) {
                         createPerson(3000,flats);
                     }
                     if (personCount===PASSENGERS) {
-                        btnCreatePassengers.textContent = PASSENGERS + " пассажиров";
-                        btnCreatePassengers.removeAttribute("disabled");
+                        btnCreatePassengers.textContent = PASSENGERS + ' пассажиров';
+                        btnCreatePassengers.removeAttribute('disabled');
                     }
                 }, temp);
             }
@@ -1353,44 +1353,44 @@ G+
             //создаем пассажира для тестов
             function createPersonTest(temp,flats,start,end,dir) {
                 setTimeout( function() {
-                    var person = document.createElement("div");
-                    person.classList.add("person");
+                    var person = document.createElement('div');
+                    person.classList.add('person');
                     //этаж для пассажира рандомно
                     var flatNumber = start;
                     var flat = flats[FLATS - flatNumber];
                     //выбор кнопки на этаже для пассажира
-                    var flatButton = flat.querySelector(".flat__button--" + dir);
+                    var flatButton = flat.querySelector('.flat__button--' + dir);
                     flatButton.click();
                     //этаж назначения для пассажира
-                    var direction = flatButton.getAttribute("data-mode");
-                    person.setAttribute("data-direction",direction);
+                    var direction = flatButton.getAttribute('data-mode');
+                    person.setAttribute('data-direction',direction);
                     var flatDestination = end;
-                    person.setAttribute("data-destination",flatDestination);
-                    var dest = document.createElement("span");
-                    dest.classList.add("person__dest");
+                    person.setAttribute('data-destination',flatDestination);
+                    var dest = document.createElement('span');
+                    dest.classList.add('person__dest');
                     dest.textContent = flatDestination;
-                    //console.log("person on " + (FLATS - flatNumber) + " go " + direction + " " + flatDestination);
+                    //console.log('person on ' + (FLATS - flatNumber) + ' go ' + direction + ' ' + flatDestination);
                     person.appendChild(dest);
                     flat.appendChild(person);
                 }, temp);
             }
             createPerson(0,flats);
-            //createPersonTest(0,flats,1,7,"up");
-            //createPersonTest(0,flats,1,3,"up");
-            //createPersonTest(1000,flats,8,4,"down");
+            //createPersonTest(0,flats,1,7,'up');
+            //createPersonTest(0,flats,1,3,'up');
+            //createPersonTest(1000,flats,8,4,'down');
         }
     }
 
     btnCreateHouse.addEventListener('click', (event) => {
-        cntHouse.innerHTML = "";
+        cntHouse.innerHTML = '';
         newHouse = new House(FLATS,cntHouse);
         newHouse.createHouse();
-        btnCreatePassengers.removeAttribute("disabled");
-        btnCreatePassengers.textContent = PASSENGERS + " пассажиров";
+        btnCreatePassengers.removeAttribute('disabled');
+        btnCreatePassengers.textContent = PASSENGERS + ' пассажиров';
 
     });
 
-    btnCreatePassengers.addEventListener("click", (event) => {
+    btnCreatePassengers.addEventListener('click', (event) => {
         newHouse.goPeople();
     });
 })();
@@ -1398,38 +1398,132 @@ G+
 'use strict';
 
 (function() {
+    
+  try {
+    var blockGithub = document.querySelector('.github');
+    var nameGithub = blockGithub.querySelector('.github__name');
+    var btnGithub = blockGithub.querySelector('.github__button');
+    var resultGithub = blockGithub.querySelector('.user');
+} catch {
+    return;
+}
+
+let url = 'https://api.github.com/users/';
+
+async function getUserInfo(evt) {
+    resultGithub.innerHTML = '';
+
+    if (nameGithub.value == '') {
+        showError();
+        return;
+    }
+
+    evt.preventDefault();
+    let response = await fetch(url + nameGithub.value);
+
+    if (response.ok) { 
+        let json = await response.json();
+        showResult(json);
+    } else {
+        showError(response.status);
+    }
+}
+
+function showError(status) {
+    var infoBlock = document.createElement('span');
+    infoBlock.textContent = status?`user with name ${nameGithub.value} was not found on GitHub`:'Please, enter the name';
+    infoBlock.classList.add('user__text');
+    resultGithub.appendChild(infoBlock);
+}
+
+
+async function showResult(info) {
+    if (!!info.avatar_url) {
+        let loadPhoto = new Promise((resolve) => {
+            var img = new Image();
+            img.src = info.avatar_url;
+            img.onload = () => resolve('loaded');
+        });
+        await loadPhoto; 
+        var avatarImage = document.createElement('img');
+        avatarImage.src = info.avatar_url;
+        avatarImage.alt = info.login;
+        avatarImage.classList.add('user__photo');
+        resultGithub.appendChild(avatarImage);
+    }
+    var infoBlock = document.createElement('div');
+    infoBlock.classList.add('user__data');
+    resultGithub.appendChild(infoBlock);
+
+    addInfoText(infoBlock,'login',info.login);
+    addInfoText(infoBlock,'name',info.name);
+    addInfoText(infoBlock,'location',info.location);
+    //addInfoText(infoBlock,'email',info.email);
+    addInfoText(infoBlock,'repositories',info.public_repos);
+    var link = document.createElement('a');
+    link.href = 'https://github.com/' + info.login;
+    link.setAttribute('target','_blank')
+    link.textContent = 'GitHub Profile';
+    link.classList.add('user__link');
+    infoBlock.appendChild(link);
+}
+
+function addInfoText(cnt,title,text) {
+    var block = document.createElement('div');
+    var titleBlock = document.createElement('span');
+    titleBlock.textContent = title + ':';
+    titleBlock.classList.add('user__title');
+    var textBlock = document.createElement('span');
+    textBlock.textContent = !!text?text:'-';
+    textBlock.classList.add('user__text');
+    block.appendChild(titleBlock);
+    block.appendChild(textBlock);
+    cnt.appendChild(block);
+}
+        
+if (btnGithub) {
+    btnGithub.addEventListener('click', (event) => {
+        getUserInfo(event);
+    });
+}
+
+})();
+
+'use strict';
+
+// поток событий с информацией о закрытии мадальных окон
+//var modalEvents = new EventEmitter();
+
+(function() {
     var taskList = document.querySelectorAll('.task-link');
     var modalFormList = document.querySelectorAll('.modal');
-    var closeButtonsList = document.querySelectorAll(".modal__button-close");
+    var closeButtonsList = document.querySelectorAll('.modal__button-close');
     var closeButtonLink;
     var modalForm;
     var modalTaskLink;
 
-    var observer = new MutationObserver(function(mutations) {
+    /*var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
-            if(mutation.attributeName == "class"){
+            if(mutation.attributeName == 'class'){
                 if (mutation.target.classList.contains('modal--show')) {
-                    //debugger;
-                    //console.log(mutation.target.getAttribute("id") + " OPEN!");
+                    console.log(mutation.target.getAttribute('id') + ' OPEN!');
                     return;
                 }
-                //console.log(mutation.target.getAttribute("id") + " CLOSE!");
+                console.log(mutation.target.getAttribute('id') + ' CLOSE!');
             }
         });
-    });
+    });*/
     
     //modalFormList.forEach( modal =>  observer.observe(modal, {attributes: true}));
-    // поток событий с информацией о погоде
-    //var weatherEvents = new EventEmitter();
     
     //закрытие модальных окон по кнопке закрытия
     for (var i = 0; i < closeButtonsList.length; i++) {
         closeButtonLink = closeButtonsList[i];
-        closeButtonLink.addEventListener("click", closeModals);
+        closeButtonLink.addEventListener('click', closeModals);
     }
 
     // закрытие модальных окон по esc
-    window.addEventListener("keydown", function(evt) {
+    window.addEventListener('keydown', function(evt) {
         if (evt.keyCode === 27) {
             evt.preventDefault();
             closeModals();
@@ -1440,7 +1534,7 @@ G+
     for (var i = 0; i < taskList.length; i++) {
         modalTaskLink = taskList[i];
         modalTaskLink.addEventListener('click', function(evt) {
-            var taskId = evt.target.getAttribute("data-task");
+            var taskId = evt.target.getAttribute('data-task');
             var taskModal = document.getElementById(taskId);
             if (!taskModal) {
                 return;
@@ -1462,9 +1556,10 @@ G+
     }
 
     function closeModals() {
+        //modalEvents.emit('close');
         for (var i = 0; i < modalFormList.length; i++) {
             modalForm = modalFormList[i];
-            if (modalForm.classList.contains("modal--show")) {
+            if (modalForm.classList.contains('modal--show')) {
                 modalForm.classList.remove('modal--show');
             }
             document.body.classList.remove('stop-scrolling');
@@ -1523,14 +1618,14 @@ G+
     function setAction(direction) {
         action = direction;
         controlList.forEach( function(control) {
-            control.classList.remove("move-resize__control--active");
-            control.classList.remove("move-resize__control--non-active");
+            control.classList.remove('move-resize__control--active');
+            control.classList.remove('move-resize__control--non-active');
             if (action) {
-                control.classList.add("move-resize__control--non-active");
+                control.classList.add('move-resize__control--non-active');
             }
-            if (control.getAttribute("data-action")===action) {
-                control.classList.remove("move-resize__control--non-active");
-                control.classList.add("move-resize__control--active");
+            if (control.getAttribute('data-action')===action) {
+                control.classList.remove('move-resize__control--non-active');
+                control.classList.add('move-resize__control--active');
             }
         })
     }
@@ -1539,7 +1634,7 @@ G+
     document.addEventListener('mousedown', onMouseDown);
 
     function onMouseDown(evt) {
-        setAction(evt.target.getAttribute("data-action"));
+        setAction(evt.target.getAttribute('data-action'));
         if (action) {
             evt.preventDefault();
             document.addEventListener('mousemove', onMouseMove);
@@ -1585,124 +1680,124 @@ G+
 
         switch(action) {
             //перемещение самой картинки по экрану
-            case "image":
-                image.style.top = Math.min(topShift, limits.bottom) + "px";
-                image.style.left = Math.min(leftShift, limits.right) + "px";
+            case 'image':
+                image.style.top = Math.min(topShift, limits.bottom) + 'px';
+                image.style.left = Math.min(leftShift, limits.right) + 'px';
                 break;
             //ресайз картинки слева
-            case "left":
-                image.style.left = leftShift + "px";
-                image.style.width = (leftMax - leftShift) + "px";
+            case 'left':
+                image.style.left = leftShift + 'px';
+                image.style.width = (leftMax - leftShift) + 'px';
                 if (leftShift >= leftMax) {
-                    image.style.left = leftMax + "px";
+                    image.style.left = leftMax + 'px';
                     rightMin = cntImage.offsetWidth - image.offsetLeft;
-                    setAction("right");
-                    image.classList.toggle("move-resize__image--mirrorX");
+                    setAction('right');
+                    image.classList.toggle('move-resize__image--mirrorX');
                 }
                 break;
             //ресайз картинки справа
-            case "right":
-                image.style.width = Math.min(rightShift,rightMin) + "px";
+            case 'right':
+                image.style.width = Math.min(rightShift,rightMin) + 'px';
                 if (rightShift <= 0) {
-                    image.style.width = "0px";
+                    image.style.width = '0px';
                     leftMax = image.offsetLeft;
-                    setAction("left");
-                    image.classList.toggle("move-resize__image--mirrorX");
+                    setAction('left');
+                    image.classList.toggle('move-resize__image--mirrorX');
                 }
                 break;
             //ресайз картинки сверху
-            case "top":
-                image.style.top = topShift + "px";
-                image.style.height = (topMax - topShift) + "px";
+            case 'top':
+                image.style.top = topShift + 'px';
+                image.style.height = (topMax - topShift) + 'px';
                 if (topShift >= topMax) {
-                    image.style.top = topMax + "px";
+                    image.style.top = topMax + 'px';
                     bottomMin = cntImage.offsetHeight - image.offsetTop;;
-                    setAction("bottom");
-                    image.classList.toggle("move-resize__image--mirrorY");
+                    setAction('bottom');
+                    image.classList.toggle('move-resize__image--mirrorY');
                 }
                 break;
             //ресайз картинки снизу
-            case "bottom":
-                image.style.height = Math.min(bottomShift,bottomMin) + "px";
+            case 'bottom':
+                image.style.height = Math.min(bottomShift,bottomMin) + 'px';
                 if (bottomShift <= 0) {
-                    image.style.height = "0px";
+                    image.style.height = '0px';
                     topMax = image.offsetTop;
-                    setAction("top");
-                    image.classList.toggle("move-resize__image--mirrorY");
+                    setAction('top');
+                    image.classList.toggle('move-resize__image--mirrorY');
                 }
                 break;
             //ресайз картинки слева сверху
-            case "left-top":
+            case 'left-top':
                 if (image.offsetTop<=0 && mouseShift.x <= 0) {
                     leftShift = Math.max(image.offsetLeft,0);
                 }
-                image.style.width = Math.min(topMax /(propHeight/propWidth),(leftMax - leftShift)) + "px";
-                image.style.height = Math.min((image.offsetWidth / (propWidth/propHeight)),topMax) + "px";
-                image.style.top = (topMax - image.offsetHeight) + "px";
-                image.style.left = (leftMax - image.offsetWidth) + "px";
+                image.style.width = Math.min(topMax /(propHeight/propWidth),(leftMax - leftShift)) + 'px';
+                image.style.height = Math.min((image.offsetWidth / (propWidth/propHeight)),topMax) + 'px';
+                image.style.top = (topMax - image.offsetHeight) + 'px';
+                image.style.left = (leftMax - image.offsetWidth) + 'px';
                 if (leftShift >= leftMax) {
-                    image.style.left = leftMax + "px";
-                    image.style.top = topMax + "px";
+                    image.style.left = leftMax + 'px';
+                    image.style.top = topMax + 'px';
                     rightMin = cntImage.offsetWidth - image.offsetLeft;
                     bottomMin = cntImage.offsetHeight - image.offsetTop;
-                    setAction("right-bottom");
-                    image.classList.toggle("move-resize__image--mirrorX");
-                    image.classList.toggle("move-resize__image--mirrorY");
+                    setAction('right-bottom');
+                    image.classList.toggle('move-resize__image--mirrorX');
+                    image.classList.toggle('move-resize__image--mirrorY');
                 }
                 break;
             //ресайз картинки справа снизу
-            case "right-bottom":
+            case 'right-bottom':
                 if (image.offsetHeight>=bottomMin && mouseShift.x > 0) {
                     rightShift = image.offsetWidth;
                 }
-                image.style.width = Math.min(bottomMin /(propHeight/propWidth),Math.min(rightShift,rightMin)) + "px";
-                image.style.height = Math.min((image.offsetWidth / (propWidth/propHeight)),bottomMin) + "px";
+                image.style.width = Math.min(bottomMin /(propHeight/propWidth),Math.min(rightShift,rightMin)) + 'px';
+                image.style.height = Math.min((image.offsetWidth / (propWidth/propHeight)),bottomMin) + 'px';
                 if (rightShift <= 0) {
-                    image.style.width = "0px";
-                    image.style.height = "0px";
+                    image.style.width = '0px';
+                    image.style.height = '0px';
                     topMax = image.offsetTop;
                     leftMax = image.offsetLeft;
                     
-                    setAction("left-top");
-                    image.classList.toggle("move-resize__image--mirrorX");
-                    image.classList.toggle("move-resize__image--mirrorY");
+                    setAction('left-top');
+                    image.classList.toggle('move-resize__image--mirrorX');
+                    image.classList.toggle('move-resize__image--mirrorY');
                 }
                 break;
             //ресайз картинки справа сверху
-            case "right-top":
+            case 'right-top':
                 if (image.offsetTop<=0 && mouseShift.x > 0) {
                     rightShift = image.offsetWidth;
                 }
-                image.style.width = Math.min(topMax/(propHeight/propWidth),Math.min(rightShift,rightMin)) + "px";
-                image.style.height = Math.min((image.offsetWidth/(propWidth/propHeight)),topMax) + "px";
-                image.style.top = (topMax - image.offsetHeight) + "px";
+                image.style.width = Math.min(topMax/(propHeight/propWidth),Math.min(rightShift,rightMin)) + 'px';
+                image.style.height = Math.min((image.offsetWidth/(propWidth/propHeight)),topMax) + 'px';
+                image.style.top = (topMax - image.offsetHeight) + 'px';
                 if (rightShift <= 0) {
-                    image.style.width = "0px";
-                    image.style.top = topMax + "px";
+                    image.style.width = '0px';
+                    image.style.top = topMax + 'px';
                     leftMax = image.offsetLeft;
                     bottomMin = cntImage.offsetHeight - image.offsetTop;
-                    setAction("left-bottom");
-                    image.classList.toggle("move-resize__image--mirrorX");
-                    image.classList.toggle("move-resize__image--mirrorY");
+                    setAction('left-bottom');
+                    image.classList.toggle('move-resize__image--mirrorX');
+                    image.classList.toggle('move-resize__image--mirrorY');
                 }
                 break;
             //ресайз картинки слева снизу
-            case "left-bottom":
+            case 'left-bottom':
                 if (image.offsetHeight>=bottomMin && mouseShift.x <= 0) {
                     leftShift = Math.max(image.offsetLeft,0);
                 }
-                image.style.width = Math.min(bottomMin /(propHeight/propWidth),(leftMax - leftShift)) + "px";
-                image.style.height = Math.min((image.offsetWidth / (propWidth/propHeight)),bottomMin) + "px";
-                image.style.left = (leftMax - image.offsetWidth) + "px";
+                image.style.width = Math.min(bottomMin /(propHeight/propWidth),(leftMax - leftShift)) + 'px';
+                image.style.height = Math.min((image.offsetWidth / (propWidth/propHeight)),bottomMin) + 'px';
+                image.style.left = (leftMax - image.offsetWidth) + 'px';
                 if (leftShift >= leftMax) {
-                    image.style.left = leftMax + "px";
-                    image.style.width = "0px";
-                    image.style.height = "0px";
+                    image.style.left = leftMax + 'px';
+                    image.style.width = '0px';
+                    image.style.height = '0px';
                     rightMin = cntImage.offsetWidth - image.offsetLeft;
                     topMax = image.offsetTop;
-                    setAction("right-top");
-                    image.classList.toggle("move-resize__image--mirrorX");
-                    image.classList.toggle("move-resize__image--mirrorY");
+                    setAction('right-top');
+                    image.classList.toggle('move-resize__image--mirrorX');
+                    image.classList.toggle('move-resize__image--mirrorY');
                 }
                 break;
             default:
@@ -1763,7 +1858,7 @@ G+
     }
 
     var timer;
-    const TENNIS_SIZE = window.matchMedia("(max-width: 768px)").matches?300:600;
+    const TENNIS_SIZE = window.matchMedia('(max-width: 768px)').matches?300:600;
     const SPEED = 5;
     const SIZES = {
         playgroundWidth: TENNIS_SIZE,
@@ -1774,10 +1869,10 @@ G+
         scoreboardFontSize: TENNIS_SIZE*0.1,
     };
     const COLORS = {
-        playground: "#eae3d8",
-        playerLeft: "#d5a129",
-        playerRight: "#787132",
-        ball: "#9b4e23",
+        playground: '#eae3d8',
+        playerLeft: '#d5a129',
+        playerRight: '#787132',
+        ball: '#9b4e23',
     }
 
     //мячик
@@ -1819,7 +1914,7 @@ G+
         draw = function() {
             this.cnt.strokeStyle = this.color;
             this.cnt.lineWidth = this.width;
-            this.cnt.lineCap = "round";
+            this.cnt.lineCap = 'round';
             this.cnt.beginPath();
             this.cnt.moveTo(this.posX,this.posY);
             this.cnt.lineTo(this.posX,this.posY + this.height);
@@ -1836,28 +1931,28 @@ G+
         var scoreRight = 0;
 
         //создаем табло
-        var scoreboard = document.createElement("span");
-        scoreboard.classList.add("tennis__scoreboard");
-        scoreboard.style.fontSize = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.height = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.lineHeight = "normal";
+        var scoreboard = document.createElement('span');
+        scoreboard.classList.add('tennis__scoreboard');
+        scoreboard.style.fontSize = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.height = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.lineHeight = 'normal';
         cnt.appendChild(scoreboard);
         updateScore();
 
         //создаем канвас
-        var tennisCanvas = document.createElement("canvas");
-        tennisCanvas.classList.add("tennis__playground");
-        tennisCanvas.setAttribute("width",pgWidth);
-        tennisCanvas.setAttribute("height",pgHeight);
+        var tennisCanvas = document.createElement('canvas');
+        tennisCanvas.classList.add('tennis__playground');
+        tennisCanvas.setAttribute('width',pgWidth);
+        tennisCanvas.setAttribute('height',pgHeight);
         cnt.appendChild(tennisCanvas);
-        var context = tennisCanvas.getContext("2d");
+        var context = tennisCanvas.getContext('2d');
 
         //создаем кнопку старта
-        var btnStart = document.createElement("button");
-        btnStart.classList.add("tennis__start");
-        btnStart.textContent = "Start";
+        var btnStart = document.createElement('button');
+        btnStart.classList.add('tennis__start');
+        btnStart.textContent = 'Start';
         cnt.appendChild(btnStart);
-        btnStart.addEventListener("click", startGame);
+        btnStart.addEventListener('click', startGame);
 
         //создаем левую ракетку
         var playerLeft = new Player(context,COLORS.playerLeft,SIZES.playerWidth,SIZES.playerHeight,SIZES.playerWidth/2,pgHeight/2 - SIZES.playerHeight/2);
@@ -1868,7 +1963,7 @@ G+
       
         //обновление табло
         function updateScore() {
-            scoreboard.textContent =  scoreLeft + ":" + scoreRight;
+            scoreboard.textContent =  scoreLeft + ':' + scoreRight;
         }
 
         //создание рисунка на канвасе
@@ -1907,7 +2002,7 @@ G+
         }
 
         //клавиши
-        window.addEventListener("keydown", function(evt) {
+        window.addEventListener('keydown', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = SPEED;
@@ -1926,7 +2021,7 @@ G+
             };
         });
 
-        window.addEventListener("keyup", function(evt) {
+        window.addEventListener('keyup', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = 0;
@@ -2017,7 +2112,7 @@ G+
 
     btnTennisSVG.addEventListener('click', function() {
         clearInterval(timer);
-        cntTennis.innerHTML = "";
+        cntTennis.innerHTML = '';
         renderTennisSVG(cntTennis);
     });
 })();
@@ -2051,7 +2146,7 @@ G+
     }
 
     var timer;
-    const TENNIS_SIZE = window.matchMedia("(max-width: 768px)").matches?300:600;
+    const TENNIS_SIZE = window.matchMedia('(max-width: 768px)').matches?300:600;
     const SPEED = 5;
     const SIZES = {
         playgroundWidth: TENNIS_SIZE,
@@ -2062,10 +2157,10 @@ G+
         scoreboardFontSize: TENNIS_SIZE*0.1,
     };
     const COLORS = {
-        playground: "#eae3d8",
-        playerLeft: "#3d677b",
-        playerRight: "#c28f48",
-        ball: "#9a4832",
+        playground: '#eae3d8',
+        playerLeft: '#3d677b',
+        playerRight: '#c28f48',
+        ball: '#9a4832',
     }
 
     //мячик
@@ -2080,21 +2175,21 @@ G+
             this.height = height;
             this.speedX = speed;
             this.speedY = speed;
-            this.elem = document.createElement("div");
-            this.elem.style.width = this.width + "px";
-            this.elem.style.height = this.height + "px";
+            this.elem = document.createElement('div');
+            this.elem.style.width = this.width + 'px';
+            this.elem.style.height = this.height + 'px';
             this.elem.style.backgroundColor = color;
-            this.elem.style.position = "absolute";
-            this.elem.style.borderRadius = "50%";
-            this.elem.style.transform = "translate(-50%,-50%)";
+            this.elem.style.position = 'absolute';
+            this.elem.style.borderRadius = '50%';
+            this.elem.style.transform = 'translate(-50%,-50%)';
             cnt.appendChild(this.elem);
         };
 
         moveTo = function (posX,posY) {
             this.posX = posX;
             this.posY = posY;
-            this.elem.style.left = this.posX + "px";
-            this.elem.style.top = this.posY + "px";
+            this.elem.style.left = this.posX + 'px';
+            this.elem.style.top = this.posY + 'px';
         };
       
     }
@@ -2110,21 +2205,21 @@ G+
         create = function(cnt,color,width,height) {
             this.width = width;
             this.height = height;
-            this.elem = document.createElement("div");
-            this.elem.classList.add("tennis__player");
-            this.elem.style.width = this.width + "px";
-            this.elem.style.height = this.height + "px";
+            this.elem = document.createElement('div');
+            this.elem.classList.add('tennis__player');
+            this.elem.style.width = this.width + 'px';
+            this.elem.style.height = this.height + 'px';
             this.elem.style.backgroundColor = color;
-            this.elem.style.borderRadius = this.width/2 + "px";
-            this.elem.style.position = "absolute";
+            this.elem.style.borderRadius = this.width/2 + 'px';
+            this.elem.style.position = 'absolute';
             cnt.appendChild(this.elem);
         };
 
         moveTo = function (posX, posY) {
             this.posX = posX;
             this.posY = posY;
-            this.elem.style.left = this.posX + "px";
-            this.elem.style.top = this.posY + "px";
+            this.elem.style.left = this.posX + 'px';
+            this.elem.style.top = this.posY + 'px';
         };
       
     }
@@ -2138,28 +2233,28 @@ G+
         var scoreRight = 0;
 
         //создаем табло
-        var scoreboard = document.createElement("span");
-        scoreboard.classList.add("tennis__scoreboard");
-        scoreboard.style.fontSize = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.height = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.lineHeight = "normal";
+        var scoreboard = document.createElement('span');
+        scoreboard.classList.add('tennis__scoreboard');
+        scoreboard.style.fontSize = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.height = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.lineHeight = 'normal';
         cnt.appendChild(scoreboard);
         updateScore();
 
         //создаем корт
-        var tennis = document.createElement("div");
-        tennis.classList.add("tennis__playground");
-        tennis.style.width = pgWidth + "px";
-        tennis.style.height = pgHeight + "px";
+        var tennis = document.createElement('div');
+        tennis.classList.add('tennis__playground');
+        tennis.style.width = pgWidth + 'px';
+        tennis.style.height = pgHeight + 'px';
         tennis.style.backgroundColor = COLORS.playground;
         cnt.appendChild(tennis);
 
         //создаем кнопку старта
-        var btnStart = document.createElement("button");
-        btnStart.classList.add("tennis__start");
-        btnStart.textContent = "Start";
+        var btnStart = document.createElement('button');
+        btnStart.classList.add('tennis__start');
+        btnStart.textContent = 'Start';
         cnt.appendChild(btnStart);
-        btnStart.addEventListener("click", startGame);
+        btnStart.addEventListener('click', startGame);
         
         //создаем ракетку 1
         var playerLeft = new Player();
@@ -2178,7 +2273,7 @@ G+
 
         //обновление табло
         function updateScore() {
-            scoreboard.textContent =  scoreLeft + ":" + scoreRight;
+            scoreboard.textContent =  scoreLeft + ':' + scoreRight;
         }
 
         //движение ракетки
@@ -2205,7 +2300,7 @@ G+
         }
 
         //клавиши
-        window.addEventListener("keydown", function(evt) {
+        window.addEventListener('keydown', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = SPEED;
@@ -2224,7 +2319,7 @@ G+
             };
         });
 
-        window.addEventListener("keyup", function(evt) {
+        window.addEventListener('keyup', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = 0;
@@ -2312,7 +2407,7 @@ G+
 
     btnTennisDOM.addEventListener('click', function() {
         clearInterval(timer);
-        cntTennis.innerHTML = "";
+        cntTennis.innerHTML = '';
         renderTennisDOM(cntTennis);
     });
 })();
@@ -2346,7 +2441,7 @@ G+
     }
 
     var timer;
-    const TENNIS_SIZE = window.matchMedia("(max-width: 768px)").matches?300:600;
+    const TENNIS_SIZE = window.matchMedia('(max-width: 768px)').matches?300:600;
     const SPEED = 5;
     const SIZES = {
         playgroundWidth: TENNIS_SIZE,
@@ -2357,10 +2452,10 @@ G+
         scoreboardFontSize: TENNIS_SIZE*0.1,
     };
     const COLORS = {
-        playground: "#eceac7",
-        playerLeft: "#c0978d",
-        playerRight: "#5d5e62",
-        ball: "#972426",
+        playground: '#eceac7',
+        playerLeft: '#c0978d',
+        playerRight: '#5d5e62',
+        ball: '#972426',
     }
 
     //мячик
@@ -2374,17 +2469,17 @@ G+
 
         create = function(cnt,color,radius) {
             this.radius = radius;
-            this.elem = document.createElementNS("http://www.w3.org/2000/svg","circle");
-            this.elem.setAttribute("r", radius);
-            this.elem.setAttribute("fill", color);
+            this.elem = document.createElementNS('http://www.w3.org/2000/svg','circle');
+            this.elem.setAttribute('r', radius);
+            this.elem.setAttribute('fill', color);
             cnt.appendChild(this.elem);
         };
 
         moveTo = function (posX,posY) {
             this.posX = posX;
             this.posY = posY;
-            this.elem.setAttribute("cx", this.posX);
-            this.elem.setAttribute("cy", this.posY);
+            this.elem.setAttribute('cx', this.posX);
+            this.elem.setAttribute('cy', this.posY);
         };
       
     }
@@ -2400,23 +2495,23 @@ G+
         create = function(cnt,color,width,height) {
             this.width = width;
             this.height = height;
-            this.elem = document.createElementNS("http://www.w3.org/2000/svg","rect");
-            this.elem.classList.add("tennis__player");
-            this.elem.setAttribute("x",0);
-            this.elem.setAttribute("y",0);
-            this.elem.setAttribute("width", this.width);
-            this.elem.setAttribute("height", this.height);
-            this.elem.setAttribute("fill", color);
-            this.elem.setAttribute("rx", this.width/2);
-            this.elem.setAttribute("ry", this.width/2);
+            this.elem = document.createElementNS('http://www.w3.org/2000/svg','rect');
+            this.elem.classList.add('tennis__player');
+            this.elem.setAttribute('x',0);
+            this.elem.setAttribute('y',0);
+            this.elem.setAttribute('width', this.width);
+            this.elem.setAttribute('height', this.height);
+            this.elem.setAttribute('fill', color);
+            this.elem.setAttribute('rx', this.width/2);
+            this.elem.setAttribute('ry', this.width/2);
             cnt.appendChild(this.elem);
         };
 
         moveTo = function (posX, posY) {
             this.posX = posX;
             this.posY = posY;
-            this.elem.setAttribute("x", this.posX);
-            this.elem.setAttribute("y", this.posY);
+            this.elem.setAttribute('x', this.posX);
+            this.elem.setAttribute('y', this.posY);
         };
       
     }
@@ -2430,36 +2525,36 @@ G+
         var scoreRight = 0;
 
         //создаем табло
-        var scoreboard = document.createElement("span");
-        scoreboard.classList.add("tennis__scoreboard");
-        scoreboard.style.fontSize = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.height = SIZES.scoreboardFontSize + "px";
-        scoreboard.style.lineHeight = "normal";
+        var scoreboard = document.createElement('span');
+        scoreboard.classList.add('tennis__scoreboard');
+        scoreboard.style.fontSize = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.height = SIZES.scoreboardFontSize + 'px';
+        scoreboard.style.lineHeight = 'normal';
         cnt.appendChild(scoreboard);
         updateScore();
 
         //создаем корт
-        var tennisSVG = document.createElementNS("http://www.w3.org/2000/svg","svg");
-        tennisSVG.classList.add("tennis__playground");
-        tennisSVG.setAttribute("width", pgWidth);
-        tennisSVG.setAttribute("height", pgHeight);
-        tennisSVG.setAttribute("xmlns","http://www.w3.org/2000/svg");
+        var tennisSVG = document.createElementNS('http://www.w3.org/2000/svg','svg');
+        tennisSVG.classList.add('tennis__playground');
+        tennisSVG.setAttribute('width', pgWidth);
+        tennisSVG.setAttribute('height', pgHeight);
+        tennisSVG.setAttribute('xmlns','http://www.w3.org/2000/svg');
         cnt.appendChild(tennisSVG);
         
-        var tennis = document.createElementNS("http://www.w3.org/2000/svg","rect");
-        tennis.setAttribute("x",0);
-        tennis.setAttribute("y",0);
-        tennis.setAttribute("width", pgWidth);
-        tennis.setAttribute("height", pgHeight);
-        tennis.setAttribute("fill", COLORS.playground);
+        var tennis = document.createElementNS('http://www.w3.org/2000/svg','rect');
+        tennis.setAttribute('x',0);
+        tennis.setAttribute('y',0);
+        tennis.setAttribute('width', pgWidth);
+        tennis.setAttribute('height', pgHeight);
+        tennis.setAttribute('fill', COLORS.playground);
         tennisSVG.appendChild(tennis);
         
         //создаем кнопку старта
-        var btnStart = document.createElement("button");
-        btnStart.classList.add("tennis__start");
-        btnStart.textContent = "Start";
+        var btnStart = document.createElement('button');
+        btnStart.classList.add('tennis__start');
+        btnStart.textContent = 'Start';
         cnt.appendChild(btnStart);
-        btnStart.addEventListener("click", startGame);
+        btnStart.addEventListener('click', startGame);
         
         //создаем левую ракетку
         var playerLeft = new Player();
@@ -2478,7 +2573,7 @@ G+
 
         //обновление табло
         function updateScore() {
-            scoreboard.textContent =  scoreLeft + ":" + scoreRight;
+            scoreboard.textContent =  scoreLeft + ':' + scoreRight;
         }
 
         //движение ракетки
@@ -2505,7 +2600,7 @@ G+
         }
 
         //клавиши
-        window.addEventListener("keydown", function(evt) {
+        window.addEventListener('keydown', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = SPEED;
@@ -2524,7 +2619,7 @@ G+
             };
         });
 
-        window.addEventListener("keyup", function(evt) {
+        window.addEventListener('keyup', function(evt) {
             if (evt.keyCode === 17) { //ctrl
                 evt.preventDefault;
                 playerLeft.speed = 0;
@@ -2613,7 +2708,7 @@ G+
 
     btnTennisSVG.addEventListener('click', function() {
         clearInterval(timer);
-        cntTennis.innerHTML = "";
+        cntTennis.innerHTML = '';
         renderTennisSVG(cntTennis);
     });
 })();

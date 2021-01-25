@@ -40,20 +40,20 @@ E2+
 
     function onLoadDoc() {
         for (var i = imageList.length-1; i >= 0; i--) {
-            imageList[i].style.top = imageList[i].offsetTop + "px";
-            imageList[i].style.left = imageList[i].offsetLeft + "px";
-            imageList[i].style.position = "absolute";
-            imageList[i].classList.add("drag-drop__image--drag");
-            imageList[i].setAttribute("data-dragged",true);
+            imageList[i].style.top = imageList[i].offsetTop + 'px';
+            imageList[i].style.left = imageList[i].offsetLeft + 'px';
+            imageList[i].style.position = 'absolute';
+            imageList[i].classList.add('drag-drop__image--drag');
+            imageList[i].setAttribute('data-dragged',true);
         }
         //вешаем обработчики событий на контэйнер
-        cntImages.addEventListener("mousedown", startMove);
+        cntImages.addEventListener('mousedown', startMove);
         cntImages.addEventListener('touchstart',startMove);
     }
     
     function startMove(evt) {
         //если эта одна из картинок, то начинаем перетаскивание
-        if (evt.target.getAttribute("data-dragged")) {
+        if (evt.target.getAttribute('data-dragged')) {
             evt.preventDefault();
             if (evt instanceof TouchEvent) {
                 evt = evt.changedTouches[0];
@@ -106,8 +106,8 @@ E2+
         var leftShift = Math.max(image.offsetLeft + mouseShift.x,0);
         var topShift = Math.max(image.offsetTop + mouseShift.y,0);
         //перемещаем объект
-        image.style.top = Math.min(topShift, limits.bottom) + "px";
-        image.style.left = Math.min(leftShift, limits.right) + "px";
+        image.style.top = Math.min(topShift, limits.bottom) + 'px';
+        image.style.left = Math.min(leftShift, limits.right) + 'px';
     }
 
     function endMove(evt) {
