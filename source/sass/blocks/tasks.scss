@@ -1,5 +1,5 @@
 .task-link {
-    display: flex;
+    /*display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -12,12 +12,13 @@
     background-color: $color-blue;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    padding: 10px 20px;
+    //padding: 10px 20px;
     transition: 0.3s ease;
-    padding-left: 60px;
+    //padding-left: 60px;
     background-repeat: no-repeat;
-    background-size: auto 80%;
-    background-position: center left;
+    background-size: auto 50px;
+    background-position-x: center;
+    background-position-y: 10px;
 
     &:hover {
         box-shadow: none;
@@ -39,31 +40,23 @@
 
     &--move {
         background-image: url("../img/arrows.svg");
-        background-position-x: 10px;
     }
 
     &--dnd {
         background-image: url("../img/butterfly-3.svg");
-        background-position-x: 10px;
     }
 
     &--clock {
         background-image: url("../img/clock.svg");
-        background-position-x: 10px;
-        background-size: auto 70%;
     }
 
     &--tennis {
         background-image: url("../img/tennis.svg");
-        background-position-x: 5px;
-        background-size: auto 70%;
     }
 
     &--github {
         background-image: url("../img/github.svg");
-        background-position-x: 5px;
-        background-size: auto 100%;
-    }
+    }*/
 }
 
 .task {
@@ -94,5 +87,7 @@
 
 //mobile version
 @include viewport--mobile {
-
+    .task-link {
+     //   width: auto;
+    }
 }

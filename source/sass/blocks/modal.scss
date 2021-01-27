@@ -15,7 +15,7 @@
 
 	&__inner {
 		width: 800px;
-		min-height: 400px;
+		min-height: 700px;
 		background-color: $color-white;
 		border-radius: 10px;
 		position: relative;
@@ -26,9 +26,10 @@
 		padding: 40px;
 	  
 		@include viewport--mobile {
-		  margin-top: 0;
-		  width: 100%;
-		  border-radius: 0;
+			height: 100%;
+		  	margin-top: 0;
+		  	width: 100%;
+		  	border-radius: 0;
 		}
 	}
 
@@ -56,6 +57,7 @@
 	@include viewport--tablet {
 		&__inner {
 			padding: 30px;
+			min-height: 500px;
 		}
 
 		&__button-close {

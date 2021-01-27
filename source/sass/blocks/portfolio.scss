@@ -27,97 +27,117 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: stretch;
-        margin-right: -25px;
-
-        &:last-child {
-            margin-bottom: -25px;
-        }
+        margin-bottom: 30px;
     }
 
-    &__item--link {
+    &__item {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         box-sizing: border-box;
         background-color: $color-white;
         border-radius: 10px;
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-        width: calc(100% / 2 - 40px);
         min-height: 240px;
-        padding: 10px;
-        margin: 0 30px 30px 0;
-        transition: 0.3s ease;
+        padding: 20px;
+        margin: 30px 20px 0 20px;
+        transition: all 0.5s ease;
+
+        &:nth-child(even) {
+            .portfolio__link {
+                order: 1;
+            }
+        }
 
         &:hover {
-            box-shadow: none;
-            transition: 0.3s ease;
-
-            .portfolio__image {
-                width: 60%;
-                border: 1px solid $color-light-green;
-                border-radius: 10px;
-            }
-
-            .portfolio__name,
-            .portfolio__desc {
-                display: block;
-            }
+            transform: scale(1.05);
         }
     }
 
-    &__item--task {
-        display: flex;
-        width: calc(100% / 3  - 25px);
-        padding: 0;
-        margin: 0 25px 25px 0;
-    }
-
-    &__name {
-        display: none;
-        font-size: 18px;
-        font-style: italic;
-        color: $color-green;
-        margin: 5px;
-    }
-
-    &__desc {
-        display: none;
-        font-size: 16px;
-        color: $color-gray;
-        margin: 0;
-    }
-
     &__link {
-        flex-grow: 1;
+        flex-shrink: 0;
+        align-self: center;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
         border: 1px solid $color-light-green;
-        border-radius: 3px;
-        width: 100%;
+        border-radius: 10px;
+        width: 40%;
         overflow: hidden;
+        transition: all 0.5s ease;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 
     &__image {
         width: 100%;
-        margin: 0;
     }
 
-  //tablet version
-  @include viewport--tablet {
-    &__item--link {
-        width: calc(100% / 2 - 25px);
-        min-height: 285px;
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 18px;
+        color: $color-gray;
+        margin: 0;
+        padding: 10px;
+        margin: 0 auto;
     }
-  }
+
+    &__name {
+        font-size: 24px;
+        font-style: italic;
+        color: $color-green;
+        text-align: center;
+        margin: 0 0 15px 0;
+    }
+
+    &__details {
+        font-size: 20px;
+        margin: 0 0 15px 0;
+    }
+
+    &__stack {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 15px 0;    
+    }
+
+    
+    &__item--task {
+        background-color: $color-blue;
+        min-height: auto;
+
+        h4 {
+            color: white;
+            font-size: 20px;
+        }
+        p {
+            color: white;
+            font-size: 18px;
+        }
+        .portfolio__link {
+            width: 20%;
+        }
+    }
 
   //mobile version
   @include viewport--mobile {
-    &__item--link,
-    &__item--task {
-      width: 100%;
-      min-height: auto;
+    &__container {
+        padding: 25px 0;
+    }
+
+    &__item {
+        flex-direction: column;
+    }
+
+    &__item--task .portfolio__link {
+        width: auto;
+    }
+
+    &__link {
+        margin: 0 auto;
+        width: auto;
+        order: 1;
     }
   }
 }

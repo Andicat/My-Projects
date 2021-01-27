@@ -33,7 +33,7 @@
               "name": "HTML"
             })
             @@include("source/html/components/skill.html", {
-              "mod": "start",
+              "mod": "medium",
               "name": "React"
             })
             @@include("source/html/components/skill.html", {
@@ -78,10 +78,46 @@
           <ul class='portfolio__list'>
             <li class="portfolio__item portfolio__item--link">
               <a class="portfolio__link" href="https://andicat.github.io/FD-2-Project" target="_blank">
-                <h4 class="portfolio__name">Scale-game</h4>
                 <img class="portfolio__image" src="img/scale.jpg" alt="Scale game">
-                <p class="portfolio__desc">Technologies: JavaScript ES6, Animation, Canvas, MVC, SPA, AJAX, Sass</p>  
               </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Scale-game</h4>
+                <p class="portfolio__details">I made this game as my final project after course "JavaScript Developer". It's simple, but not. Adaptive for mobile and different screens.
+                  Was made without libraries, all calculations inside.</p>
+                <p class="portfolio__stack">JavaScript ES6, Animation, Canvas, MVC, SPA, AJAX, Sass</p>
+              </div>
+            </li>
+
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/sedona" target="_blank">
+                <img class="portfolio__image" src="img/sedona.jpg" alt="Sedona">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Sedona</h4>
+                <p class="portfolio__details">It was my first project like web developer. So simply, but is was my first lovestory with Frontend. Adaptive for tablet/mobile</p>
+                <p class="portfolio__stack">Adaptive page, mobile-first, HTML, CSS, Less</p>
+              </div>
+            </li>
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/keksobooking" target="_blank">
+                <img class="portfolio__image" src="img/keksobooking.jpg" alt="Keksobooking">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Keksobooking</h4>
+                <p class="portfolio__details">Here I used form validation, communication with back-end, developing on Vanilla js.</p>
+                <p class="portfolio__stack">JavaScript, AJAX, mouseEvent</p>
+              </div>
+            </li>
+
+            <li class="portfolio__item portfolio__item--link">
+              <a class="portfolio__link" href="https://andicat.github.io/simon" target="_blank">
+                <img class="portfolio__image" src="img/simon.jpg" alt="Simon game">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Simon-game</h4>
+                <p class="portfolio__details">It's my version of famous Simon-game, made with JavaScript.</p>
+                <p class="portfolio__stack">JavaScript, HTML, CSS</p>
+              </div>
             </li>
             <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/technomart/" target="_blank">
@@ -90,27 +126,6 @@
                 <p class="portfolio__desc"> It was my first project. Technologies: HTML, CSS</p>
               </a>
             </li>-->
-            <li class="portfolio__item portfolio__item--link">
-              <a class="portfolio__link" href="https://andicat.github.io/sedona/" target="_blank">
-                <h4 class="portfolio__name">Sedona</h4>
-                <img class="portfolio__image" src="img/sedona.jpg" alt="Sedona">
-                <p class="portfolio__desc">Technologies: Adaptive page, mobile-first, HTML, CSS, Less</p>  
-              </a>
-            </li>
-            <li class="portfolio__item portfolio__item--link">
-              <a class="portfolio__link" href="https://andicat.github.io/keksobooking/" target="_blank">
-                <h4 class="portfolio__name">Keksobooking</h4>
-                <img class="portfolio__image scroll" src="img/keksobooking.jpg" alt="Keksobooking">
-                <p class="portfolio__desc">Technologies: JavaScript, form validation, mouseEvent</p>  
-              </a>
-            </li>
-            <li class="portfolio__item portfolio__item--link">
-              <a class="portfolio__link" href="https://andicat.github.io/simon/" target="_blank">
-                <h4 class="portfolio__name">Simon-game</h4>
-                <img class="portfolio__image" src="img/simon.jpg" alt="Simon game">
-                <p class="portfolio__desc">Simple game. Technologies: JavaScript, HTML, CSS</p>  
-              </a>
-            </li>
             <!--<li class="portfolio__item">
               <a class="portfolio__link" href="https://andicat.github.io/Quotes/" target="_blank">
                 <h4 class="portfolio__name">Quotes</h4>
@@ -118,34 +133,80 @@
                 <p class="portfolio__desc">API</p>  
               </a>
             </li>-->
-          </ul>
-          <h3>My JavaScript tasks</h3>
-          <ul class="portfolio__list">
             <li class="portfolio__item portfolio__item--task">
-              <a class="task-link task-link--queen" data-task="task-chess" href="#">Шахматы: расстановка ферзей</a>
+              <a class="portfolio__link task-link task-link--queen" data-task="task-chess" href="#">
+                <img class="portfolio__image" src="img/chess.jpg" alt="Chess">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Chess: Independent queens</h4>
+                <p class="portfolio__details">Task: find all possible combinations of queens' arrangement on the chessboard. Queens should not beat each other. Create a chessboard with JavaScript.</p>
+                <p class="portfolio__stack">JavaScript</p>
+              </div>
             </li>
             <li class="portfolio__item portfolio__item--task">
-              <a class="task-link task-link--knight" data-task="task-chess-knight" href="#">Шахматы: обход конем доски</a>
+              <a class="portfolio__link task-link task-link--knight" data-task="task-chess-knight" href="#">
+                <img class="portfolio__image" src="img/chess-knight.jpg" alt="Chess-knight">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Chess: Knight way</h4>
+                <p class="portfolio__details">Task: find a knight way. The knight should pass all the chessboard, having visited each cell once. Create a chessboard using with JavaScript.</p>
+                <p class="portfolio__stack">JavaScript</p>
+              </div>
             </li>
             <li class="portfolio__item portfolio__item--task">
-              <a class="task-link task-link--elevator" data-task="task-elevator" href="#">Лифт и пассажиры</a>
+              <a class="portfolio__link task-link task-link--elevator" data-task="task-elevator" href="#">
+                <img class="portfolio__image" src="img/elevator.jpg" alt="Elevator">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Elevator & passengers</h4>
+                <p class="portfolio__details">Task: With JavaScript create a house, an elevator, an elevator operation algorithm and a queue of passengers.</p>
+                <p class="portfolio__stack">JavaScript</p>
+              </div>
             </li>
             <li class="portfolio__item portfolio__item--task">
-              <a class="task-link task-link--move" data-task="task-move-resize" href="#">Move & Resize</a>
+              <a class="portfolio__link task-link task-link--move" data-task="task-move-resize" href="#">
+                <img class="portfolio__image" src="img/move-resize.jpg" alt="Move-resize">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Move & Resize</h4>
+                <p class="portfolio__details">Task: Moving, resizing, flipping, scaling the picture with mouse.</p>
+                <p class="portfolio__stack">JavaScript</p>
+              </div>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="portfolio__link task-link task-link--clock" data-task="task-clock" href="#">
+                <img class="portfolio__image" src="img/clock.jpg" alt="Clock">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Clocks</h4>
+                <p class="portfolio__details">Task: Creating clocks in different ways: DOM, SVG, Canvas</p>
+                <p class="portfolio__stack">JavaScript</p>
+              </div>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="portfolio__link task-link task-link--tennis" data-task="task-tennis" href="#">
+                <img class="portfolio__image" src="img/tennis.jpg" alt="Tennis">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">Tennis</h4>
+                <p class="portfolio__details">Task: Creating tennis-game in different ways: DOM, SVG, Canvas</p>
+                <p class="portfolio__stack">JavaScript</p>
+              </div>
+            </li>
+            <li class="portfolio__item portfolio__item--task">
+              <a class="portfolio__link task-link task-link--github" data-task="task-github" href="#">
+                <img class="portfolio__image" src="img/github.jpg" alt="GitHub">
+              </a>
+              <div class="portfolio__description">
+                <h4 class="portfolio__name">GitHub users</h4>
+                <p class="portfolio__details">Task: Get information about GitHub users.</p>
+                <p class="portfolio__stack">JavaScript</p>
+              </div>
             </li>
             <!--<li class="portfolio__item portfolio__item--task">
               <a class="task-link task-link--dnd" data-task="task-drag-drop" href="#">Drag & Drop</a>
             </li>-->
-            <li class="portfolio__item portfolio__item--task">
-              <a class="task-link task-link--clock" data-task="task-clock" href="#">Создание часов разными способами</a>
-            </li>
-            <li class="portfolio__item portfolio__item--task">
-              <a class="task-link task-link--tennis" data-task="task-tennis" href="#">Создание игры "Теннис" разными способами</a>
-            </li>
-            <li class="portfolio__item portfolio__item--task">
-              <a class="task-link task-link--github" data-task="task-github" href="#">Пользователи GitHub</a>
-            </li>
-          </ul>      
+          </ul>
         </div>
       </section>
       <!--<section class="aboutme" id="aboutme">

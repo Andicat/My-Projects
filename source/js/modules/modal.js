@@ -43,7 +43,7 @@
     for (var i = 0; i < taskList.length; i++) {
         modalTaskLink = taskList[i];
         modalTaskLink.addEventListener('click', function(evt) {
-            var taskId = evt.target.getAttribute('data-task');
+            var taskId = evt.currentTarget.getAttribute('data-task');
             var taskModal = document.getElementById(taskId);
             if (!taskModal) {
                 return;
